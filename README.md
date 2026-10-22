@@ -1,6 +1,8 @@
 # Touch-R1 · Project website
 
-Official website: https://laiyingxin2.github.io/Touch-R1/
+Official website: https://laiyingxin2.github.io/Touch-R1
+
+GitHub Pages redirects the short display URL to the canonical directory URL ending in `/`; the page metadata consistently uses that canonical URL.
 
 Paper: https://arxiv.org/abs/2605.27154
 

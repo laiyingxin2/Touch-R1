@@ -11,11 +11,11 @@
   <meta property="og:title" content="Touch-R1: Reinforcing Touch Reasoning in MLLMs">
   <meta property="og:description" content="Reasoning from physical contact. Touch-R1, TouchReason-1M, and tactile-grounded GRPO.">
   <meta property="og:url" content="https://laiyingxin2.github.io/Touch-R1/">
-  <meta property="og:image" content="https://laiyingxin2.github.io/Touch-R1/assets/figures/paper_main_touch_r1.png">
+  <meta property="og:image" content="https://laiyingxin2.github.io/Touch-R1/assets/figures/touch_r1_overview_final.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Touch-R1: Reinforcing Touch Reasoning in MLLMs">
   <meta name="twitter:description" content="Reasoning from physical contact. Touch-R1, TouchReason-1M, and tactile-grounded GRPO.">
-  <meta name="twitter:image" content="https://laiyingxin2.github.io/Touch-R1/assets/figures/paper_main_touch_r1.png">
+  <meta name="twitter:image" content="https://laiyingxin2.github.io/Touch-R1/assets/figures/touch_r1_overview_final.png">
   <meta name="theme-color" content="#0b0e0d">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,13 +52,22 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 @media(max-width:900px){.object-preview{grid-template-columns:repeat(4,1fr)}.atlas-heading h3{font-size:35px}.atlas-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:600px){.object-atlas{margin:35px 0 45px;padding-top:23px}.atlas-heading{display:block;margin-bottom:23px}.atlas-heading h3{font-size:34px;letter-spacing:-1.6px}.atlas-kicker{font-size:8px;line-height:1.8;margin-bottom:13px}.atlas-intro{margin-top:20px}.atlas-intro p{font-size:12px}.atlas-open{font-size:11px;padding:11px 15px}.object-preview{grid-template-columns:repeat(2,1fr);gap:6px}.object-preview .object-tile:nth-child(n+7){display:none}.object-tile>span{font-size:8px;padding:15px 7px 6px}.atlas-foot{font-size:7px;flex-direction:column;gap:5px}.atlas-dialog{padding:20px 15px;width:96vw;height:94vh}.atlas-dialog-head{gap:14px}.atlas-dialog-head h2{font-size:27px;letter-spacing:-1.2px}.atlas-dialog-head button{font-size:10px;padding:7px 9px}.atlas-help{font-size:11px;margin:20px 0}.atlas-grid{grid-template-columns:repeat(2,1fr);gap:8px}.atlas-pages{gap:5px}.atlas-pages button{font-size:9px;padding:8px 10px}#atlas-range{font-size:8px}.art-atlas-link{font-size:10px}.atlas-grid .object-tile>span{font-size:9px}}
 
+
+/* Follow-up refinement: typography, explicit recordings, supplied final framework. */
+.hero{padding-top:58px;min-height:660px}.authors{font-size:13px;line-height:2}.affiliations{font-size:11px;line-height:1.9}.author-note{font-size:10px;color:#8c9b83}.nav-links{gap:23px}.nav-links a{display:inline-block}.card-caption{color:#58694d;font-size:12px}.card-caption a{display:inline-block;margin-left:12px;font-weight:600;color:#48622d}.section{padding-block:88px}#results{padding:88px 0 45px}#analysis{padding:65px 0 42px}#bibtex{padding:65px 0 85px}.figure-card img{height:auto}.motion-card{min-width:0;scroll-margin-top:100px}.contact-modes{display:grid;grid-template-columns:1fr 1fr;background:#34412c;gap:1px}.motion-card{background:#10160f}.motion-head{display:flex;align-items:flex-start;gap:16px;padding:23px 24px 21px}.motion-index{font:11px "JetBrains Mono",monospace;color:#8eaa6d;padding-top:5px}.motion-head h3{font-family:var(--display-font);font-weight:400;font-size:25px;letter-spacing:-1px;color:#e9f2df;margin:0 0 9px}.motion-head p{font-size:12px;color:#9bad8b;line-height:1.75;max-width:430px;margin:0}.motion-views{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#34412c}.motion-views video{aspect-ratio:4/3;object-fit:contain;background:#070b07;width:100%}.motion-views .stream-label{top:10px;left:10px;font-size:8px;padding:5px 7px}.motion-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:17px 22px;color:#8ca277;background:#131c0e}.motion-controls button{font-size:10px;border-radius:2px;padding:8px 11px;border:1px solid #456033;background:#213119;color:#d9edc3;min-height:34px}.motion-controls .motion-play{background:var(--acid);border-color:var(--acid);color:#1d2b0f;min-width:96px}.motion-controls a{font:9px "JetBrains Mono",monospace;color:#b2ca96;margin-left:2px}.motion-time{font:9px "JetBrains Mono",monospace;margin-left:auto;color:#91a77b}.library-subtitle{font:9px/1.7 "JetBrains Mono",monospace;letter-spacing:.5px;color:#90a378;margin:9px 0 0}.library-caption{margin:0;border-top:1px solid #34412c;padding:18px 24px;font-size:11px;line-height:1.8;color:#9daf8b;background:#10160f}#pause-demos{flex:none;padding:10px 15px;font-size:11px;background:#1a2812;border:1px solid #465e35;border-radius:2px;color:#ccdfb6}.contact-library .demo-heading{max-width:none}.contact-library .demo-toolbar{align-items:center;padding:20px 24px}.lightbox{max-width:96vw;max-height:96vh}.lightbox img{max-height:84vh}.lightbox button{min-height:34px;padding:5px 14px;color:#223418}.atlas-dialog-head button,.atlas-pages button,.copy-button{min-height:36px}
+@media(max-width:1100px){.nav-links a[href="#bibtex"]{display:none}.motion-controls{padding-inline:14px;gap:7px}.motion-time{order:5;width:100%;margin:2px 0 0;text-align:left}}
+@media(max-width:960px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:45px}.hero-content{max-width:740px}.contact-art{width:100%;max-width:560px;justify-self:center;height:330px;margin-top:15px}.hero-bottom{margin-top:22px}.nav-links a[href="#abstract"]{display:none}.contact-modes{grid-template-columns:1fr}.motion-head{padding:22px 24px}.motion-views video{aspect-ratio:16/9}.motion-time{order:initial;width:auto;margin-left:auto}.motion-controls{padding:17px 22px}.section h2{text-wrap:balance}}
+@media(max-width:600px){.nav-links a{display:none!important}.nav-links a[href="#videos"],.nav-links .nav-paper{display:inline-block!important}.hero{padding-top:32px}.authors{font-size:12px;line-height:2.05}.affiliations{font-size:10px;line-height:1.9}.author-note{font-size:9px;line-height:1.8}.contact-art{height:270px;margin-top:18px}.hero-bottom{margin-top:18px}.section{padding-block:61px}.card-caption{font-size:11px;line-height:1.8}.card-caption a{display:block;margin:7px 0 0}#results{padding:65px 0 35px}#analysis{padding:45px 0 30px}#bibtex{padding:45px 0 65px}.contact-library .demo-toolbar{padding:17px 16px;gap:10px}.contact-library .demo-heading{font-size:12px;max-width:none}.library-subtitle{font-size:8px;letter-spacing:0}.motion-head{padding:20px 16px;gap:12px}.motion-head h3{font-size:24px}.motion-head p{font-size:12px}.motion-views{grid-template-columns:1fr}.motion-views video{aspect-ratio:16/9}.motion-views .stream-label{font-size:8px}.motion-controls{padding:15px 14px;gap:7px}.motion-controls button{font-size:10px;padding:7px 9px;min-height:36px}.motion-time{font-size:8px}.motion-controls a{font-size:8px}.library-caption{padding:15px 16px;font-size:10px}.atlas-dialog-head button,.atlas-pages button{min-height:38px}}
+
+.footer-links{flex-wrap:wrap;align-items:center}.footer-copy{border:0;background:none;padding:0;color:#9aaf84;font:inherit;cursor:pointer}.footer-copy:hover{text-decoration:underline;text-underline-offset:4px}#share-status{font-size:10px;overflow-wrap:anywhere}
+.research-brand{margin:24px 0 2px;display:flex;align-items:center}.research-brand a{display:inline-block;line-height:0;padding:4px 0}.research-brand img{width:193px;height:auto;object-fit:contain;display:block}.hero-content .links{margin-top:22px}@media(max-width:600px){.research-brand{margin:20px 0 0}.research-brand img{width:172px}.hero-content .links{margin-top:20px}}
 </style>
 </head>
 <body>
   <a class="skip-link" href="#abstract">Skip to research overview</a>
   <nav class="navbar" aria-label="Main navigation"><div class="nav-inner">
     <a class="brand" href="#top"><span class="brand-icon" aria-hidden="true"></span>Touch-R1</a>
-    <div class="nav-links"><a href="#abstract">Overview</a><a href="#method">Method</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#bibtex">Citation</a><a class="nav-paper" href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">Paper ↗</a></div>
+    <div class="nav-links"><a href="#abstract">Overview</a><a href="#videos">Demos</a><a href="#method">Method</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#bibtex">Citation</a><a class="nav-paper" href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">Paper ↗</a></div>
   </div></nav>
   <main id="top">
     <header class="hero"><div class="hero-content">
@@ -68,6 +77,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       <div class="authors"><span>Yingxin Lai<sup>1,5,*</sup></span><span>Yafei Zhou<sup>2,5,*</sup></span><span>Fucai Zhu<sup>5</sup></span><span>Siyu Zhu<sup>3</sup></span><span>Weihao Yuan<sup>4,5,†</sup></span></div>
       <p class="affiliations"><sup>1</sup> Xiamen University &nbsp; <sup>2</sup> Great Bay University &nbsp; <sup>3</sup> Fudan University &nbsp; <sup>4</sup> Nanjing University &nbsp; <sup>5</sup> Daimon Robotics</p>
       <p class="author-note">* Equal contribution. Author order is random. &nbsp; † Corresponding author.</p>
+      <div class="research-brand"><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics official website"><img src="assets/brand/daimon-robotics.svg" alt="戴盟 Daimon Robotics" width="193" height="35"></a></div>
       <div class="links"><a class="button" href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a><a class="button secondary" href="#videos">Explore touch <span aria-hidden="true">↓</span></a></div>
       <p class="resource-note">TouchReason-1M &nbsp; / &nbsp; TouchReason-Bench &nbsp; / &nbsp; Qwen2.5-VL-7B</p>
       </div>
@@ -78,15 +88,11 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       </div>
       <div class="hero-bottom"><span>PHYSICAL EVIDENCE. STRUCTURED REASONING.</span><a href="#videos">Discover the research <span aria-hidden="true">↓</span></a></div>
     </header>
-    <section id="videos" class="teaser" aria-label="Paired contact demonstrations">
-      <div class="demo-toolbar"><span class="demo-heading"><span class="section-index">01 /</span> Contact, seen and felt.</span><div class="demo-tabs" role="group" aria-label="Choose contact demonstration"><button type="button" data-demo="press" aria-pressed="true">Normal press</button><button type="button" data-demo="move_up" aria-pressed="false">Upward shear</button></div></div>
-      <div class="teaser-video">
-        <div class="stream"><span class="stream-label">01 / RGB view</span><video id="demo-rgb" autoplay muted loop playsinline preload="metadata" aria-label="RGB view of normal press" poster="assets/posters/press_rgb.jpg"><source src="assets/videos/press_rgb.mp4" type="video/mp4"></video></div>
-        <div class="stream"><span class="stream-label">02 / Tactile view</span><video id="demo-tactile" autoplay muted loop playsinline preload="metadata" aria-label="Tactile view of normal press" poster="assets/posters/press_tactile.jpg"><source src="assets/videos/press_tactile.mp4" type="video/mp4"></video></div>
-      </div>
-      <div class="demo-caption"><span id="demo-description"><b>Normal press.</b> Paired RGB and optical tactile recordings of a soft plastic cup-lid protrusion under increasing contact.</span><button class="play-toggle" id="play-toggle" type="button" aria-label="Pause both demonstration videos">Pause ↙</button></div>
-      <noscript><p class="demo-noscript">JavaScript enables paired playback controls. <a href="assets/videos/press_rgb.mp4">Watch RGB</a> · <a href="assets/videos/press_tactile.mp4">Watch touch</a> · <a href="assets/videos/move_up_rgb.mp4">Watch upward shear</a>.</p></noscript>
-    </section>
+    <section id="videos" class="teaser contact-library" aria-label="Two paired contact recordings"><div class="demo-toolbar"><div><span class="demo-heading"><span class="section-index">01 /</span> Two motions. Seen and felt.</span><p class="library-subtitle">2 acquisition sequences · RGB + optical tactile</p></div><button type="button" id="pause-demos">Pause all</button></div><div class="contact-modes"><article class="motion-card" data-motion="press" aria-label="Normal press paired recording">
+ <div class="motion-head"><span class="motion-index">01</span><div><h3>Normal press</h3><p>Increasing normal contact reveals deformation over time.</p></div></div>
+ <div class="motion-views"><div class="stream"><span class="stream-label">RGB view</span><video id="press-rgb" muted loop playsinline preload="metadata" aria-label="Normal press rgb view" poster="assets/posters/press_rgb.jpg"><source src="assets/videos/press_rgb.mp4" type="video/mp4"></video></div><div class="stream"><span class="stream-label">Tactile view</span><video id="press-tactile" muted loop playsinline preload="metadata" aria-label="Normal press tactile view" poster="assets/posters/press_tactile.jpg"><source src="assets/videos/press_tactile.mp4" type="video/mp4"></video></div></div><div class="motion-controls"><button type="button" class="motion-play" aria-label="Play normal press paired videos">Play pair ▷</button><button type="button" class="motion-replay" aria-label="Replay normal press paired videos">Replay ↺</button><span class="motion-time" aria-live="off">00:00</span><a href="assets/videos/press_rgb.mp4" target="_blank" rel="noopener" aria-label="Open normal press RGB recording">RGB ↗</a><a href="assets/videos/press_tactile.mp4" target="_blank" rel="noopener" aria-label="Open normal press tactile recording">Touch ↗</a></div></article><article class="motion-card" data-motion="move_up" aria-label="Upward shear paired recording">
+ <div class="motion-head"><span class="motion-index">02</span><div><h3>Upward shear</h3><p>Tangential motion reveals a changing contact response.</p></div></div>
+ <div class="motion-views"><div class="stream"><span class="stream-label">RGB view</span><video id="move_up-rgb" muted loop playsinline preload="metadata" aria-label="Upward shear rgb view" poster="assets/posters/move_up_rgb.jpg"><source src="assets/videos/move_up_rgb.mp4" type="video/mp4"></video></div><div class="stream"><span class="stream-label">Tactile view</span><video id="move_up-tactile" muted loop playsinline preload="metadata" aria-label="Upward shear tactile view" poster="assets/posters/move_up_tactile.jpg"><source src="assets/videos/move_up_tactile.mp4" type="video/mp4"></video></div></div><div class="motion-controls"><button type="button" class="motion-play" aria-label="Play upward shear paired videos">Play pair ▷</button><button type="button" class="motion-replay" aria-label="Replay upward shear paired videos">Replay ↺</button><span class="motion-time" aria-live="off">00:00</span><a href="assets/videos/move_up_rgb.mp4" target="_blank" rel="noopener" aria-label="Open upward shear RGB recording">RGB ↗</a><a href="assets/videos/move_up_tactile.mp4" target="_blank" rel="noopener" aria-label="Open upward shear tactile recording">Touch ↗</a></div></article></div><p class="library-caption">Source recordings of a soft plastic cup-lid protrusion under normal press and upward shear. Each pair shows the same contact from two views.</p><noscript><p class="demo-noscript">Open the RGB and Touch links below each recording to watch the original videos.</p></noscript></section>
     <div class="quick-stats" aria-label="Research at a glance"><div class="stat"><strong>4</strong><span>optical tactile sensors</span></div><div class="stat"><strong>1M+</strong><span>synchronized tactile pairs</span></div><div class="stat"><strong>4,800</strong><span>held-out benchmark QA pairs</span></div><div class="stat"><strong>60.1</strong><span>TouchReason-Bench average</span></div></div>
 
     <section id="abstract" class="section">
@@ -123,7 +129,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
             <p>Align touch, vision, and language to a structured reasoning interface.</p>
           </article>
           <article class="method-card" data-step="03">
-            <h3>Grounded GRPO</h3>
+            <h3>Tactile-adapted GRPO</h3>
             <p>Reward answers that are correct, consistent, parsable, and tactile-dependent.</p>
           </article>
         </div>
@@ -141,8 +147,8 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
         </div>
 
         <figure class="figure-card" style="margin-top:18px;">
-          <img src="assets/figures/paper_main_touch_r1.png" alt="Touch-R1 framework">
-          <figcaption class="card-caption">Touch-R1 unifies tactile dynamics pretraining, structured QA supervision, and tactile-grounded GRPO.</figcaption>
+          <img src="assets/figures/touch_r1_overview_final.png" width="3600" height="1277" alt="Touch-R1 final framework: tactile dynamics pretraining, QA supervised fine-tuning, and tactile-adapted GRPO">
+          <figcaption class="card-caption">Three-stage Touch-R1 training: tactile dynamics pretraining, QA supervised fine-tuning, and tactile-adapted GRPO. <a href="assets/figures/touch_r1_overview_final.pdf" target="_blank" rel="noopener">Open original figure (PDF) ↗</a></figcaption>
         </figure>
       </div>
     </section>
@@ -257,28 +263,31 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     </section>
   </main>
 
-  <footer><span>Touch-R1 &nbsp; · &nbsp; Reasoning from physical contact.</span><div class="footer-links"><a href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">arXiv ↗</a><a href="https://github.com/laiyingxin2/Touch-R1" target="_blank" rel="noopener">Website source ↗</a><a href="#top">Back to top ↑</a></div></footer>
+  <footer><span>Touch-R1 &nbsp; · &nbsp; Reasoning from physical contact.</span><div class="footer-links"><a href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">arXiv ↗</a><a href="https://github.com/laiyingxin2/Touch-R1" target="_blank" rel="noopener">Website source ↗</a><button class="footer-copy" id="copy-project-link" type="button">Copy project link</button><span id="share-status" role="status" aria-live="polite"></span><a href="#top">Back to top ↑</a></div></footer>
 <dialog class="atlas-dialog" id="atlas-dialog" aria-labelledby="atlas-title"><header class="atlas-dialog-head"><div><p class="atlas-kicker">TOUCHREASON-1M / THE OBJECT ATLAS</p><h2 id="atlas-title">The physical world, up close.</h2></div><button id="close-atlas" type="button" aria-label="Close object atlas">Close ×</button></header><p class="atlas-help">Selected acquisition views from TouchReason-1M. Choose a sample to inspect the photograph.</p><div class="atlas-pages" role="group" aria-label="Choose object page"><button type="button" data-atlas-page="0" aria-pressed="true">01–16</button><button type="button" data-atlas-page="1" aria-pressed="false">17–32</button><button type="button" data-atlas-page="2" aria-pressed="false">33–48</button><button type="button" data-atlas-page="3" aria-pressed="false">49–64</button><button type="button" data-atlas-page="4" aria-pressed="false">65–80</button><span id="atlas-range" role="status" aria-live="polite">01–16 / 80</span></div><div id="atlas-grid" class="atlas-grid"></div></dialog>
   <dialog class="lightbox" id="figure-dialog" aria-label="Expanded research figure"><button type="button" id="close-figure" aria-label="Close expanded figure">Close ×</button><img id="expanded-figure" alt="Expanded research figure"></dialog>
   <script>
   (() => {
-    const rgb = document.getElementById('demo-rgb'), touch = document.getElementById('demo-tactile');
-    const toggle = document.getElementById('play-toggle');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let playing = !reduced.matches;
-    const label = () => { toggle.textContent = playing ? 'Pause ↙' : 'Play ↗'; toggle.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' both demonstration videos'); };
-    const playback = () => { [rgb,touch].forEach(v => playing ? v.play().catch(() => { playing=false; rgb.pause();touch.pause();label(); }) : v.pause());label(); };
-    if(reduced.matches) playback();
-    toggle.addEventListener('click', () => { playing=!playing; playback(); });
-    document.querySelectorAll('[data-demo]').forEach(button => button.addEventListener('click', () => {
-      const name=button.dataset.demo, words=name==='press'?'Normal press':'Upward shear';
-      document.querySelectorAll('[data-demo]').forEach(b => b.setAttribute('aria-pressed',String(b===button)));
-      [rgb,touch].forEach((v,i) => { const type=i?'tactile':'rgb';v.pause();v.poster='assets/posters/'+name+'_'+type+'.jpg';v.querySelector('source').src='assets/videos/'+name+'_'+type+'.mp4';v.setAttribute('aria-label',(i?'Tactile':'RGB')+' view of '+words.toLowerCase());v.load(); });
-      document.getElementById('demo-description').innerHTML=name==='press'?'<b>Normal press.</b> Paired RGB and optical tactile recordings of a soft plastic cup-lid protrusion under increasing contact.':'<b>Upward shear.</b> Exploratory motion reveals how the tactile response changes with tangential contact.';
-      playback();
-    }));
-    rgb.addEventListener('timeupdate', () => { if(playing && Number.isFinite(rgb.duration) && Number.isFinite(touch.duration) && rgb.duration>0){ const t=rgb.currentTime/rgb.duration*touch.duration;if(Math.abs(touch.currentTime-t)>.15)touch.currentTime=t; } });
-    document.addEventListener('visibilitychange',()=>{ if(document.hidden){rgb.pause();touch.pause();}else if(playing) playback(); });
+    const recordings=[];
+    document.querySelectorAll('[data-motion]').forEach(card=>{
+      const videos=[...card.querySelectorAll('video')],rgb=videos[0],touch=videos[1],play=card.querySelector('.motion-play'),replay=card.querySelector('.motion-replay'),clock=card.querySelector('.motion-time');
+      const title=card.querySelector('h3').textContent.toLowerCase();let desired=false,visible=false;
+      const label=()=>{play.textContent=desired?'Pause pair Ⅱ':'Play pair ▷';play.setAttribute('aria-label',(desired?'Pause ':'Play ')+title+' paired videos');};
+      const pause=()=>{desired=false;videos.forEach(v=>v.pause());label();};
+      const start=()=>{recordings.forEach(other=>{if(other.card!==card)other.pause();});desired=true;label();videos.forEach(v=>v.play().catch(()=>pause()));};
+      const fmt=t=>Number.isFinite(t)?String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0'):'00:00';
+      play.addEventListener('click',()=>desired?pause():start());
+      replay.addEventListener('click',()=>{videos.forEach(v=>{v.currentTime=0;});start();});
+      rgb.addEventListener('timeupdate',()=>{clock.textContent=fmt(rgb.currentTime)+' / '+fmt(rgb.duration);if(desired&&rgb.duration>0&&Number.isFinite(touch.duration)){const t=rgb.currentTime/rgb.duration*touch.duration;if(Math.abs(touch.currentTime-t)>.15)touch.currentTime=t;}});
+      rgb.addEventListener('loadedmetadata',()=>{clock.textContent='00:00 / '+fmt(rgb.duration);});
+      const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible)pause();},{threshold:.2});observer.observe(card);
+      recordings.push({card,pause,start});
+    });
+    document.getElementById('pause-demos').addEventListener('click',()=>recordings.forEach(x=>x.pause()));
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)recordings.forEach(x=>x.pause());});
+    const share=document.getElementById('copy-project-link');
+    share.addEventListener('click',async()=>{const url='https://laiyingxin2.github.io/Touch-R1';try{await navigator.clipboard.writeText(url);share.textContent='Link copied ✓';document.getElementById('share-status').textContent='';}catch(_){document.getElementById('share-status').textContent=url;}});
     const copy=document.getElementById('copy-bib'), status=document.getElementById('copy-status');
     copy.addEventListener('click', async()=>{try{await navigator.clipboard.writeText(document.getElementById('citation').textContent);copy.textContent='Copied ✓';status.textContent='Citation copied.';}catch(_){status.textContent='Select the citation below to copy.';const range=document.createRange();range.selectNodeContents(document.getElementById('citation'));getSelection().removeAllRanges();getSelection().addRange(range);} });
     const dialog=document.getElementById('figure-dialog'), expanded=document.getElementById('expanded-figure');
