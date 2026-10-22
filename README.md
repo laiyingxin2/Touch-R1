@@ -1,23 +1,22 @@
-# Touch-R1 Project Page
+# Touch-R1 · Project website
 
-This repository hosts the project page for **Touch-R1**.
+Official website: https://laiyingxin2.github.io/Touch-R1/
 
-## Live Page
+Paper: https://arxiv.org/abs/2605.27154
 
-https://laiyingxin2.github.io/Projects/
+The previous URL https://laiyingxin2.github.io/Projects/ is retained as a redirect.
 
-## GitHub Pages
+This repository contains the **website source**, not a release of the model training code or dataset.
 
-The site is deployed from `docs/` by the GitHub Actions workflow in `.github/workflows/static.yml`.
+## Local preview
 
-Recommended Pages setting:
+```sh
+python3 -m http.server 8000 --directory docs
+```
 
-- Source: `GitHub Actions`
+Visit http://localhost:8000/. No build step or package installation is needed.
 
-The deployable static files live in `docs/`:
+## Deployment
 
-- `docs/index.html`
-- `docs/assets/`
-- `docs/.nojekyll`
-
-After pushing changes to `main`, the workflow uploads `docs/` and publishes the site automatically.
+GitHub Pages is deployed from `docs/` by `.github/workflows/static.yml`.
+Set Pages → Source to GitHub Actions. Push to `main` to deploy.
