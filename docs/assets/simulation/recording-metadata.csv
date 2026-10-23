@@ -1,0 +1,31 @@
+﻿case编号,benchmark,任务指令,case_id,模型,结果,执行步数,视频文件,SHA256
+01,LIBERO Spatial,pick up the black bowl between the plate and the ramekin and place it on the plate,43,GPT-6 Astra (third-party API),未完成,220,01__libero_spatial_task0__43__GPT6_Astra.mp4,dd8f3d1912aa46b6d95850855bdabc6308c7a8fe77b63ddede6354e0608af8a0
+01,LIBERO Spatial,pick up the black bowl between the plate and the ramekin and place it on the plate,43,Original Qwen,未完成,220,01__libero_spatial_task0__43__Original_Qwen.mp4,4b1163640f087a88b7a5ffc71e4c8b016a165b68332cf64fbaef99e9d86e2275
+01,LIBERO Spatial,pick up the black bowl between the plate and the ramekin and place it on the plate,43,Touch-R1,成功,69,01__libero_spatial_task0__43__Touch-R1.mp4,4722f1d486692eb0a04b3446de794818716c292f93dc836e36c3ce2e748645eb
+02,MetaWorld / drawer-open-v3,Open the drawer,10008,GPT-6 Astra (third-party API),成功,370,02__drawer-open-v3__10008__GPT6_Astra.mp4,b7e422670ab75ba4a67bea858bed70e61e400d21609072607e3425237ec3b3a5
+02,MetaWorld / drawer-open-v3,Open the drawer,10008,Original Qwen,未完成,500,02__drawer-open-v3__10008__Original_Qwen.mp4,dd59eee14339fc75cf6b39a67755ceca81e4f50dad1b0be40fe2f14cb4905371
+02,MetaWorld / drawer-open-v3,Open the drawer,10008,Touch-R1,成功,90,02__drawer-open-v3__10008__Touch-R1.mp4,141f04125b1838af292b5795f35a518c410d419e5600e93fc4aa41a66252077f
+03,MetaWorld / window-open-v3,Open the window,10004,GPT-6 Astra (third-party API),成功,379,03__window-open-v3__10004__GPT6_Astra.mp4,b81d349fe713edb3ef9c793c5b89acd3fb9ef22cd046315694e71555c3a3a648
+03,MetaWorld / window-open-v3,Open the window,10004,Original Qwen,未完成,500,03__window-open-v3__10004__Original_Qwen.mp4,39ec7aef95452869477064798268aae5168e3a9a8fd191928a120dc8a5f0d05a
+03,MetaWorld / window-open-v3,Open the window,10004,Touch-R1,成功,82,03__window-open-v3__10004__Touch-R1.mp4,1f3892028ea152509060d860606fba5fb4ea1a0b56c39d1387b0e0947107583d
+04,MetaWorld / drawer-open-v3,Open the drawer,20002,GPT-6 Astra (third-party API),成功,294,04__drawer-open-v3__20002__GPT6_Astra.mp4,54c0cb404cf5eaa45a141ebf510ccd4e6d427a695ac292d3bb7d7dd6b9ba90a7
+04,MetaWorld / drawer-open-v3,Open the drawer,20002,Original Qwen,未完成,500,04__drawer-open-v3__20002__Original_Qwen.mp4,e8e3d046b7b4fc315d0fe98d5acb34a84ffd2f647322c243a211abb4fe7ea93a
+04,MetaWorld / drawer-open-v3,Open the drawer,20002,Touch-R1,成功,92,04__drawer-open-v3__20002__Touch-R1.mp4,647e38081594e550987d3ff83cde83de5fe8fd4445faa4f1ddba375e4586e6ad
+05,MetaWorld / window-open-v3,Open the window,20004,GPT-6 Astra (third-party API),成功,51,05__window-open-v3__20004__GPT6_Astra.mp4,4d124713e1f728790a8b956ebd2553f9501f86b0ad93aea4fd87b09f69d13e90
+05,MetaWorld / window-open-v3,Open the window,20004,Original Qwen,未完成,500,05__window-open-v3__20004__Original_Qwen.mp4,c19f1decac96e966179c74a7b9cd5192900823ce123bc07affe6b100d7efb3cd
+05,MetaWorld / window-open-v3,Open the window,20004,Touch-R1,成功,87,05__window-open-v3__20004__Touch-R1.mp4,4f797cdd1186475bdf6f948b14c3be4adbcc222abae022984af4d454c8a14bfc
+06,MetaWorld / drawer-open-v3,Open the drawer,20032,GPT-6 Astra (third-party API),成功,84,06__drawer-open-v3__20032__GPT6_Astra.mp4,db505d6e9c564951f789330ad868ac03c280b8c3fea02e848494d1ea7b398715
+06,MetaWorld / drawer-open-v3,Open the drawer,20032,Original Qwen,未完成,500,06__drawer-open-v3__20032__Original_Qwen.mp4,795e0b033435656deace5230ba17a20cdc89c69aceb391e4f844901fb3c73db3
+06,MetaWorld / drawer-open-v3,Open the drawer,20032,Touch-R1,成功,107,06__drawer-open-v3__20032__Touch-R1.mp4,d94de17b44f7a0282ced53edc04d785374a579c60ff1170c3061239e2c54fcdf
+07,MetaWorld / drawer-open-v3,Open the drawer,20045,GPT-6 Astra (third-party API),成功,332,07__drawer-open-v3__20045__GPT6_Astra.mp4,8027d8a94404fa00c1d9f86c1347ad644f6f690987ae037ed3586fe1c475e3b0
+07,MetaWorld / drawer-open-v3,Open the drawer,20045,Original Qwen,未完成,500,07__drawer-open-v3__20045__Original_Qwen.mp4,0dbfb19c17589d2c1e3b1a9186a3b7d435ffb21c7522f39fcacecb8647af31f8
+07,MetaWorld / drawer-open-v3,Open the drawer,20045,Touch-R1,成功,89,07__drawer-open-v3__20045__Touch-R1.mp4,cdf88fdb4930360b1c5d869f6ed462f006d4c5c0f4e8a56787fbe840ddfe19af
+08,MetaWorld / drawer-open-v3,Open the drawer,20065,GPT-6 Astra (third-party API),成功,431,08__drawer-open-v3__20065__GPT6_Astra.mp4,ab04bf350595778e17a7f9dbe5e1d0f1625b7c52f5fdcbb11dff21154f4442c5
+08,MetaWorld / drawer-open-v3,Open the drawer,20065,Original Qwen,未完成,500,08__drawer-open-v3__20065__Original_Qwen.mp4,ff7ec200e9a75f134128152f204176dfc2ccf234045815b5a3093bafc354d306
+08,MetaWorld / drawer-open-v3,Open the drawer,20065,Touch-R1,成功,89,08__drawer-open-v3__20065__Touch-R1.mp4,f13551369063f0096ee4c42f2728990e0613d8446fbf4549ea12edaed9daa229
+09,MetaWorld / drawer-open-v3,Open the drawer,20116,GPT-6 Astra (third-party API),成功,98,09__drawer-open-v3__20116__GPT6_Astra.mp4,42f17992b926021b91480e7fed9d11f605581cd2d77464b198b8700601ace2f3
+09,MetaWorld / drawer-open-v3,Open the drawer,20116,Original Qwen,未完成,500,09__drawer-open-v3__20116__Original_Qwen.mp4,8417bb7ba18164c78cd4b20e7336108ffbaf80b4c827772a32b0ab9718020766
+09,MetaWorld / drawer-open-v3,Open the drawer,20116,Touch-R1,成功,96,09__drawer-open-v3__20116__Touch-R1.mp4,298652151e0325330088077f77eec880e73133d39575caa36cecba9eab6293d7
+10,MetaWorld / drawer-open-v3,Open the drawer,20124,GPT-6 Astra (third-party API),成功,202,10__drawer-open-v3__20124__GPT6_Astra.mp4,806831ef35ce24bef1134fd7bc14a51e2a9283b533be756e5c87714a6d88b450
+10,MetaWorld / drawer-open-v3,Open the drawer,20124,Original Qwen,未完成,500,10__drawer-open-v3__20124__Original_Qwen.mp4,c22e59467f2350157669ff8a63382bac824c6629781ac823d1b0105d34393b1e
+10,MetaWorld / drawer-open-v3,Open the drawer,20124,Touch-R1,成功,89,10__drawer-open-v3__20124__Touch-R1.mp4,3294491efcfd1108b0974717f3d81127e59d66db4d53cc702c96be15a6ea3d69
