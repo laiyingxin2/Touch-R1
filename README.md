@@ -10,6 +10,25 @@ The previous URL https://laiyingxin2.github.io/Projects/ is retained as a redire
 
 This repository contains the **website source**, not a release of the model training code or dataset.
 
+## Research resources
+
+- Dataset: https://huggingface.co/datasets/laiyingxin/TouchReason
+- Model: https://huggingface.co/laiyingxin/Touch-R1
+- Data, research code, and model weights: coming soon.
+
+## Citation
+
+```bibtex
+@inproceedings{lai2026touchr1reinforcingtouchreasoning,
+  title     = {{Touch-R1}: Reinforcing Touch Reasoning in {MLLMs}},
+  author    = {Yingxin Lai and Yafei Zhou and Fucai Zhu and Siyu Zhu and Weihao Yuan},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  note      = {To appear},
+  url       = {https://arxiv.org/abs/2605.27154}
+}
+```
+
 ## Local preview
 
 ```sh
