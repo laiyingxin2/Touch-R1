@@ -19,13 +19,14 @@ This repository contains the **website source**, not a release of the model trai
 ## Citation
 
 ```bibtex
-@inproceedings{lai2026touchr1reinforcingtouchreasoning,
-  title     = {{Touch-R1}: Reinforcing Touch Reasoning in {MLLMs}},
-  author    = {Yingxin Lai and Yafei Zhou and Fucai Zhu and Siyu Zhu and Weihao Yuan},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026},
-  note      = {To appear},
-  url       = {https://arxiv.org/abs/2605.27154}
+@misc{lai2026touchr1reinforcingtouchreasoning,
+  title         = {{Touch-R1}: Reinforcing Touch Reasoning in {MLLMs}},
+  author        = {Yingxin Lai and Yafei Zhou and Fucai Zhu and Siyu Zhu and Weihao Yuan},
+  year          = {2026},
+  eprint        = {2605.27154},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2605.27154}
 }
 ```
 
