@@ -1,10 +1,10 @@
 {
   "title": "Three real-robot adapter interaction recordings",
-  "revision": "robot-trials-v1",
+  "revision": "robot-smooth-v2",
   "source_files_deduplicated": true,
   "playback_speed": 2,
   "audio_tracks": 0,
-  "processing": "H.264 browser copies accelerated by timestamps at 2x; 720x720 framing retained; source recordings unchanged. Audio omitted from public copies.",
+  "processing": "H.264 480x480/30fps low-delay previews accelerated by timestamps at 2x, complete frame retained, no B-frames, one-second closed GOP, audio omitted. 720x720 accelerated HD copies available through card links. Original source recordings unchanged.",
   "condition_labels": "Not inferred from observed outcomes; trial IDs identify supplied recordings, not experimental conditions.",
   "source_ids": [
     {
@@ -54,6 +54,29 @@
       "path": "trial-03-poster.jpg",
       "bytes": 38688,
       "sha256": "5a333a86e0dcb3cebf37919acca063513bc563b3813d9517d5f6df95559b9b5a"
+    },
+    {
+      "path": "trial-01-preview.mp4",
+      "bytes": 765628,
+      "sha256": "d4e1deac1334b79b7c70784b8f4719cc72922055304cee9a2cb9230386e87181"
+    },
+    {
+      "path": "trial-02-preview.mp4",
+      "bytes": 586769,
+      "sha256": "9ef1672167f60fe0bf3b192940819bbf9909ca0f8c40c1b4315eb858728d14f9"
+    },
+    {
+      "path": "trial-03-preview.mp4",
+      "bytes": 782860,
+      "sha256": "73e3bcf4fc68884751e1ba5b768d6818e9074bb37c7ead599458f18e7d4fea7f"
     }
+  ],
+  "preview_resolution": [
+    480,
+    480
+  ],
+  "hd_resolution": [
+    720,
+    720
   ]
 }

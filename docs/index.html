@@ -102,10 +102,11 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 /* end micro-polish-v1 */
 
 
-/* robot-trials-v1 / real-robot rollouts: accelerated, muted and viewport-aware. */
-.robot-trials{margin-bottom:46px;border-radius:3px;scroll-margin-top:100px}.robot-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:36px;padding:31px 29px 28px;background:#131a11}.robot-kicker{font:8px/1.8 "JetBrains Mono",monospace;letter-spacing:1.5px;color:#91a77d;margin:0 0 15px}.robot-heading h2{font:400 clamp(29px,3vw,40px)/1.13 var(--display-font);letter-spacing:-1.7px;color:#edf4e7;margin:0 0 14px}.robot-intro{font-size:12px;line-height:1.8;color:#9aad8c;margin:0;max-width:560px}.robot-heading-actions{display:flex;flex-direction:column;align-items:flex-end;gap:15px;flex:none}.robot-collection-tag{font:8px "JetBrains Mono",monospace;letter-spacing:.8px;color:#9eaf8f}#robot-toggle-all{background:#1a2812;border:1px solid #465e35;border-radius:2px;color:#d8e7c7;font-size:11px;padding:10px 14px;min-height:38px}.robot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#34412c;border-block:1px solid #34412c}.robot-demo{min-width:0;background:#10160f}.robot-frame{position:relative;background:#070b07}.robot-frame video{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#070b07}.robot-trial-index,.robot-speed{position:absolute;z-index:1;top:12px;padding:5px 7px;border:1px solid #d7e6c838;background:#0c160bd9;font:8px/1.4 "JetBrains Mono",monospace;letter-spacing:.6px;color:#e4eddc;pointer-events:none}.robot-trial-index{left:12px}.robot-speed{right:12px;color:var(--acid);border-color:#d3fa7940}.robot-progress{display:block;width:100%;height:2px;appearance:none;border:0;background:#26351d;color:var(--acid)}.robot-progress::-webkit-progress-bar{background:#26351d}.robot-progress::-webkit-progress-value{background:var(--acid)}.robot-progress::-moz-progress-bar{background:var(--acid)}.robot-card-copy{padding:19px 20px 10px}.robot-card-copy h3{font:400 20px/1.3 var(--display-font);letter-spacing:-.7px;color:#e5eedb;margin:0 0 8px}.robot-card-copy h3 span{font:10px "JetBrains Mono",monospace;color:#86a267;margin-left:6px;white-space:nowrap}.robot-status{font:9px/1.8 "JetBrains Mono",monospace;color:#93a97f;min-height:17px;margin:0}.robot-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:10px 20px 20px}.robot-controls button{font-size:10px;padding:7px 10px;border:1px solid #40582f;border-radius:2px;background:#1b2b13;color:#d4e9bd;min-height:34px}.robot-controls .robot-play{min-width:74px;background:var(--acid);border-color:var(--acid);color:#18250e}.robot-time{font:9px "JetBrains Mono",monospace;color:#8ca373;margin-left:auto;font-variant-numeric:tabular-nums}.robot-controls a{font:8px "JetBrains Mono",monospace;color:#b4caa0;margin-left:2px}.robot-footnote{font-size:10px;line-height:1.85;color:#91a47e;margin:0;padding:16px 25px;background:#10160f}.robot-controls button:focus-visible,#robot-toggle-all:focus-visible{outline-color:var(--acid)}
-@media(max-width:960px){.robot-heading{gap:20px;padding:25px 22px}.robot-heading h2{font-size:32px}.robot-card-copy{padding:16px 13px 8px}.robot-card-copy h3{font-size:17px}.robot-controls{padding:8px 13px 17px;gap:6px}.robot-controls button{font-size:9px;padding:7px 8px}.robot-time{font-size:8px}.robot-controls a{font-size:7px}.robot-status{font-size:8px}}
-@media(max-width:600px){.robot-trials{margin-bottom:32px}.robot-heading{display:block;padding:24px 18px}.robot-heading h2{font-size:30px;letter-spacing:-1.4px}.robot-intro{font-size:11px}.robot-kicker{font-size:7px;letter-spacing:1px}.robot-heading-actions{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;margin-top:20px}.robot-collection-tag{font-size:7px;letter-spacing:.25px}#robot-toggle-all{font-size:10px;padding:9px 10px}.robot-grid{grid-template-columns:1fr}.robot-demo+.robot-demo{border-top:1px solid #34412c}.robot-card-copy{padding:18px 17px 9px}.robot-card-copy h3{font-size:21px}.robot-controls{padding:9px 17px 19px}.robot-controls button{font-size:10px}.robot-time{font-size:9px}.robot-controls a{font-size:8px}.robot-status{font-size:9px}.robot-footnote{padding:15px 18px;font-size:9px}}
+/* robot-trials-v1; robot-smooth-v2 / lightweight previews, independent editorial cards. */
+.robot-trials{margin-bottom:46px;border-radius:8px;scroll-margin-top:100px}.robot-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;padding:24px 24px 22px;background:#131a11}.robot-kicker{font:8px/1.8 "JetBrains Mono",monospace;letter-spacing:1.5px;color:#91a77d;margin:0 0 9px}.robot-heading h2{font:400 clamp(29px,3vw,38px)/1.13 var(--display-font);letter-spacing:-1.5px;color:#edf4e7;margin:0 0 10px}.robot-intro{font-size:12px;line-height:1.8;color:#9aad8c;margin:0;max-width:560px}.robot-heading-actions{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex:none}.robot-collection-tag{font:8px "JetBrains Mono",monospace;letter-spacing:.8px;color:#9eaf8f}#robot-toggle-all{background:#1a2812;border:1px solid #465e35;border-radius:4px;color:#d8e7c7;font-size:11px;padding:10px 14px;min-height:38px}.robot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 20px 0;background:#131a11}.robot-demo{min-width:0;display:flex;flex-direction:column;background:#10160f;border:1px solid #34412c;border-radius:7px;overflow:hidden}.robot-frame{position:relative;background:#070b07}.robot-frame video{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#070b07}.robot-trial-index,.robot-speed{position:absolute;z-index:1;top:11px;padding:5px 7px;border:1px solid #d7e6c838;border-radius:3px;background:#0c160bd9;font:8px/1.4 "JetBrains Mono",monospace;letter-spacing:.6px;color:#e4eddc;pointer-events:none}.robot-trial-index{left:11px}.robot-speed{right:11px;color:var(--acid);border-color:#d3fa7940}.robot-progress{display:block;width:100%;height:2px;appearance:none;border:0;background:#26351d;color:var(--acid)}.robot-progress::-webkit-progress-bar{background:#26351d}.robot-progress::-webkit-progress-value{background:var(--acid)}.robot-progress::-moz-progress-bar{background:var(--acid)}.robot-card-copy{padding:16px 16px 8px}.robot-card-copy h3{font:400 21px/1.3 var(--display-font);letter-spacing:-.7px;color:#e5eedb;margin:0 0 7px}.robot-status{font:9px/1.8 "JetBrains Mono",monospace;color:#93a97f;min-height:17px;margin:0}.robot-status::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#65775a;margin-right:6px;vertical-align:2px}.robot-demo[data-playback-state="playing"] .robot-status::before{background:var(--acid)}.robot-controls{display:grid;grid-template-columns:70px 65px minmax(0,1fr) auto;gap:6px;align-items:center;margin-top:auto;padding:9px 16px 16px}.robot-controls button{font-size:10px;padding:7px 8px;border:1px solid #40582f;border-radius:4px;background:#1b2b13;color:#d4e9bd;min-height:35px}.robot-controls .robot-play{background:var(--acid);border-color:var(--acid);color:#18250e}.robot-time{font:9px "JetBrains Mono",monospace;color:#8ca373;justify-self:end;white-space:nowrap;font-variant-numeric:tabular-nums}.robot-controls a{font:9px "JetBrains Mono",monospace;color:#b4caa0;white-space:nowrap;padding:8px 0 8px 3px}.robot-footnote{font:9px/1.85 "JetBrains Mono",monospace;color:#91a47e;margin:0;padding:15px 24px 17px;background:#131a11}.robot-controls button:focus-visible,#robot-toggle-all:focus-visible,.robot-controls a:focus-visible{outline:2px solid var(--acid);outline-offset:3px}.robot-controls button:hover,#robot-toggle-all:hover{border-color:#a6cc7f}.robot-controls a:hover{color:var(--acid)}
+@media(min-width:601px) and (max-width:960px){.robot-heading{gap:20px;padding:22px 20px}.robot-heading h2{font-size:31px}.robot-grid{padding-inline:16px;gap:10px}.robot-card-copy{padding:14px 12px 6px}.robot-card-copy h3{font-size:18px}.robot-controls{grid-template-columns:1fr 1fr;padding:8px 12px 13px;gap:6px 8px}.robot-controls button{font-size:10px}.robot-time{justify-self:start;font-size:9px}.robot-controls a{justify-self:end}.robot-status{font-size:8px}}
+@media(max-width:600px){.robot-trials{margin-bottom:32px;scroll-margin-top:80px}.robot-heading{display:block;padding:22px 16px 18px}.robot-heading h2{font-size:30px;letter-spacing:-1.4px}.robot-intro{font-size:11px}.robot-kicker{font-size:7px;letter-spacing:1px}.robot-heading-actions{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}.robot-collection-tag{font-size:7px;letter-spacing:.25px}#robot-toggle-all{font-size:10px;padding:9px 10px;min-height:42px}.robot-grid{grid-template-columns:1fr;gap:14px;padding-inline:12px}.robot-card-copy{padding:16px 14px 7px}.robot-card-copy h3{font-size:21px}.robot-controls{padding:8px 14px 15px;grid-template-columns:66px 62px minmax(0,1fr) auto}.robot-controls button{font-size:10px;min-height:42px}.robot-time{font-size:8px}.robot-controls a{font-size:8px}.robot-status{font-size:9px}.robot-footnote{padding:14px 16px 16px;font-size:8px}}
+@media(max-width:380px){.robot-controls{grid-template-columns:1fr 1fr;gap:6px 10px}.robot-time{justify-self:start;font-size:9px}.robot-controls a{justify-self:end;font-size:9px}}
 
 </style>
 </head>
@@ -136,24 +137,24 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     </header>
 
     <section class="robot-trials teaser" id="robot-trials" aria-labelledby="robot-title">
-      <div class="robot-heading"><div><p class="robot-kicker">REAL-WORLD ROBOT DEMONSTRATIONS</p><h2 id="robot-title">Real robots. Physical contact.</h2><p class="robot-intro">Real-robot interaction recordings, presented side by side at 2× speed.</p></div><div class="robot-heading-actions"><span class="robot-collection-tag">03 TRIALS / 2× PLAYBACK</span><button type="button" id="robot-toggle-all">Pause robot demos</button></div></div>
+      <div class="robot-heading"><div><p class="robot-kicker">REAL-WORLD ROBOT DEMONSTRATIONS</p><h2 id="robot-title">Real robots. Physical contact.</h2><p class="robot-intro">Three real-robot recordings. Watch physical contact unfold at 2× speed.</p></div><div class="robot-heading-actions"><span class="robot-collection-tag">03 REAL-ROBOT TRIALS</span><button type="button" id="robot-toggle-all">Pause robot demos</button></div></div>
       <div class="robot-grid"><article class="robot-demo" data-robot-demo="01" aria-label="Real robot trial 01">
- <div class="robot-frame"><span class="robot-trial-index">TRIAL 01</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-01-2x.mp4" poster="assets/robot/trial-01-poster.jpg" width="720" height="720" aria-label="Real robot trial 01, shown at two times speed"></video></div>
+ <div class="robot-frame"><span class="robot-trial-index">TRIAL 01</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-01-preview.mp4" poster="assets/robot/trial-01-poster.jpg" width="480" height="480" aria-label="Real robot trial 01, shown at two times speed"></video></div>
  <progress class="robot-progress" value="0" max="1" aria-label="Trial 01 playback progress"></progress>
- <div class="robot-card-copy"><h3>Adapter insertion <span>/ 01</span></h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
- <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 01">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 01">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-01-2x.mp4" target="_blank" rel="noopener" aria-label="Open real robot trial 01 video">Open ↗</a></div>
+ <div class="robot-card-copy"><h3>Adapter insertion</h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
+ <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 01">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 01">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-01-2x.mp4" target="_blank" rel="noopener" aria-label="Open HD real robot trial 01 video">HD ↗</a></div>
  </article><article class="robot-demo" data-robot-demo="02" aria-label="Real robot trial 02">
- <div class="robot-frame"><span class="robot-trial-index">TRIAL 02</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-02-2x.mp4" poster="assets/robot/trial-02-poster.jpg" width="720" height="720" aria-label="Real robot trial 02, shown at two times speed"></video></div>
+ <div class="robot-frame"><span class="robot-trial-index">TRIAL 02</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-02-preview.mp4" poster="assets/robot/trial-02-poster.jpg" width="480" height="480" aria-label="Real robot trial 02, shown at two times speed"></video></div>
  <progress class="robot-progress" value="0" max="1" aria-label="Trial 02 playback progress"></progress>
- <div class="robot-card-copy"><h3>Adapter insertion <span>/ 02</span></h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
- <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 02">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 02">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-02-2x.mp4" target="_blank" rel="noopener" aria-label="Open real robot trial 02 video">Open ↗</a></div>
+ <div class="robot-card-copy"><h3>Adapter insertion</h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
+ <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 02">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 02">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-02-2x.mp4" target="_blank" rel="noopener" aria-label="Open HD real robot trial 02 video">HD ↗</a></div>
  </article><article class="robot-demo" data-robot-demo="03" aria-label="Real robot trial 03">
- <div class="robot-frame"><span class="robot-trial-index">TRIAL 03</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-03-2x.mp4" poster="assets/robot/trial-03-poster.jpg" width="720" height="720" aria-label="Real robot trial 03, shown at two times speed"></video></div>
+ <div class="robot-frame"><span class="robot-trial-index">TRIAL 03</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-03-preview.mp4" poster="assets/robot/trial-03-poster.jpg" width="480" height="480" aria-label="Real robot trial 03, shown at two times speed"></video></div>
  <progress class="robot-progress" value="0" max="1" aria-label="Trial 03 playback progress"></progress>
- <div class="robot-card-copy"><h3>Adapter insertion <span>/ 03</span></h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
- <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 03">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 03">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-03-2x.mp4" target="_blank" rel="noopener" aria-label="Open real robot trial 03 video">Open ↗</a></div>
+ <div class="robot-card-copy"><h3>Adapter insertion</h3><p class="robot-status" role="status" aria-live="off">2× speed · muted</p></div>
+ <div class="robot-controls"><button type="button" class="robot-play" aria-label="Play real robot trial 03">Play ▷</button><button type="button" class="robot-replay" aria-label="Replay real robot trial 03">Replay ↺</button><span class="robot-time">00:00</span><a href="assets/robot/trial-03-2x.mp4" target="_blank" rel="noopener" aria-label="Open HD real robot trial 03 video">HD ↗</a></div>
  </article></div>
-      <p class="robot-footnote">Real-robot recordings · Accelerated 2× · Audio omitted. Videos play when in view; use the controls to pause or replay.</p>
+      <p class="robot-footnote">2× playback · Muted · Pauses off-screen · HD videos available.</p>
       <noscript><p class="robot-footnote">Use each Open video link to watch the accelerated recording.</p></noscript>
     </section>
 
@@ -533,13 +534,16 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   if (!section) return;
   const groupButton = document.querySelector('#robot-toggle-all');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileLayout = window.matchMedia('(max-width: 600px)');
+  let mobileChoice = null;
+  let mobileActive = null;
   let groupPaused = false;
   let disposed = false;
   const states = Array.from(section.querySelectorAll('[data-robot-demo]')).map(card => ({
     card, video: card.querySelector('video'), button: card.querySelector('.robot-play'),
     replay: card.querySelector('.robot-replay'), status: card.querySelector('.robot-status'),
     time: card.querySelector('.robot-time'), progress: card.querySelector('.robot-progress'),
-    visible: false, manualPaused: false, userEnabled: false, overridePause: false,
+    visible: false, ratio: 0, manualPaused: false, userEnabled: false, overridePause: false,
     blocked: false, failed: false, ready: false, hasPlayed: false, waiting: false,
     generation: 0, controller: null, preparation: null, starting: null, url: null
   })).filter(state => state.video && state.button);
@@ -547,8 +551,9 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
     return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
   };
-  const wanted = state => !disposed && !document.hidden && state.visible && !state.manualPaused &&
+  const eligible = state => !disposed && !document.hidden && state.visible && !state.manualPaused &&
     !state.blocked && (!groupPaused || state.overridePause) && (!reducedMotion.matches || state.userEnabled);
+  const wanted = state => eligible(state) && (!mobileLayout.matches || state === mobileActive);
   function groupLabel() {
     if (groupButton) groupButton.textContent = groupPaused ? 'Play robot demos' : 'Pause robot demos';
   }
@@ -684,7 +689,18 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     state.starting = task;
     task.finally(() => { if (state.starting === task) state.starting = null; });
   }
-  function reconcile(state) { if (wanted(state)) start(state); else stop(state); }
+  function reconcileAll() {
+    if (mobileChoice && (!mobileChoice.visible || mobileChoice.manualPaused || mobileChoice.blocked)) mobileChoice = null;
+    if (mobileLayout.matches) {
+      const candidates = states.filter(eligible);
+      mobileActive = mobileChoice && eligible(mobileChoice) ? mobileChoice :
+        candidates.reduce((best, state) => !best || state.ratio > best.ratio ? state : best,
+          candidates.includes(mobileActive) ? mobileActive : null);
+    } else mobileActive = null;
+    // Pause losing cards first; switching the active card never seeks or discards a ready Blob.
+    states.forEach(state => { if (!wanted(state)) stop(state); });
+    states.forEach(state => { if (wanted(state)) start(state); });
+  }
   function manualStart(state, replay = false) {
     state.manualPaused = false;
     state.userEnabled = true;
@@ -692,7 +708,8 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     state.blocked = false;
     state.failed = false;
     if (replay && state.ready) state.video.currentTime = 0;
-    start(state);
+    if (mobileLayout.matches) mobileChoice = state;
+    reconcileAll();
   }
   function pauseAll() {
     groupPaused = true;
@@ -714,6 +731,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       if (!state.failed && !state.blocked && wanted(state) && (state.starting || !video.paused)) {
         state.manualPaused = true;
         stop(state);
+        reconcileAll();
       } else manualStart(state);
     });
     if (state.replay) state.replay.addEventListener('click', () => manualStart(state, true));
@@ -751,37 +769,41 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
         state.overridePause = false;
         state.blocked = false;
         state.failed = false;
-        reconcile(state);
       });
+      reconcileAll();
       groupLabel();
     }
   });
   document.addEventListener('click', event => {
     if (event.target instanceof Element && event.target.closest('#pause-demos, .motion-play, .motion-replay')) pauseAll();
   }, true);
-  document.addEventListener('visibilitychange', () => states.forEach(reconcile));
-  reducedMotion.addEventListener('change', () => states.forEach(reconcile));
+  document.addEventListener('visibilitychange', reconcileAll);
+  reducedMotion.addEventListener('change', reconcileAll);
+  mobileLayout.addEventListener('change', reconcileAll);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const state = states.find(item => item.card === entry.target);
         if (!state) return;
-        state.visible = entry.isIntersecting && entry.intersectionRatio >= 0.2;
-        reconcile(state);
+        state.ratio = entry.isIntersecting ? entry.intersectionRatio : 0;
+        state.visible = state.ratio >= 0.2;
       });
-    }, { threshold: [0, 0.2] });
+      reconcileAll();
+    }, { threshold: [0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
     states.forEach(state => observer.observe(state.card));
-  } else states.forEach(state => { state.visible = true; reconcile(state); });
+  } else {
+    states.forEach(state => { state.visible = true; state.ratio = 1; });
+    reconcileAll();
+  }
   window.addEventListener('pagehide', () => {
     disposed = true;
     states.forEach(state => { stop(state); releaseSource(state); });
   });
   window.addEventListener('pageshow', event => {
-    if (event.persisted) { disposed = false; states.forEach(reconcile); }
+    if (event.persisted) { disposed = false; reconcileAll(); }
   });
   groupLabel();
 })();
-
 </script>
 </body>
 </html>
