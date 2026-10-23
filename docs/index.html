@@ -69,6 +69,38 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 @media(max-width:900px){.device-feature{grid-template-columns:1fr 1.25fr;gap:28px;padding:25px}.device-copy h3{font-size:30px}.showcase-intro{gap:25px;padding:27px 24px}.showcase-intro h3{font-size:30px}.showcase-intro>p{max-width:240px}.showcase-picker{gap:7px;padding-inline:18px}.showcase-pick-caption{padding:10px 7px}.showcase-pick-caption small{font-size:6px}.showcase-pick-caption b{font-size:10px}}
 @media(max-width:600px){.device-feature{grid-template-columns:1fr;gap:25px;padding:21px 18px;margin:33px 0 37px}.device-copy h3{font-size:31px;max-width:300px;letter-spacing:-1.4px}.device-copy p{font-size:12px}.device-tags{gap:6px;margin-bottom:20px}.device-tags li{font-size:8px}.device-feature .figure-card img{padding:7px}.device-feature .card-caption{font-size:9px;padding:11px 12px}.contact-showcase{margin-bottom:42px}.showcase-intro{display:block;padding:25px 18px}.showcase-intro h3{font-size:29px;letter-spacing:-1.3px}.showcase-intro>p{font-size:11px;max-width:none;margin-top:16px}.showcase-eyebrow{font-size:7px;margin-bottom:13px}.showcase-stage-head{padding:16px 17px;gap:8px}.showcase-stage-head h3{font-size:18px}.showcase-stage-head>span{font-size:6px;letter-spacing:.5px}.showcase-view-grid{grid-template-columns:1fr}.contact-showcase .showcase-view-grid video{aspect-ratio:4/3}.showcase-view-grid .stream-label{font-size:8px;top:10px;left:10px}.contact-showcase .motion-controls{padding:15px 13px;gap:8px}.contact-showcase .motion-time{font-size:8px}.showcase-picker-head{padding:19px 16px 12px;font-size:7px;gap:9px}.showcase-picker{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:128px;gap:8px;padding:0 16px 18px;overscroll-behavior-x:contain;scroll-snap-type:x proximity}.showcase-pick{scroll-snap-align:start}.showcase-pick-caption{padding:10px}.showcase-pick-caption b{font-size:11px}.showcase-pick-caption small{font-size:7px}.showcase-footnote{padding:14px 16px;font-size:9px}.showcase-live{padding:0 16px 14px;font-size:8px}}
 
+
+/* micro-polish-v1: restrained editorial finish; no content or player changes. */
+.hero .button{box-shadow:inset 0 1px 0 #ffffff45,0 5px 18px #00000014;background-image:linear-gradient(180deg,#ffffff15,transparent);transition:transform .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.hero .button.secondary{box-shadow:inset 0 1px 0 #ffffff0a;background-image:linear-gradient(180deg,#ffffff04,transparent)}
+.hero .button span{display:inline-block;transition:transform .18s ease}
+.nav-links>a:not(.nav-paper){position:relative;text-decoration:none}
+.nav-links>a:not(.nav-paper)::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:var(--acid);transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
+.nav-links>a:not(.nav-paper):focus-visible::after{transform:scaleX(1)}
+.nav-links .nav-paper{box-shadow:inset 0 1px 0 #ffffff0a;transition:border-color .18s ease,background-color .18s ease}
+.hero-title,.section-title h2{text-wrap:balance}
+.resource-note{color:#95a489;letter-spacing:.2px}
+.stat strong,.score,.motion-time{font-variant-numeric:tabular-nums}
+.section .kicker{display:flex;align-items:center;gap:11px}
+.section .kicker::before{content:"";display:block;flex:0 0 21px;height:1px;background:currentColor;opacity:.55}
+.figure-card{box-shadow:0 3px 16px #25351b05;transition:border-color .18s ease,box-shadow .18s ease}
+.figure-card>button:focus-visible{outline-offset:-4px}
+.device-feature{box-shadow:inset 0 1px 0 #ffffff75;background-image:linear-gradient(135deg,#ffffff20,transparent 60%)}
+.method-card::after{content:"";position:absolute;top:-1px;left:0;width:35px;height:1px;background:#7c935f}
+.contact-art::before,.contact-art::after{content:"";position:absolute;width:17px;height:17px;pointer-events:none;border-color:#95b86a55;border-style:solid}
+.contact-art::before{left:0;top:42px;border-width:1px 0 0 1px}
+.contact-art::after{right:0;bottom:58px;border-width:0 1px 1px 0}
+@media(hover:hover) and (pointer:fine){
+ .hero .button:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 #ffffff65,0 7px 22px #00000022}
+ .hero .button:first-child:hover span{transform:translate(2px,-2px)}
+ .hero .button.secondary:hover span{transform:translateY(2px)}
+ .nav-links>a:not(.nav-paper):hover::after{transform:scaleX(1)}
+ .nav-links .nav-paper:hover{border-color:var(--acid);background:#d3fa7908;text-decoration:none}
+ .figure-card:hover{border-color:#a6b894;box-shadow:0 7px 23px #25351b0a}
+}
+@media(prefers-reduced-motion:reduce){.hero .button,.hero .button span{transform:none!important}}
+/* end micro-polish-v1 */
+
 </style>
 </head>
 <body>
