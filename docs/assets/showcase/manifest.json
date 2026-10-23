@@ -2,7 +2,7 @@
   "title": "Five paired RGB and optical tactile acquisition recordings",
   "source_archive": "show.zip",
   "source_archive_sha256": "cd02213dfe3483be3419e7ec627cc85c650e978305055a4401ab779e383435d9",
-  "processing": "Faithful H.264/avc1 browser-compatible copies of supplied HEVC clips; identical frame counts, 640x480, approximately 30 fps, no audio. Posters are actual middle frames.",
+  "processing": "H.264/avc1 web copies of the supplied HEVC recordings; identical frame counts, 640x480, 30 fps and original durations; no audio. Fast-start MP4 with keyframes at most one second apart. Posters are actual source middle frames.",
   "not_model_generated": true,
   "files": [
     {
@@ -12,8 +12,8 @@
     },
     {
       "path": "sample-01-rgb.mp4",
-      "bytes": 3486320,
-      "sha256": "59b990e77871bcbf538c591e54dad85bb4ef587c8e84ad774f0866386eb537b2"
+      "bytes": 1081541,
+      "sha256": "f6210e521d94283c63c7a722468844cb38aafaad8648bf5c2420866bfef10dc3"
     },
     {
       "path": "sample-01-tactile.jpg",
@@ -22,8 +22,8 @@
     },
     {
       "path": "sample-01-tactile.mp4",
-      "bytes": 3762199,
-      "sha256": "683f9909df54cc6b418b2559b79120904615b925c2163cab8c387e8901f96280"
+      "bytes": 1258100,
+      "sha256": "4f476764675f09526677b63281d439fb26e3a2b98344a83b11b5ed75de1a942a"
     },
     {
       "path": "sample-02-rgb.jpg",
@@ -32,8 +32,8 @@
     },
     {
       "path": "sample-02-rgb.mp4",
-      "bytes": 2093294,
-      "sha256": "dc31ffc52820e64c6c6786f430f1313c0adebfb8337aaf98c49711bf7e144a94"
+      "bytes": 719108,
+      "sha256": "71dd01b4fa3f8403fb431a4ca55abdcabae9ca56f458ae464941fe4ec6cc2555"
     },
     {
       "path": "sample-02-tactile.jpg",
@@ -42,8 +42,8 @@
     },
     {
       "path": "sample-02-tactile.mp4",
-      "bytes": 2558337,
-      "sha256": "48ed4ac452c62b4880e8ab3d814c38e15a0b1c7deaa4401311b0b5cdf91837a3"
+      "bytes": 848830,
+      "sha256": "265a15b91b9a7a873c3685e6fefa0af9ca46ecc8550fe19e79dd4d134595558a"
     },
     {
       "path": "sample-03-rgb.jpg",
@@ -52,8 +52,8 @@
     },
     {
       "path": "sample-03-rgb.mp4",
-      "bytes": 2118218,
-      "sha256": "064eb2416c973a62af01e24533a969dbab2c7783db780e246c62dabceedd601c"
+      "bytes": 605346,
+      "sha256": "13a548c049f14b24e4353b59cdba152af7d0a655488929ab4c79619814c838e0"
     },
     {
       "path": "sample-03-tactile.jpg",
@@ -62,8 +62,8 @@
     },
     {
       "path": "sample-03-tactile.mp4",
-      "bytes": 2058014,
-      "sha256": "beefc6ce276e163564c9d6e65d92602e726b61003418a59db42361ec19d95ab8"
+      "bytes": 705461,
+      "sha256": "7e70f22dd38f6e4c800e229e6f2631d1ff090d3a43f4527695d95ea80644d457"
     },
     {
       "path": "sample-04-rgb.jpg",
@@ -72,8 +72,8 @@
     },
     {
       "path": "sample-04-rgb.mp4",
-      "bytes": 1494744,
-      "sha256": "f6da7414bfdb2090886994b6694bfae502e06609e12df1a12f83a8544063fb06"
+      "bytes": 541062,
+      "sha256": "27dddf3cb2d07003fe51f09dd53b66b21c2eb9841971eee4e118e0f57c399273"
     },
     {
       "path": "sample-04-tactile.jpg",
@@ -82,8 +82,8 @@
     },
     {
       "path": "sample-04-tactile.mp4",
-      "bytes": 1914899,
-      "sha256": "4cf8f2639b1dfc74b4e1cb067e2a513a225aeff99aa6c77d8636d05cf3a5c6a6"
+      "bytes": 622811,
+      "sha256": "40bdb21a5ca173316a8e47f0f44edafc139fb9ad1a5bff61507aef755ab9c493"
     },
     {
       "path": "sample-05-rgb.jpg",
@@ -92,8 +92,8 @@
     },
     {
       "path": "sample-05-rgb.mp4",
-      "bytes": 2160992,
-      "sha256": "8dbf3005568c5420a944a4922203ba57ccd7d60dd153fe70ed5e26211d3d40d4"
+      "bytes": 658913,
+      "sha256": "512469e91d00f3435eb1205b68792e0e7cf667befe04ed076c097439bc696ec7"
     },
     {
       "path": "sample-05-tactile.jpg",
@@ -102,9 +102,17 @@
     },
     {
       "path": "sample-05-tactile.mp4",
-      "bytes": 2274699,
-      "sha256": "ec51864127b0a07fbf85831b23f8b4fb8d6efdcf8f32d0e237d4678722bcf981"
+      "bytes": 772559,
+      "sha256": "9106ea5baea65a30847cf89eb7ceb4090feb701e9cd719b982d205ccbaeec2d5"
     }
   ],
-  "original_to_web_audit": "Retained in showcase-20261023/media-audit/web-metadata.json in local verification ledger."
+  "original_to_web_audit": "Retained in showcase-20261023/media-audit/web-metadata.json in local verification ledger.",
+  "web_optimization": {
+    "revision": "buffered-v2",
+    "total_mp4_bytes": 7813731,
+    "minimum_tactile_ssim_against_source": 0.99098,
+    "minimum_rgb_ssim_against_source": 0.981152,
+    "frame_counts_preserved": true,
+    "durations_preserved": true
+  }
 }

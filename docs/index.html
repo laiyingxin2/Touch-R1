@@ -294,22 +294,98 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   <script>
   (() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // buffered-v2: fully buffer only the selected short pair; never seek on timeupdate.
     const recordings=[];
     document.querySelectorAll('[data-motion]').forEach(card=>{
       const videos=[...card.querySelectorAll('video')],rgb=videos[0],touch=videos[1],play=card.querySelector('.motion-play'),replay=card.querySelector('.motion-replay'),clock=card.querySelector('.motion-time');
-      const title=()=>card.querySelector('h3').textContent.toLowerCase();let desired=false,visible=false;
-      const label=()=>{play.textContent=desired?'Pause pair Ⅱ':'Play pair ▷';play.setAttribute('aria-label',(desired?'Pause ':'Play ')+title()+' paired videos');};
-      const pause=()=>{desired=false;videos.forEach(v=>v.pause());label();};
-      const start=()=>{recordings.forEach(other=>{if(other.card!==card)other.pause();});desired=true;label();videos.forEach(v=>v.play().catch(()=>pause()));};
+      const notice=card.closest('.contact-showcase')?.querySelector('.showcase-live');
+      const title=()=>card.querySelector('h3').textContent.toLowerCase();
+      let desired=false,generation=0,request=null,prepared='',urls=[],mode='idle',launching=false;
+      videos.forEach(v=>{v.loop=false;v.preload='none';});
+      const label=()=>{
+        const busy=mode==='loading'||mode==='buffering';
+        card.dataset.playbackState=mode;card.dataset.player='buffered-v2';
+        play.textContent=busy?(mode==='loading'?'Loading pair…':'Buffering…'):(mode==='error'?'Retry pair ↻':desired?'Pause pair Ⅱ':'Play pair ▷');
+        play.setAttribute('aria-label',(desired?'Pause ':'Play ')+title()+' paired videos');
+        play.setAttribute('aria-busy',String(busy));
+      };
+      const say=text=>{if(notice)notice.textContent=text;};
+      const pause=()=>{desired=false;generation++;request?.abort();request=null;mode='idle';launching=false;videos.forEach(v=>{v.pause();v.playbackRate=1;});label();};
+      const release=()=>{pause();videos.forEach(v=>{v.removeAttribute('src');v.preload='none';v.load();});urls.forEach(url=>URL.revokeObjectURL(url));urls=[];prepared='';delete card.dataset.bufferBytes;};
+      const ready=v=>v.ended||(v.readyState>=3&&!v.seeking);
+      const waitReady=(v,signal)=>new Promise((resolve,reject)=>{
+        const events=['canplay','loadeddata','seeked','progress'];
+        const clean=()=>{events.forEach(e=>v.removeEventListener(e,check));v.removeEventListener('error',fail);signal.removeEventListener('abort',aborted);};
+        const check=()=>{if(ready(v)){clean();resolve();}};
+        const fail=()=>{clean();reject(new Error('Video decoding failed.'));};
+        const aborted=()=>{clean();reject(new DOMException('Playback cancelled.','AbortError'));};
+        events.forEach(e=>v.addEventListener(e,check));v.addEventListener('error',fail);signal.addEventListener('abort',aborted,{once:true});
+        if(signal.aborted)aborted();else check();
+      });
+      const prepare=async(signal,token)=>{
+        const sources=videos.map(v=>v.querySelector('source').src),key=sources.join('|');
+        if(prepared!==key){
+          const blobs=await Promise.all(sources.map(async source=>{
+            const response=await fetch(source,{signal,cache:'no-cache'});
+            if(!response.ok)throw new Error('Video download failed ('+response.status+').');
+            const blob=await response.blob();
+            if(!blob.size||blob.type.startsWith('text/'))throw new Error('Invalid video response.');
+            return blob.type==='video/mp4'?blob:new Blob([blob],{type:'video/mp4'});
+          }));
+          if(token!==generation||signal.aborted)return;
+          urls.forEach(url=>URL.revokeObjectURL(url));urls=blobs.map(blob=>URL.createObjectURL(blob));
+          videos.forEach((v,i)=>{v.src=urls[i];v.preload='auto';v.load();});
+          prepared=key;card.dataset.bufferBytes=String(blobs.reduce((sum,blob)=>sum+blob.size,0));
+        }
+        await Promise.all(videos.map(v=>waitReady(v,signal)));
+      };
+      const nominalRate=()=>card.dataset.syncMode==='elapsed'?1:(Number.isFinite(touch.duration/rgb.duration)?touch.duration/rgb.duration:1);
+      const resume=async token=>{
+        if(!desired||token!==generation||launching||!videos.every(ready))return;
+        launching=true;mode='playing';if(!touch.ended&&Math.abs(touch.playbackRate-nominalRate())>.005)touch.playbackRate=nominalRate();label();
+        try{await Promise.all(videos.filter(v=>!v.ended).map(v=>v.play()));}
+        catch(error){if(token===generation&&desired&&mode!=='buffering'){release();mode='error';label();say('Playback paused. Press Play pair to retry, or open the RGB / Touch links.');}}
+        finally{if(token===generation){launching=false;if(desired&&mode==='buffering'&&videos.every(ready))resume(token);}}
+      };
+      const start=async(restart=false)=>{
+        recordings.forEach(other=>{if(other.card!==card)other.release();});
+        pause();desired=true;const token=generation;request=new AbortController();const controller=request,signal=controller.signal;
+        mode='loading';card.dataset.bufferingEvents='0';label();say('Loading both recordings before playback…');
+        const timeout=setTimeout(()=>controller.abort(),30000);
+        try{
+          await prepare(signal,token);
+          if(!desired||token!==generation||signal.aborted)return;
+          if(restart||rgb.ended){videos.forEach(v=>{v.currentTime=0;});await Promise.all(videos.map(v=>waitReady(v,signal)));}
+          if(!desired||token!==generation||signal.aborted)return;
+          say('Both recordings ready.');await resume(token);
+        }catch(error){
+          if(token!==generation||!desired)return;
+          release();mode='error';label();say('Could not load the pair. Press Retry pair, or open the RGB / Touch links.');
+        }finally{clearTimeout(timeout);}
+      };
       const fmt=t=>Number.isFinite(t)?String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0'):'00:00';
-      card.addEventListener('touch-r1:reset',()=>{pause();videos.forEach(v=>{try{v.currentTime=0;}catch(_){}});clock.textContent='00:00';});
-      if(card.dataset.syncMode==='elapsed')videos.forEach(v=>v.addEventListener('ended',pause));
+      card.addEventListener('touch-r1:reset',()=>{release();clock.textContent='00:00';});
       play.addEventListener('click',()=>desired?pause():start());
-      replay.addEventListener('click',()=>{videos.forEach(v=>{v.currentTime=0;});start();});
-      rgb.addEventListener('timeupdate',()=>{clock.textContent=fmt(rgb.currentTime)+' / '+fmt(rgb.duration);if(desired&&rgb.duration>0&&Number.isFinite(touch.duration)){const t=card.dataset.syncMode==='elapsed'?Math.min(rgb.currentTime,touch.duration):rgb.currentTime/rgb.duration*touch.duration;if(Math.abs(touch.currentTime-t)>.15)touch.currentTime=t;}});
+      replay.addEventListener('click',()=>start(true));
+      rgb.addEventListener('timeupdate',()=>{
+        clock.textContent=fmt(rgb.currentTime)+' / '+fmt(rgb.duration);
+        if(mode!=='playing'||!desired||!videos.every(ready)||!rgb.duration||rgb.ended||touch.ended)return;
+        const rate=nominalRate(),target=card.dataset.syncMode==='elapsed'?rgb.currentTime:rgb.currentTime/rgb.duration*touch.duration;
+        const drift=target-touch.currentTime;
+        let nextRate=touch.playbackRate;
+        if(Math.abs(drift)>.12)nextRate=rate*(drift>0?1.03:.97);else if(Math.abs(drift)<.04)nextRate=rate;
+        if(Math.abs(touch.playbackRate-nextRate)>.005)touch.playbackRate=nextRate;
+      });
+      videos.forEach(v=>{
+        v.addEventListener('ended',()=>{if(card.dataset.syncMode==='elapsed'&&videos.every(video=>video.ended))pause();});
+        v.addEventListener('waiting',()=>{if(desired&&mode==='playing'&&!ready(v)&&v.duration-v.currentTime>.15){card.dataset.bufferingEvents=String(Number(card.dataset.bufferingEvents||0)+1);mode='buffering';videos.forEach(video=>video.pause());label();say('Preparing both frames…');}});
+        ['canplay','loadeddata','progress'].forEach(event=>v.addEventListener(event,()=>{if(desired&&mode==='buffering'&&videos.every(ready))resume(generation);}));
+        v.addEventListener('error',()=>{if(desired&&v.error){release();mode='error';label();say('Playback unavailable. Press Retry pair or open the RGB / Touch links.');}});
+      });
+      rgb.addEventListener('ended',()=>{if(card.dataset.syncMode!=='elapsed'&&desired)start(true);});
       rgb.addEventListener('loadedmetadata',()=>{clock.textContent='00:00 / '+fmt(rgb.duration);});
-      const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible)pause();},{threshold:.2});observer.observe(card);
-      recordings.push({card,pause,start});
+      new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)pause();},{threshold:.2}).observe(card);
+      recordings.push({card,pause,start,release});label();
     });
     document.getElementById('pause-demos').addEventListener('click',()=>recordings.forEach(x=>x.pause()));
     document.addEventListener('visibilitychange',()=>{if(document.hidden)recordings.forEach(x=>x.pause());});
