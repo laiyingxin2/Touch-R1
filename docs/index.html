@@ -692,7 +692,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   function reconcileAll() {
     if (mobileChoice && (!mobileChoice.visible || mobileChoice.manualPaused || mobileChoice.blocked)) mobileChoice = null;
     if (mobileLayout.matches) {
-      const candidates = states.filter(eligible);
+      const candidates = states.filter(state => state.visible);
       mobileActive = mobileChoice && eligible(mobileChoice) ? mobileChoice :
         candidates.reduce((best, state) => !best || state.ratio > best.ratio ? state : best,
           candidates.includes(mobileActive) ? mobileActive : null);
