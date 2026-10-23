@@ -1,0 +1,59 @@
+{
+  "title": "Three real-robot adapter interaction recordings",
+  "revision": "robot-trials-v1",
+  "source_files_deduplicated": true,
+  "playback_speed": 2,
+  "audio_tracks": 0,
+  "processing": "H.264 browser copies accelerated by timestamps at 2x; 720x720 framing retained; source recordings unchanged. Audio omitted from public copies.",
+  "condition_labels": "Not inferred from observed outcomes; trial IDs identify supplied recordings, not experimental conditions.",
+  "source_ids": [
+    {
+      "trial": "01",
+      "source_basename": "a07ce62f2c186057aeca929a37b77c27.mp4",
+      "duplicate_basename": "628fa4146360ff4d94af9bb9c81dd469.mp4",
+      "source_sha256": "b6a20f20ec908ba9b44696950f1f458ba1c7ac6e2c9f68b5547274b36f667fcb"
+    },
+    {
+      "trial": "02",
+      "source_basename": "155109a391641f731c24225b54788332.mp4",
+      "source_sha256": "3724afb5d186cadf13f5bd957590e4b987614f05fc238eade6844ec31f80d4ab"
+    },
+    {
+      "trial": "03",
+      "source_basename": "d3a00f050a1c94ef6513000b8f9cf1b1.mp4",
+      "source_sha256": "4385a3def4e98b9d62a77c8c63d1adc4050eaedaf86b343496815741ad9b1ac8"
+    }
+  ],
+  "files": [
+    {
+      "path": "trial-01-2x.mp4",
+      "bytes": 1224715,
+      "sha256": "b108a004f5ba010f58150fb55757b4462e415d4024fe6c5be87cdc27284c07b4"
+    },
+    {
+      "path": "trial-01-poster.jpg",
+      "bytes": 41572,
+      "sha256": "826c41dbdc503ccbd65e43f7cc65f4a00398bce09da6b1c60448f664e8cdd203"
+    },
+    {
+      "path": "trial-02-2x.mp4",
+      "bytes": 939522,
+      "sha256": "542b8f8539ca044c51327f1c585a2d7b11301f21d86c95ba47f184e2f217851c"
+    },
+    {
+      "path": "trial-02-poster.jpg",
+      "bytes": 43170,
+      "sha256": "fb512e1fcbb2b8061b64243bc7c32ac545d2766a8b4924a7ce3c2c165615ad6a"
+    },
+    {
+      "path": "trial-03-2x.mp4",
+      "bytes": 1248351,
+      "sha256": "55e0cbfcf2e6751d07b26be2917460c72dda14836a3a640bb531eb50129c5c2a"
+    },
+    {
+      "path": "trial-03-poster.jpg",
+      "bytes": 38688,
+      "sha256": "5a333a86e0dcb3cebf37919acca063513bc563b3813d9517d5f6df95559b9b5a"
+    }
+  ]
+}
