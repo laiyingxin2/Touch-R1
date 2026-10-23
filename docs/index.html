@@ -118,6 +118,30 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 @media(max-width:1050px){.evidence-header{display:block}.evidence-jumps{margin-top:22px}.sim-case-picker{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.sim-case-button{display:block;padding:8px}.sim-case-button img{display:none}.sim-case-button strong{font-size:10px}.sim-model-head{padding:12px 10px}.sim-model-head h4{font-size:17px}.sim-model-head>span{font-size:6px}.sim-controls{grid-template-columns:1fr 1fr;gap:7px 8px}.sim-time{justify-self:start}.sim-controls a{justify-self:end}.sim-case-heading{gap:16px}}
 @media(max-width:600px){.evidence-section{padding:52px 0 58px}.evidence-header{margin-bottom:24px}.evidence-header h2{font-size:38px;letter-spacing:-1.6px}.evidence-header p{font-size:12px}.evidence-jumps{gap:6px}.evidence-jumps a{font-size:10px;gap:8px;padding:10px}.evidence-jumps a span{font-size:6px}.evidence-container>.robot-trials .robot-heading :is(h2,h3){font-size:28px}.evidence-container>.robot-trials{margin-bottom:20px}.sim-intro{display:block;padding:22px 16px 19px}.sim-intro h3{font-size:28px;letter-spacing:-1.1px}.sim-intro p:last-child{font-size:11px}.sim-total{display:block;margin-top:14px;font-size:7px}.sim-picker-label{padding-inline:16px;font-size:7px}.sim-picker-label span:last-child{max-width:135px;text-align:right}.sim-case-picker{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:8px;padding:0 12px 17px;scrollbar-width:thin;scrollbar-color:#708956 #172011}.sim-case-button{display:flex;flex:0 0 182px;scroll-snap-align:start;padding:7px;gap:9px;min-height:66px}.sim-case-button img{display:block;width:42px;height:48px}.sim-case-button strong{font-size:11px}.sim-case-heading{display:block;padding:20px 16px}#sim-case-title{font-size:25px}#sim-instruction{font-size:11px;line-height:1.8}#sim-context{font-size:7px}.sim-stage-actions{display:flex;align-items:center;justify-content:space-between;text-align:left;gap:10px;margin-top:18px}.sim-stage-actions>span{margin:0;font-size:8px}.sim-stage-actions>div{gap:6px}.sim-stage-actions button{font-size:9px;padding:8px;min-height:40px}.sim-grid{grid-template-columns:1fr;gap:14px;padding:0 12px 18px}.sim-model-head{padding:14px}.sim-model-head h4{font-size:21px}.sim-model-head>span{font-size:7px}.sim-result{padding:13px 14px 0}.sim-status{margin:8px 14px 1px;font-size:9px}.sim-controls{grid-template-columns:1fr 1fr;padding:10px 14px 15px}.sim-controls button{font-size:10px;min-height:42px}.sim-controls a,.sim-time{font-size:9px}.sim-steps{font-size:10px}.sim-outcome{font-size:9px}.sim-footnote{padding:0 16px 16px}.sim-protocol p{font-size:10px}#dataset #videos{width:100%;margin:26px 0 34px}.quick-stats{padding-block:26px}}
 
+/* playback-refinement-v1: clear hierarchy, one shared speed choice, no duplicate text buttons. */
+.sim-case-heading{align-items:flex-start;padding-top:26px;padding-bottom:24px}
+.sim-case-heading>div:first-child{max-width:730px}
+.sim-stage-actions{padding-top:2px;min-width:264px}
+.sim-stage-actions>span{font-size:9px;letter-spacing:1px;margin-bottom:12px}
+.sim-stage-actions>.sim-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.sim-stage-actions .sim-speed{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid #3b4d2e;border-radius:6px;background:#10180d;flex:none}
+.sim-stage-actions .sim-speed button{min-height:31px;width:32px;padding:4px 0;border:0;border-radius:3px;background:transparent;color:#9bb487;font:10px "JetBrains Mono",monospace;cursor:pointer}
+.sim-stage-actions .sim-speed button[aria-pressed="true"]{color:#e7f4db;background:#35472a}
+.sim-stage-actions #sim-toggle-all{min-width:132px;border-color:var(--acid);background:var(--acid);color:#17220f;font-size:10px;font-weight:600;min-height:39px;cursor:pointer}
+.sim-stage-actions #sim-replay-all{min-width:36px;width:36px;min-height:39px;padding:5px;font-size:18px;color:#b7cea0;background:transparent;cursor:pointer}
+.sim-speed-note{font:8px/1.6 "JetBrains Mono",monospace;color:#90a67c;margin:8px 0 0}
+.sim-controls{grid-template-columns:minmax(52px,64px) 34px minmax(0,1fr) auto;gap:6px;padding-top:12px;margin-top:10px;border-top:1px solid #2c3b23}
+.sim-controls .sim-play{background:#1c2b14;border-color:#4b6438;color:#d9e9cd;font-size:10px}
+.sim-model-ours .sim-controls .sim-play{background:var(--acid);border-color:var(--acid);color:#17220f}
+.sim-controls .sim-replay{font-size:17px;line-height:1;padding:4px;background:transparent;color:#a7bf91}
+.sim-controls .sim-time{justify-self:end}
+.sim-status{min-height:30px;line-height:1.65;font-size:8px;margin-top:9px;margin-bottom:0;color:#9bb388}
+.sim-controls button:hover,.sim-stage-actions #sim-replay-all:hover{border-color:#a0c573}
+.sim-stage-actions .sim-speed button:hover{color:var(--acid)}
+.sim-model-head{min-height:55px;padding-top:15px;padding-bottom:14px}
+@media(min-width:601px) and (max-width:1050px){.sim-case-heading{display:block}.sim-stage-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px 15px;text-align:left;margin-top:17px;min-width:0}.sim-stage-actions>span{margin:0;flex:1}.sim-speed-note{width:100%;text-align:right;margin:0}.sim-controls{grid-template-columns:minmax(52px,1fr) 34px auto}.sim-controls .sim-time{grid-column:1/3;grid-row:2;justify-self:start}.sim-controls .sim-open{grid-column:3;grid-row:2}.sim-controls .sim-replay{grid-column:3;grid-row:1}.sim-controls .sim-play{grid-column:1/3;grid-row:1}.sim-status{min-height:42px}}
+@media(max-width:600px){.sim-case-heading{padding-top:22px;padding-bottom:22px}.sim-stage-actions{display:block;text-align:left;min-width:0;margin-top:18px}.sim-stage-actions>span{margin-bottom:10px;font-size:8px}.sim-stage-actions>.sim-toolbar{justify-content:flex-start;gap:6px;width:100%}.sim-stage-actions #sim-toggle-all{flex:1;min-width:0;font-size:9px;padding:8px 6px;min-height:42px;white-space:nowrap}.sim-stage-actions #sim-replay-all{width:36px;min-width:36px;min-height:42px}.sim-stage-actions .sim-speed button{width:29px;min-height:34px;font-size:10px}.sim-speed-note{font-size:7px;line-height:1.6;margin-top:9px}.sim-controls{grid-template-columns:54px 36px minmax(0,1fr) auto;padding-top:12px;gap:5px}.sim-controls button{min-height:42px}.sim-controls .sim-play{font-size:10px}.sim-controls .sim-replay{font-size:20px}.sim-controls .sim-time,.sim-controls .sim-open{font-size:8px}.sim-status{font-size:8px;min-height:28px;margin-top:10px}.sim-model-head{min-height:56px}}
+
 </style>
 </head>
 <body>
@@ -188,23 +212,23 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 <section class="simulation-trials" id="simulation-trials" aria-labelledby="simulation-title">
  <div class="sim-intro"><div><p class="evidence-eyebrow">IN SIMULATION / CASE EXPLORER</p><h3 id="simulation-title">See the task. Compare the rollout.</h3><p>Choose a case. Compare the same task across three methods.</p></div><span class="sim-total">10 CASES / 30 ROLLOUTS</span></div>
  <div class="sim-picker-label"><span>CHOOSE A CASE</span><span>1 LIBERO SPATIAL / 9 METAWORLD</span></div><div class="sim-case-picker" role="group" aria-label="Choose simulation case"><button type="button" class="sim-case-button" data-sim-case="01" aria-pressed="true" aria-label="Show case 01: Bowl to plate"><img src="assets/simulation/case-01-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>01 / LIBERO Spatial</small><strong>Bowl to plate</strong><em>Case 43</em></span></button><button type="button" class="sim-case-button" data-sim-case="02" aria-pressed="false" aria-label="Show case 02: Open the drawer"><img src="assets/simulation/case-02-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>02 / MetaWorld</small><strong>Open the drawer</strong><em>Case 10008</em></span></button><button type="button" class="sim-case-button" data-sim-case="03" aria-pressed="false" aria-label="Show case 03: Open the window"><img src="assets/simulation/case-03-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>03 / MetaWorld</small><strong>Open the window</strong><em>Case 10004</em></span></button><button type="button" class="sim-case-button" data-sim-case="04" aria-pressed="false" aria-label="Show case 04: Open the drawer"><img src="assets/simulation/case-04-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>04 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20002</em></span></button><button type="button" class="sim-case-button" data-sim-case="05" aria-pressed="false" aria-label="Show case 05: Open the window"><img src="assets/simulation/case-05-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>05 / MetaWorld</small><strong>Open the window</strong><em>Case 20004</em></span></button><button type="button" class="sim-case-button" data-sim-case="06" aria-pressed="false" aria-label="Show case 06: Open the drawer"><img src="assets/simulation/case-06-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>06 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20032</em></span></button><button type="button" class="sim-case-button" data-sim-case="07" aria-pressed="false" aria-label="Show case 07: Open the drawer"><img src="assets/simulation/case-07-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>07 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20045</em></span></button><button type="button" class="sim-case-button" data-sim-case="08" aria-pressed="false" aria-label="Show case 08: Open the drawer"><img src="assets/simulation/case-08-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>08 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20065</em></span></button><button type="button" class="sim-case-button" data-sim-case="09" aria-pressed="false" aria-label="Show case 09: Open the drawer"><img src="assets/simulation/case-09-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>09 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20116</em></span></button><button type="button" class="sim-case-button" data-sim-case="10" aria-pressed="false" aria-label="Show case 10: Open the drawer"><img src="assets/simulation/case-10-touch-r1-poster.jpg" alt="" width="64" height="64" loading="lazy" decoding="async"><span><small>10 / MetaWorld</small><strong>Open the drawer</strong><em>Case 20124</em></span></button></div>
- <div class="sim-stage"><div class="sim-case-heading"><div><p id="sim-context">LIBERO Spatial · Case 43 · Recorded 1×</p><h4 id="sim-case-title">Bowl to plate</h4><p id="sim-instruction">pick up the black bowl between the plate and the ramekin and place it on the plate</p></div><div class="sim-stage-actions"><span id="sim-case-count">01 / 10</span><div><button id="sim-toggle-all" type="button">Pause comparison</button><button id="sim-replay-all" type="button">Replay all ↺</button></div></div></div><div class="sim-grid"><article class="sim-model-card" data-sim-model="qwen" aria-label="Original Qwen simulation rollout">
+ <div class="sim-stage"><div class="sim-case-heading"><div><p id="sim-context">LIBERO Spatial · Case 43 · Recorded 1×</p><h4 id="sim-case-title">Bowl to plate</h4><p id="sim-instruction">pick up the black bowl between the plate and the ramekin and place it on the plate</p></div><div class="sim-stage-actions"><span id="sim-case-count">01 / 10</span><div class="sim-toolbar"><div class="sim-speed" role="group" aria-label="Preview speed for all three videos"><button type="button" data-sim-speed="1" aria-pressed="true" title="Original clip speed">1×</button><button type="button" data-sim-speed="2" aria-pressed="false" title="Two times clip speed, applied to all three methods">2×</button></div><button id="sim-toggle-all" type="button">Play comparison</button><button id="sim-replay-all" class="sim-reset" type="button" aria-label="Restart comparison" title="Restart comparison">↺</button></div><p class="sim-speed-note">Preview speed · shared by all methods</p></div></div><div class="sim-grid"><article class="sim-model-card" data-sim-model="qwen" aria-label="Original Qwen simulation rollout">
  <div class="sim-model-head"><h4>Original Qwen</h4><span>BASELINE</span></div>
  <div class="sim-frame"><video muted playsinline preload="none" width="640" height="640" data-source="assets/simulation/case-01-qwen.mp4" poster="assets/simulation/case-01-qwen-poster.jpg" aria-label="Case 01 Original Qwen rollout"></video></div>
  <progress class="sim-progress" value="0" max="1" aria-label="Original Qwen playback progress"></progress>
  <div class="sim-result"><span class="sim-outcome">Not completed</span><span class="sim-steps">220 steps</span></div><p class="sim-status" role="status" aria-live="off">Ready · recorded timing</p>
- <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Original Qwen simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Original Qwen simulation video">Replay ↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-qwen.mp4" target="_blank" rel="noopener" aria-label="Open Original Qwen simulation video">Video ↗</a></div></article><article class="sim-model-card" data-sim-model="astra" aria-label="Astra (API) simulation rollout">
+ <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Original Qwen simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Original Qwen simulation video" title="Restart this clip">↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-qwen.mp4" target="_blank" rel="noopener" aria-label="Open Original Qwen simulation video">Video ↗</a></div></article><article class="sim-model-card" data-sim-model="astra" aria-label="Astra (API) simulation rollout">
  <div class="sim-model-head"><h4>Astra (API)</h4><span>API</span></div>
  <div class="sim-frame"><video muted playsinline preload="none" width="640" height="640" data-source="assets/simulation/case-01-astra.mp4" poster="assets/simulation/case-01-astra-poster.jpg" aria-label="Case 01 Astra (API) rollout"></video></div>
  <progress class="sim-progress" value="0" max="1" aria-label="Astra (API) playback progress"></progress>
  <div class="sim-result"><span class="sim-outcome">Not completed</span><span class="sim-steps">220 steps</span></div><p class="sim-status" role="status" aria-live="off">Ready · recorded timing</p>
- <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Astra (API) simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Astra (API) simulation video">Replay ↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-astra.mp4" target="_blank" rel="noopener" aria-label="Open Astra (API) simulation video">Video ↗</a></div></article><article class="sim-model-card sim-model-ours" data-sim-model="touch-r1" aria-label="Touch-R1 (Ours) simulation rollout">
+ <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Astra (API) simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Astra (API) simulation video" title="Restart this clip">↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-astra.mp4" target="_blank" rel="noopener" aria-label="Open Astra (API) simulation video">Video ↗</a></div></article><article class="sim-model-card sim-model-ours" data-sim-model="touch-r1" aria-label="Touch-R1 (Ours) simulation rollout">
  <div class="sim-model-head"><h4>Touch-R1 (Ours)</h4><span>OURS</span></div>
  <div class="sim-frame"><video muted playsinline preload="none" width="640" height="640" data-source="assets/simulation/case-01-touch-r1.mp4" poster="assets/simulation/case-01-touch-r1-poster.jpg" aria-label="Case 01 Touch-R1 (Ours) rollout"></video></div>
  <progress class="sim-progress" value="0" max="1" aria-label="Touch-R1 (Ours) playback progress"></progress>
  <div class="sim-result"><span class="sim-outcome">Successful</span><span class="sim-steps">69 steps</span></div><p class="sim-status" role="status" aria-live="off">Ready · recorded timing</p>
- <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Touch-R1 (Ours) simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Touch-R1 (Ours) simulation video">Replay ↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-touch-r1.mp4" target="_blank" rel="noopener" aria-label="Open Touch-R1 (Ours) simulation video">Video ↗</a></div></article></div></div>
- <div class="sim-footnote"><p>Selected simulation cases · Outcomes per recording · Inference waits omitted · Clips hold their final frame.</p><details class="sim-protocol"><summary>Recording protocol &amp; case metadata <span>↗</span></summary><div><p>These 10 examples were selected for Touch-R1 completion and Original Qwen non-completion: one LIBERO Spatial case and nine MetaWorld cases. They are curated demonstrations, not an aggregate benchmark success-rate sample.</p><p>Astra is the source package’s third-party API label; its backend model identity has not been independently verified. Astra uses zero-shot direct control; Qwen and Touch-R1 use action training, with different training budgets.</p><p>Recorded timing is preserved: LIBERO 1× and MetaWorld 0.5×. Model-inference waiting time is omitted. Outcomes and action-step counts follow the supplied case manifest; clip duration is not an inference-speed measurement.</p><a href="assets/simulation/recording-metadata.csv" target="_blank" rel="noopener">Source case metadata ↗</a><a href="assets/simulation/manifest.json" target="_blank" rel="noopener">Media provenance ↗</a></div></details></div>
+ <div class="sim-controls"><button type="button" class="sim-play" aria-label="Play Touch-R1 (Ours) simulation video">Play ▷</button><button type="button" class="sim-replay" aria-label="Replay Touch-R1 (Ours) simulation video" title="Restart this clip">↺</button><span class="sim-time">0:00</span><a class="sim-open sim-source" href="assets/simulation/case-01-touch-r1.mp4" target="_blank" rel="noopener" aria-label="Open Touch-R1 (Ours) simulation video">Video ↗</a></div></article></div></div>
+ <div class="sim-footnote"><p>Selected simulation cases · Outcomes per recording · Inference waits omitted · Clips hold their final frame.</p><details class="sim-protocol"><summary>Recording protocol &amp; case metadata <span>↗</span></summary><div><p>These 10 examples were selected for Touch-R1 completion and Original Qwen non-completion: one LIBERO Spatial case and nine MetaWorld cases. They are curated demonstrations, not an aggregate benchmark success-rate sample.</p><p>Astra is the source package’s third-party API label; its backend model identity has not been independently verified. Astra uses zero-shot direct control; Qwen and Touch-R1 use action training, with different training budgets.</p><p>Source timing is preserved in the files: LIBERO 1× and MetaWorld 0.5×. The default 1× preview plays that source timing; the optional 2× preview multiplies all three methods equally without editing the recordings. Model-inference waiting time is omitted. Outcomes and action-step counts follow the supplied case manifest; clip duration is not an inference-speed measurement.</p><a href="assets/simulation/recording-metadata.csv" target="_blank" rel="noopener">Source case metadata ↗</a><a href="assets/simulation/manifest.json" target="_blank" rel="noopener">Media provenance ↗</a></div></details></div>
  <noscript><p class="sim-footnote">JavaScript enables the ten-case selector. The first comparison remains available through each Video link; the metadata file lists all cases.</p></noscript>
  </section></div></section>
 
@@ -501,7 +525,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     const canvas=document.getElementById('touch-field'); if(!canvas)return;
     const context=canvas.getContext('2d'); if(!context)return;
     const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-    let width=500,height=500,visible=true,frame=0,last=0,time=0;
+    let width=500,height=500,visible=false,frame=0,last=0,time=0;
     const resize=()=>{const rect=canvas.getBoundingClientRect();width=rect.width;height=rect.height;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=width*dpr;canvas.height=height*dpr;context.setTransform(dpr,0,0,dpr,0,0);draw(time);};
     function draw(t){
       context.clearRect(0,0,width,height);
@@ -521,10 +545,12 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       const tip=point(centerX,centerY);context.setLineDash([2,5]);context.strokeStyle='#aacd7855';context.beginPath();context.moveTo(tip[0],height*.16);context.lineTo(tip[0],tip[1]-8);context.stroke();context.setLineDash([]);
       context.strokeStyle='#e0ffb8';context.beginPath();context.arc(tip[0],tip[1],4,0,Math.PI*2);context.stroke();context.fillStyle='#dcffac';context.beginPath();context.arc(tip[0],tip[1],1.5,0,Math.PI*2);context.fill();
     }
-    const tick=(stamp)=>{frame=requestAnimationFrame(tick);if(!visible||document.hidden||reduce.matches)return;if(stamp-last<40)return;time=stamp/1000;last=stamp;draw(time);};
+    const tick=(stamp)=>{frame=0;if(!visible||document.hidden||reduce.matches)return;if(stamp-last>=40){time=stamp/1000;last=stamp;draw(time);}frame=requestAnimationFrame(tick);};
+    const syncAnimation=()=>{const active=visible&&!document.hidden&&!reduce.matches;canvas.dataset.animationState=active?'playing':'paused';if(active&&!frame)frame=requestAnimationFrame(tick);else if(!active&&frame){cancelAnimationFrame(frame);frame=0;}};
     new ResizeObserver(resize).observe(canvas);
-    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:.05}).observe(canvas);
-    reduce.addEventListener('change',()=>draw(time));resize();frame=requestAnimationFrame(tick);
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncAnimation();},{threshold:.05}).observe(canvas);
+    document.addEventListener('visibilitychange',syncAnimation);
+    reduce.addEventListener('change',()=>{draw(time);syncAnimation();});resize();syncAnimation();
   })();
   </script>
 
@@ -845,6 +871,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   if (!section) return;
   const groupButton = document.querySelector('#sim-toggle-all');
   const replayAllButton = document.querySelector('#sim-replay-all');
+  const speedButtons = Array.from(section.querySelectorAll('[data-sim-speed]'));
   const dataElement = document.querySelector('#simulation-data');
   let cases;
   try { cases = JSON.parse(dataElement.textContent).cases; } catch (_) { return; }
@@ -854,8 +881,9 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   let activeCase = null;
   let selectionVersion = 0;
   let cohortTask = null;
+  let playbackSpeed = 1;
   const speed = value => value == null || value === '' ? '' : /^\d+(?:\.\d+)?$/.test(String(value)) ? `${value}×` : String(value);
-  const note = () => `${activeCase && speed(activeCase.sourceSpeed) || 'Source speed'} · muted`;
+  const note = () => `Preview ${playbackSpeed}× · source ${activeCase && speed(activeCase.sourceSpeed) || 'timing'} · muted`;
   const text = (selector, value) => {
     const element = section.querySelector(selector);
     if (element) element.textContent = value == null ? '' : String(value);
@@ -893,13 +921,56 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     state.button.textContent = verb;
     state.button.setAttribute('aria-label', `${verb} ${state.label || labels[state.card.dataset.simModel] || state.card.dataset.simModel} simulation`);
   }
+  function sampleQuality(state) {
+    const second = Math.floor(state.video.currentTime || 0);
+    if (!state.ready || (state.qualitySecond === second && !state.video.ended)) return;
+    state.qualitySecond = second;
+    const video = state.video;
+    ['totalFrames', 'droppedFrames', 'corruptedFrames'].forEach(key => { delete state.card.dataset[key]; });
+    let quality = null;
+    try { if (typeof video.getVideoPlaybackQuality === 'function') quality = video.getVideoPlaybackQuality(); } catch (_) {}
+    if (quality && Number.isFinite(quality.totalVideoFrames) && Number.isFinite(quality.droppedVideoFrames)) {
+      state.card.dataset.qualityMetric = 'standard';
+      state.card.dataset.totalFrames = String(quality.totalVideoFrames);
+      state.card.dataset.droppedFrames = String(quality.droppedVideoFrames);
+      if (Number.isFinite(quality.corruptedVideoFrames)) state.card.dataset.corruptedFrames = String(quality.corruptedVideoFrames);
+    } else if (Number.isFinite(video.webkitDecodedFrameCount) && Number.isFinite(video.webkitDroppedFrameCount)) {
+      state.card.dataset.qualityMetric = 'webkit';
+      state.card.dataset.totalFrames = String(video.webkitDecodedFrameCount);
+      state.card.dataset.droppedFrames = String(video.webkitDroppedFrameCount);
+    } else state.card.dataset.qualityMetric = 'unavailable';
+  }
   function updateTime(state) {
     const duration = Number.isFinite(state.video.duration) ? state.video.duration : 0;
-    if (state.time) state.time.textContent = `${clock(state.video.currentTime)} / ${clock(duration)}`;
-    if (state.progress) {
-      state.progress.max = duration || 1;
-      state.progress.value = state.video.currentTime || 0;
+    const label = `${clock(state.video.currentTime)} / ${clock(duration)}`;
+    if (state.time && state.timeText !== label) {
+      state.time.textContent = label;
+      state.timeText = label;
     }
+    if (state.progress) {
+      const maximum = duration || 1;
+      const value = state.video.currentTime || 0;
+      if (state.progressMaximum !== maximum) { state.progress.max = maximum; state.progressMaximum = maximum; }
+      if (state.progressValue !== value) { state.progress.value = value; state.progressValue = value; }
+    }
+    sampleQuality(state);
+  }
+  function setPlaybackSpeed(value) {
+    const next = typeof value === 'number' ? value : typeof value === 'string' && /^[12]$/.test(value) ? Number(value) : NaN;
+    if (next !== 1 && next !== 2) return false;
+    playbackSpeed = next;
+    section.dataset.playbackSpeed = String(next);
+    speedButtons.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.simSpeed) === next)));
+    states.forEach(state => {
+      state.video.defaultPlaybackRate = next;
+      state.video.playbackRate = next;
+      const mode = state.card.dataset.playbackState;
+      if (mode === 'playing') display(state, mode, `Playing · ${note()}`);
+      else if (mode === 'ended') display(state, mode, `Ended · ${note()}`);
+      else if (mode === 'blocked') display(state, mode, `Tap Play · ${note()}`);
+      else if (mode === 'paused' || mode === 'idle') display(state, mode, `Paused · ${note()}`);
+    });
+    return true;
   }
   function releaseSource(state) {
     state.ready = false;
@@ -911,6 +982,8 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     if (state.url) URL.revokeObjectURL(state.url);
     state.url = null;
     state.card.dataset.bufferedBytes = '0';
+    state.qualitySecond = undefined;
+    ['qualityMetric', 'totalFrames', 'droppedFrames', 'corruptedFrames'].forEach(key => { delete state.card.dataset[key]; });
   }
   function stop(state, message = `Paused · ${note()}`) {
     state.generation += 1;
@@ -937,21 +1010,23 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       const cleanup = () => {
         video.removeEventListener('loadeddata', check);
         video.removeEventListener('canplay', check);
+        video.removeEventListener('canplaythrough', check);
         video.removeEventListener('error', error);
         signal.removeEventListener('abort', abort);
       };
-      const check = () => { if (video.readyState >= 3) { cleanup(); resolve(); } };
+      const check = () => { if (video.readyState >= 4) { cleanup(); resolve(); } };
       const error = () => { cleanup(); reject(new Error('Media decode failed')); };
       const abort = () => { cleanup(); reject(new DOMException('Cancelled', 'AbortError')); };
       video.addEventListener('loadeddata', check);
       video.addEventListener('canplay', check);
+      video.addEventListener('canplaythrough', check);
       video.addEventListener('error', error);
       signal.addEventListener('abort', abort, { once: true });
       if (signal.aborted) abort(); else check();
     });
   }
   function prepare(state) {
-    if (state.ready && state.video.readyState >= 3) return Promise.resolve(true);
+    if (state.ready && state.video.readyState >= 4) return Promise.resolve(true);
     if (state.preparation) return state.preparation;
     const generation = ++state.generation;
     const controller = new AbortController();
@@ -1010,7 +1085,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       if (!await prepare(state) || revision !== selectionVersion || !wanted(state)) return;
       const generation = state.generation;
       state.video.muted = true;
-      state.video.playbackRate = 1;
+      state.video.playbackRate = playbackSpeed;
       claimOwnership();
       try {
         await state.video.play();
@@ -1084,8 +1159,8 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     video.muted = true;
     video.loop = false;
     video.playsInline = true;
-    video.defaultPlaybackRate = 1;
-    video.playbackRate = 1;
+    video.defaultPlaybackRate = playbackSpeed;
+    video.playbackRate = playbackSpeed;
     state.card.dataset.bufferingEvents = '0';
     state.card.dataset.bufferedBytes = '0';
     display(state, 'idle', note());
@@ -1108,17 +1183,17 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     });
     video.addEventListener('timeupdate', () => updateTime(state));
     video.addEventListener('loadedmetadata', () => updateTime(state));
-    video.addEventListener('ratechange', () => { if (video.playbackRate !== 1) video.playbackRate = 1; });
+    video.addEventListener('ratechange', () => { if (video.playbackRate !== playbackSpeed) video.playbackRate = playbackSpeed; });
     video.addEventListener('playing', () => {
       if (!wanted(state)) { video.pause(); return; }
-      if (!state.ready || video.readyState < 3) return;
+      if (!state.ready || video.readyState < 4) return;
       state.hasPlayed = true;
       state.waiting = false;
       display(state, 'playing', `Playing · ${note()}`);
       groupLabel();
     });
     video.addEventListener('waiting', () => {
-      if (!wanted(state) || video.paused || !state.hasPlayed || video.readyState >= 3 ||
+      if (!wanted(state) || video.paused || !state.hasPlayed || video.readyState >= 4 ||
           video.currentTime <= 0.15 || !Number.isFinite(video.duration) || video.duration - video.currentTime <= 0.15) return;
       if (!state.waiting) state.card.dataset.bufferingEvents = String(Number(state.card.dataset.bufferingEvents) + 1);
       state.waiting = true;
@@ -1217,6 +1292,8 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
     groupLabel();
   }
   caseButtons.forEach(button => button.addEventListener('click', () => selectCase(button.dataset.simCase)));
+  speedButtons.forEach(button => button.addEventListener('click', () => setPlaybackSpeed(button.dataset.simSpeed)));
+  setPlaybackSpeed(1);
   const initialButton = caseButtons.find(button => button.getAttribute('aria-pressed') === 'true');
   selectCase(initialButton ? initialButton.dataset.simCase : cases[0].id);
   document.addEventListener('visibilitychange', reconcileAll);
@@ -1246,7 +1323,6 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   });
   groupLabel();
 })();
-
 </script>
 </body>
 </html>
