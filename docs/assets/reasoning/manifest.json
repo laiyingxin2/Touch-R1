@@ -1,0 +1,606 @@
+{
+  "revision": "reasoning-english-v1",
+  "presentation_language": "English",
+  "source_archive_sha256": "37ae2594c2c0afe03980106a3be4627129c9771d67837b7c056519268c755967",
+  "source_archive_unchanged": true,
+  "case_count": 5,
+  "video_count": 5,
+  "selection_note": "Purposely selected qualitative tactile QA examples, not random benchmark scores. Labels are inherited source annotations, not independent physical calibration.",
+  "model_provenance": "GPT-6 Astra is the supplied third-party requested and returned identifier; backend identity not independently attested.",
+  "comparison_note": "Touch-R1 is fine-tuned on attribute QA; Astra is zero-shot. Examples do not establish an aggregate ranking.",
+  "presentation_note": "Exact provided English visible answers, fixed 58 characters/second text replay, inference waits omitted; not measured latency. Input image aspect ratios preserved without cropping.",
+  "files": [
+    {
+      "case": 1,
+      "qa_id": "test_001059",
+      "title": "Strong contact response, small protrusion",
+      "question": "Which protrusion label is best supported by the tactile evidence?",
+      "options": {
+        "A": "large",
+        "B": "small",
+        "C": "none"
+      },
+      "source_label": "small",
+      "source_transcript_sha256": "fb3ac2bffc8e35cf1ab7db554983ab43d83312d45417f91910b30d5e535ec657",
+      "responses": [
+        {
+          "model": "GPT-6 Astra",
+          "output": "A\nThe maps show a broad, prominent central region with a bright core and extensive surrounding gradients across pressing and sliding. This substantial contact footprint best supports a large protrusion rather than a small bump or no protrusion.",
+          "output_sha256": "24972046b66c52416a6939c3c32f274728bc0c5f832d14557bf3e804cb4d6e5e",
+          "record_sha256": "bc089fe20338d8f8ce6fe05ac5d51227a571a1d46caebd540b2bc9cb89f545fe",
+          "matches_source_annotation": false,
+          "parsed_answer": "large"
+        },
+        {
+          "model": "Original Qwen",
+          "output": "A. large\n\nThe images show a central bright spot, indicating a significant tactile response, suggesting a large protrusion.",
+          "output_sha256": "a85cf47ff214f650f6cca62406c9be04c6c5a25ad0d9f30dcf5af5437071a280",
+          "record_sha256": "d720d75ca36696b7282cb0db427640af54ec6b754438dd8a8fafdc4f6fd6e64f",
+          "matches_source_annotation": false,
+          "parsed_answer": "large"
+        },
+        {
+          "model": "Touch-R1",
+          "output": "B. small\n\nThe grid shows a small, localized area of increased tactile signal intensity.",
+          "output_sha256": "432889c95d57f20e951bdf3037b70cd7d2736cf11b8e27effd77920c0da64360",
+          "record_sha256": "953c4899f1f1193e4cfefe5dbe5f67a955ca16f97a65e3ade2ef4f5bed9d53ad",
+          "matches_source_annotation": true,
+          "parsed_answer": "small"
+        }
+      ],
+      "input_images": [
+        {
+          "source_sha256": "5bc5939cf9f88185bb4916d7415dcc0ace269adf03326084261679414b9843c0",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            280,
+            280
+          ],
+          "display_xy": [
+            56,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "64b25f83323d5db2b2cc3db15bcbfcc2d615922909324db710a35e04c246d309",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            280,
+            280
+          ],
+          "display_xy": [
+            360,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        }
+      ],
+      "video": "reasoning-case-01.mp4",
+      "video_bytes": 1005037,
+      "video_sha256": "5af1ce57502d30d1fbdb45e54ebf4a36deea7ec746200fe174cc9acc7b4a6c4b",
+      "poster": "reasoning-case-01-poster.webp",
+      "poster_bytes": 115328,
+      "poster_sha256": "a7be934283735b7dad69359909e14a13580fcfcf8f3d50873b3f05dd4d70628a",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frame_count": 360,
+      "duration_seconds": 15,
+      "audio_tracks": 0,
+      "faststart": true,
+      "b_frames": 0,
+      "max_keyframe_interval_frames": 48,
+      "characters_per_second": 58,
+      "answer_reveal_start_seconds": 1.0,
+      "outcome_reveal_seconds": 9.0,
+      "inference_waits_omitted": true,
+      "timing_is_measured_latency": false,
+      "full_decode_exit": 0,
+      "all_on_screen_text_english": true,
+      "build_elapsed_seconds": 21.22
+    },
+    {
+      "case": 2,
+      "qa_id": "test_000644",
+      "title": "Two baselines, opposite rankings",
+      "question": "Compare object 1 to object 2 in protrusion. Levels from low to high: none,small,large.",
+      "options": {
+        "A": "Object 1 is higher",
+        "B": "Equal",
+        "C": "Object 1 is lower"
+      },
+      "source_label": "Equal",
+      "source_transcript_sha256": "6fffabf386c5604a8e9dd8e27fae226380daf07cf7850171ba814e8a4d74b04b",
+      "responses": [
+        {
+          "model": "GPT-6 Astra",
+          "output": "A.\nObject 1 shows a pronounced continuous ridge with a strong light–dark transition. Object 2 has a broader, patterned contact imprint with less prominent relief, suggesting lower protrusion.",
+          "output_sha256": "7ec7a686720d988db0688285b588dce930f75e8289d7dade9806299c52aca005",
+          "record_sha256": "69f04bc405df9c5aa5f34982109f1f2e483ec9de6db5b5727f13bee46a5390ed",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is higher"
+        },
+        {
+          "model": "Original Qwen",
+          "output": "C. Object 1 is lower\n\nThe images show that Object 1 has less protrusion than Object 2, as indicated by the smaller shadows and less visible deformation under pressure.",
+          "output_sha256": "8912baf1a36b984bb1dbf33ffee722112904c064bf6d50480e896845e79c4675",
+          "record_sha256": "a5d7408d15d3841f4e664b3893646a9da947e12f7fec16e87c0add83c7ce98c3",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is lower"
+        },
+        {
+          "model": "Touch-R1",
+          "output": "B. Equal",
+          "output_sha256": "6ce063c0c32f3ed1166e17336d0fba822abef9d3d2ea810830366787a52b3532",
+          "record_sha256": "ee8625a56bdbb910acb750ae38fc2966fd5319b6c7995ba6d05dfb17c33e1310",
+          "matches_source_annotation": true,
+          "parsed_answer": "Equal"
+        }
+      ],
+      "input_images": [
+        {
+          "source_sha256": "93d7bd4ba029378c5de32a8e07a915d2341436b5f3ca0e0f280501ed1f9621b8",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            56,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "9558c74718da59612a9397c4a4110a67e7a1cc1ae23ba99f34bb99cf9c9b868a",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            340,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "547cb47e783c7ab8eb9aee8657f912b331f7a50f78f8435ad65d18dccb177037",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            624,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "4e4649314b5139fa0e6c90f73f09bae9243170ac0414b6ff634c4bcc03c43610",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            908,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        }
+      ],
+      "video": "reasoning-case-02.mp4",
+      "video_bytes": 1385432,
+      "video_sha256": "2944a63c03f17c8d2983362024801a483ea53eb5f09983c29bf5458430170f2c",
+      "poster": "reasoning-case-02-poster.webp",
+      "poster_bytes": 150678,
+      "poster_sha256": "48a9cc8ed373b918bdd34b7c7138a13a55b33e12447de4be3a985d9b64bfa12d",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frame_count": 360,
+      "duration_seconds": 15,
+      "audio_tracks": 0,
+      "faststart": true,
+      "b_frames": 0,
+      "max_keyframe_interval_frames": 48,
+      "characters_per_second": 58,
+      "answer_reveal_start_seconds": 1.0,
+      "outcome_reveal_seconds": 9.0,
+      "inference_waits_omitted": true,
+      "timing_is_measured_latency": false,
+      "full_decode_exit": 0,
+      "all_on_screen_text_english": true,
+      "build_elapsed_seconds": 33.05
+    },
+    {
+      "case": 3,
+      "qa_id": "test_001308",
+      "title": "Different shapes. Same hardness label.",
+      "question": "Compare object 1 to object 2 in hardness. Levels from low to high: soft,medium,hard.",
+      "options": {
+        "A": "Equal",
+        "B": "Object 1 is higher",
+        "C": "Object 1 is lower"
+      },
+      "source_label": "Equal",
+      "source_transcript_sha256": "0c35ef436f1800558a92c2f176bbe18894c8344ea0319d67ae441baebc3f2701",
+      "responses": [
+        {
+          "model": "GPT-6 Astra",
+          "output": "B.\nObject 1 maintains a sharply defined, stable contact shape across pressing frames, suggesting greater rigidity. Object 2’s contact region broadens from loading to peak, consistent with greater compliance and lower hardness.",
+          "output_sha256": "ee301ac4a8b0d1a6d046ace0125c7d29ec327853ddf664a2a7c0df832a0dfee0",
+          "record_sha256": "43120a20c3222d78545c5b85b8ee69d04fb6f36236dd3ac813fe3bdb3dd1f6e2",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is higher"
+        },
+        {
+          "model": "Original Qwen",
+          "output": "C. Object 1 is lower\n\nThe grid in Object 1 shows more deformation under pressure compared to Object 2, indicating it is softer.",
+          "output_sha256": "ab97baac8e920fda4033c0bda6beb80a4c7c2f5e6ab31c372ba812b9bfd012c1",
+          "record_sha256": "622bb3f9e344f5e89f81d215c348a021e8fd1d8cb14c9e211404b5bfa35d67da",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is lower"
+        },
+        {
+          "model": "Touch-R1",
+          "output": "A. Equal\n\nThe two objects have similar tactile signals, indicating they are equally hard.",
+          "output_sha256": "176ddfc18a02b564845b35a01bac5d9507de9ab2cc1aabac6198cac32bc22f7d",
+          "record_sha256": "40dbc9a7516da7ae0b79e660acf180892368957d58ef6079358ea954723c04eb",
+          "matches_source_annotation": true,
+          "parsed_answer": "Equal"
+        }
+      ],
+      "input_images": [
+        {
+          "source_sha256": "8f8f7d945beb6a14fc2d294b54c469622bda386abaf710b76a5dfcc24a429608",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            56,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "9d9a4d2c6780df5be0c9cfb77ad80ef8599fec5eff1f9228d83e13938addd760",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            340,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "992daf994f1c9d6be0ca9ee6b2a57823482857196d2733281c90c4b2c4d9759b",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            624,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "389419ffbf64a2755aa45ce22c4047968a162777095d14cb164b997100530100",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            908,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        }
+      ],
+      "video": "reasoning-case-03.mp4",
+      "video_bytes": 1348066,
+      "video_sha256": "43daec5eaec62ad7b6cecb8462342eab55e0430c4fcecfb8e6900c9f59ab51ed",
+      "poster": "reasoning-case-03-poster.webp",
+      "poster_bytes": 148234,
+      "poster_sha256": "e7e77da5dd65dee842a3da500a616eab5eee0a1e139c597df2cceb904be23ef3",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frame_count": 360,
+      "duration_seconds": 15,
+      "audio_tracks": 0,
+      "faststart": true,
+      "b_frames": 0,
+      "max_keyframe_interval_frames": 48,
+      "characters_per_second": 58,
+      "answer_reveal_start_seconds": 1.0,
+      "outcome_reveal_seconds": 9.0,
+      "inference_waits_omitted": true,
+      "timing_is_measured_latency": false,
+      "full_decode_exit": 0,
+      "all_on_screen_text_english": true,
+      "build_elapsed_seconds": 33.19
+    },
+    {
+      "case": 4,
+      "qa_id": "test_001419",
+      "title": "Distinct edges, small protrusion",
+      "question": "Which protrusion label is best supported by the tactile evidence?",
+      "options": {
+        "A": "small",
+        "B": "none",
+        "C": "large"
+      },
+      "source_label": "small",
+      "source_transcript_sha256": "925de402df0903371be1360f537b465d4b72a20ef89b30e75eb9dc5398a7cd81",
+      "responses": [
+        {
+          "model": "GPT-6 Astra",
+          "output": "C.\nThe visible contact pattern has pronounced horizontal and vertical edges with strong localized deformation. It persists across the middle press frames and during sliding, supporting a large protrusion rather than a flat or subtly raised surface.",
+          "output_sha256": "e65c4419fec64b938e8199c360384934ba3aace723dc41c6f676028b867f86ab",
+          "record_sha256": "a120e30325d8eb1a6758ef16ccba0a7a24f891fc11b8c261f79dd38ece225d97",
+          "matches_source_annotation": false,
+          "parsed_answer": "large"
+        },
+        {
+          "model": "Original Qwen",
+          "output": "C. large\n\nThe grid shows a larger protrusion that covers more area, indicating a larger object.",
+          "output_sha256": "23be563577613e395dddaa98c5f692187c5165366ec577eadebde89ca73d8d87",
+          "record_sha256": "e79eccdebcd979185261f79ce1919810aab012e2736d93b3799f1f796c148752",
+          "matches_source_annotation": false,
+          "parsed_answer": "large"
+        },
+        {
+          "model": "Touch-R1",
+          "output": "A. small\n\nThe grid is deformed slightly, indicating a small protrusion.",
+          "output_sha256": "724556b3c288f516a967921db6629ad316870bec92924f2e657a2376ce4eb197",
+          "record_sha256": "5851468236e33e355f3dc1f1a13a71f107ba155f8231c185b79cff38ed53115b",
+          "matches_source_annotation": true,
+          "parsed_answer": "small"
+        }
+      ],
+      "input_images": [
+        {
+          "source_sha256": "11414e7d2cb30241e553016fea0c1170f48081f28f86b00f75e22566197b7fb8",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            280,
+            280
+          ],
+          "display_xy": [
+            56,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "470961d799610bd3d3ad5f5260b72c3b55e4d588930040112103dad26a993a9b",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            280,
+            280
+          ],
+          "display_xy": [
+            360,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        }
+      ],
+      "video": "reasoning-case-04.mp4",
+      "video_bytes": 1067738,
+      "video_sha256": "910f605b6bde2153e15e19150ced97e79d54bfe5681dcdcad98d1e7ba6aa8ea3",
+      "poster": "reasoning-case-04-poster.webp",
+      "poster_bytes": 123598,
+      "poster_sha256": "9dca79e632e0ce078aed493a6449727df94fe7b03885c4e9c16862e7950e7c51",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frame_count": 360,
+      "duration_seconds": 15,
+      "audio_tracks": 0,
+      "faststart": true,
+      "b_frames": 0,
+      "max_keyframe_interval_frames": 48,
+      "characters_per_second": 58,
+      "answer_reveal_start_seconds": 1.0,
+      "outcome_reveal_seconds": 9.0,
+      "inference_waits_omitted": true,
+      "timing_is_measured_latency": false,
+      "full_decode_exit": 0,
+      "all_on_screen_text_english": true,
+      "build_elapsed_seconds": 29.8
+    },
+    {
+      "case": 5,
+      "qa_id": "test_001672",
+      "title": "Different appearance. Same roughness label.",
+      "question": "Compare object 1 to object 2 in roughness. Levels from low to high: smooth,medium,rough.",
+      "options": {
+        "A": "Equal",
+        "B": "Object 1 is lower",
+        "C": "Object 1 is higher"
+      },
+      "source_label": "Equal",
+      "source_transcript_sha256": "2c5295bd423a9d9eb74b306acbb63f587dc124b14d9bf582187c391b0725d888",
+      "responses": [
+        {
+          "model": "GPT-6 Astra",
+          "output": "C.\nObject 1 shows small bumps and uneven texture along its contact bands. Object 2 shows a smoother, more uniform contact pattern with fewer visible fine-scale irregularities, suggesting lower roughness.",
+          "output_sha256": "57e196eeed80164630f15b45192d3c7b34e1a26c1aa6985cc2f656d0c622031d",
+          "record_sha256": "14687ae6e6ebc2d87695bff72ba18eb604d8cb9f9a7e3928006989b75af8f1e1",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is higher"
+        },
+        {
+          "model": "Original Qwen",
+          "output": "C. Object 1 is higher\n\nThe tactile signals in Object 1 show more pronounced variations and intensity changes compared to Object 2, indicating a rougher surface.",
+          "output_sha256": "8d7c87685883deac0a7cb1379400d95b6763bd34d1c34fc8d646e1641a81330c",
+          "record_sha256": "0790c976bb48e1f71a3d5cef8f1b9fa4c4bfa8f7ba3033fbc2404cb0465dbb86",
+          "matches_source_annotation": false,
+          "parsed_answer": "Object 1 is higher"
+        },
+        {
+          "model": "Touch-R1",
+          "output": "A. Equal\n\nThe two objects have similar textures, as both show a consistent pattern of dots and lines without any significant variation in their appearance.",
+          "output_sha256": "95fc79d8978d38ef81b20b216747e5edbf5fed652f8c2bb0827d6c6985d13969",
+          "record_sha256": "7765cab4e0f0145e1da87021c531ce3ab89d2a3039d840c1f92498aaad90cb31",
+          "matches_source_annotation": true,
+          "parsed_answer": "Equal"
+        }
+      ],
+      "input_images": [
+        {
+          "source_sha256": "d091ebc7342139142206d6bcd17fc2f8eb2c1a7519946414742b7adc3ec13cf4",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            56,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "d555de16463808ce703acc7ecdde832e7aa5f8b6773a0394d159025e40da1160",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            340,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "50e9d935319f692b07e52c1d5a85515691a576ab03132db2e989c07463d1391d",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            624,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        },
+        {
+          "source_sha256": "3a49ff00fe40c0453dc6b45d93283a2dce4e79e1731609a069df428f6392350a",
+          "source_size": [
+            448,
+            448
+          ],
+          "display_size": [
+            268,
+            268
+          ],
+          "display_xy": [
+            908,
+            266
+          ],
+          "crop": false,
+          "aspect_ratio_preserved": true
+        }
+      ],
+      "video": "reasoning-case-05.mp4",
+      "video_bytes": 1424775,
+      "video_sha256": "fbe5b02fcf11f0c19fd53040469cc7862228363ea387eb4bb27254c0865397df",
+      "poster": "reasoning-case-05-poster.webp",
+      "poster_bytes": 157884,
+      "poster_sha256": "8d5e7580117e327af06d46ed9a02c3567e757776a2c8a695bde9927bc15e5d74",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frame_count": 360,
+      "duration_seconds": 15,
+      "audio_tracks": 0,
+      "faststart": true,
+      "b_frames": 0,
+      "max_keyframe_interval_frames": 48,
+      "characters_per_second": 58,
+      "answer_reveal_start_seconds": 1.0,
+      "outcome_reveal_seconds": 9.0,
+      "inference_waits_omitted": true,
+      "timing_is_measured_latency": false,
+      "full_decode_exit": 0,
+      "all_on_screen_text_english": true,
+      "build_elapsed_seconds": 33.12
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "revision": "reasoning-cases-v1",
+  "source_archive_sha256": "37ae2594c2c0afe03980106a3be4627129c9771d67837b7c056519268c755967",
+  "presentation": "English presentation of source tactile images and verbatim model answers. Fixed15-second text replay; inference waits omitted. Not a latency comparison.",
+  "selection": "These five examples were purposefully selected from a frozen local reconstructed tactile QA test after reviewing Original Qwen and Touch-R1 results, then queried with Astra. They are qualitative examples, not a random benchmark sample or aggregate success-rate estimate.",
+  "inputs": "Inputs are tactile sensor images / visualizations from GelSight and Tac3D acquisitions, not ordinary camera RGB images. No answer or object name was supplied in the common explanatory prompt.",
+  "labels": "“Matches source label” indicates agreement with the supplied source annotations. The source property annotations have not been independently physically calibrated. Correct option selection does not independently validate every physical statement in an explanation.",
+  "training": "Original Qwen and Touch-R1 share the same base model with the task-trained adapter disabled or enabled. Astra is a zero-shot comparison; training budgets are not matched.",
+  "resolution": "Qwen and Touch-R1 use the default processor limit of 448×448. Astra receives the same source images at high detail; resolutions are not matched.",
+  "model_provenance": "Astra was requested and returned under the name gpt-6-astra through an existing third-party endpoint; backend identity was not independently attested.",
+  "cases": [
+    {
+      "id": "01",
+      "qa_id": "test_001059",
+      "editorial_title": "Strong response, small protrusion",
+      "editorial_takeaway": "Both baselines select large. Touch-R1 selects small, matching the source label.",
+      "question": "Which protrusion label is best supported by the tactile evidence?",
+      "actual_prompt": "Which protrusion label is best supported by the tactile evidence?\nReturn the option letter on the first line. Then give a brief explanation of at most 45 words based on the visible evidence. Do not invent force or displacement measurements. Answer in English.",
+      "options": {
+        "A": "large",
+        "B": "small",
+        "C": "none"
+      },
+      "source_label": {
+        "option": "B",
+        "text": "small",
+        "provenance": "Inherited source annotations in the supplied transcript; ordinal comparisons are derived from those annotations, not new physical measurements."
+      },
+      "responses": [
+        {
+          "key": "astra",
+          "model": "GPT-6 Astra",
+          "answer": "large",
+          "matchesSource": false,
+          "output": "A\nThe maps show a broad, prominent central region with a bright core and extensive surrounding gradients across pressing and sliding. This substantial contact footprint best supports a large protrusion rather than a small bump or no protrusion."
+        },
+        {
+          "key": "qwen",
+          "model": "Original Qwen",
+          "answer": "large",
+          "matchesSource": false,
+          "output": "A. large\n\nThe images show a central bright spot, indicating a significant tactile response, suggesting a large protrusion."
+        },
+        {
+          "key": "touch-r1",
+          "model": "Touch-R1",
+          "answer": "small",
+          "matchesSource": true,
+          "output": "B. small\n\nThe grid shows a small, localized area of increased tactile signal intensity."
+        }
+      ],
+      "input_image_sha256": [
+        "5bc5939cf9f88185bb4916d7415dcc0ace269adf03326084261679414b9843c0",
+        "64b25f83323d5db2b2cc3db15bcbfcc2d615922909324db710a35e04c246d309"
+      ],
+      "source_transcript_sha256": "fb3ac2bffc8e35cf1ab7db554983ab43d83312d45417f91910b30d5e535ec657",
+      "source_video_sha256": "3faa29dbeb68e3cf5ca91f194e765fe517f176855745dd80af77723b34d762b2",
+      "English_presentation": {
+        "video": "assets/reasoning/reasoning-case-01.mp4",
+        "sha256": "5af1ce57502d30d1fbdb45e54ebf4a36deea7ec746200fe174cc9acc7b4a6c4b",
+        "poster": "assets/reasoning/reasoning-case-01-poster.webp",
+        "duration_seconds": 15,
+        "fps": 24
+      }
+    },
+    {
+      "id": "02",
+      "qa_id": "test_000644",
+      "editorial_title": "One pair, opposite rankings",
+      "editorial_takeaway": "The baselines give opposite rankings. Touch-R1 selects Equal, matching the source label.",
+      "question": "Compare object 1 to object 2 in protrusion. Levels from low to high: none,small,large.",
+      "actual_prompt": "Compare object 1 to object 2 in protrusion. Levels from low to high: none,small,large.\nReturn the option letter on the first line. Then give a brief explanation of at most 45 words based on the visible evidence. Do not invent force or displacement measurements. Answer in English.",
+      "options": {
+        "A": "Object 1 is higher",
+        "B": "Equal",
+        "C": "Object 1 is lower"
+      },
+      "source_label": {
+        "option": "B",
+        "text": "Equal",
+        "provenance": "Inherited source annotations in the supplied transcript; ordinal comparisons are derived from those annotations, not new physical measurements."
+      },
+      "responses": [
+        {
+          "key": "astra",
+          "model": "GPT-6 Astra",
+          "answer": "Object 1 is higher",
+          "matchesSource": false,
+          "output": "A.\nObject 1 shows a pronounced continuous ridge with a strong light–dark transition. Object 2 has a broader, patterned contact imprint with less prominent relief, suggesting lower protrusion."
+        },
+        {
+          "key": "qwen",
+          "model": "Original Qwen",
+          "answer": "Object 1 is lower",
+          "matchesSource": false,
+          "output": "C. Object 1 is lower\n\nThe images show that Object 1 has less protrusion than Object 2, as indicated by the smaller shadows and less visible deformation under pressure."
+        },
+        {
+          "key": "touch-r1",
+          "model": "Touch-R1",
+          "answer": "Equal",
+          "matchesSource": true,
+          "output": "B. Equal"
+        }
+      ],
+      "input_image_sha256": [
+        "93d7bd4ba029378c5de32a8e07a915d2341436b5f3ca0e0f280501ed1f9621b8",
+        "9558c74718da59612a9397c4a4110a67e7a1cc1ae23ba99f34bb99cf9c9b868a",
+        "547cb47e783c7ab8eb9aee8657f912b331f7a50f78f8435ad65d18dccb177037",
+        "4e4649314b5139fa0e6c90f73f09bae9243170ac0414b6ff634c4bcc03c43610"
+      ],
+      "source_transcript_sha256": "6fffabf386c5604a8e9dd8e27fae226380daf07cf7850171ba814e8a4d74b04b",
+      "source_video_sha256": "cf2b1db8ff6923f41fd08df66afc144cf6434ca15d9a9ce22bf89e8fe46843ba",
+      "English_presentation": {
+        "video": "assets/reasoning/reasoning-case-02.mp4",
+        "sha256": "2944a63c03f17c8d2983362024801a483ea53eb5f09983c29bf5458430170f2c",
+        "poster": "assets/reasoning/reasoning-case-02-poster.webp",
+        "duration_seconds": 15,
+        "fps": 24
+      }
+    },
+    {
+      "id": "03",
+      "qa_id": "test_001308",
+      "editorial_title": "Hardness across different views",
+      "editorial_takeaway": "Touch-R1 matches the shared hardness label across different contact views.",
+      "question": "Compare object 1 to object 2 in hardness. Levels from low to high: soft,medium,hard.",
+      "actual_prompt": "Compare object 1 to object 2 in hardness. Levels from low to high: soft,medium,hard.\nReturn the option letter on the first line. Then give a brief explanation of at most 45 words based on the visible evidence. Do not invent force or displacement measurements. Answer in English.",
+      "options": {
+        "A": "Equal",
+        "B": "Object 1 is higher",
+        "C": "Object 1 is lower"
+      },
+      "source_label": {
+        "option": "A",
+        "text": "Equal",
+        "provenance": "Inherited source annotations in the supplied transcript; ordinal comparisons are derived from those annotations, not new physical measurements."
+      },
+      "responses": [
+        {
+          "key": "astra",
+          "model": "GPT-6 Astra",
+          "answer": "Object 1 is higher",
+          "matchesSource": false,
+          "output": "B.\nObject 1 maintains a sharply defined, stable contact shape across pressing frames, suggesting greater rigidity. Object 2’s contact region broadens from loading to peak, consistent with greater compliance and lower hardness."
+        },
+        {
+          "key": "qwen",
+          "model": "Original Qwen",
+          "answer": "Object 1 is lower",
+          "matchesSource": false,
+          "output": "C. Object 1 is lower\n\nThe grid in Object 1 shows more deformation under pressure compared to Object 2, indicating it is softer."
+        },
+        {
+          "key": "touch-r1",
+          "model": "Touch-R1",
+          "answer": "Equal",
+          "matchesSource": true,
+          "output": "A. Equal\n\nThe two objects have similar tactile signals, indicating they are equally hard."
+        }
+      ],
+      "input_image_sha256": [
+        "8f8f7d945beb6a14fc2d294b54c469622bda386abaf710b76a5dfcc24a429608",
+        "9d9a4d2c6780df5be0c9cfb77ad80ef8599fec5eff1f9228d83e13938addd760",
+        "992daf994f1c9d6be0ca9ee6b2a57823482857196d2733281c90c4b2c4d9759b",
+        "389419ffbf64a2755aa45ce22c4047968a162777095d14cb164b997100530100"
+      ],
+      "source_transcript_sha256": "0c35ef436f1800558a92c2f176bbe18894c8344ea0319d67ae441baebc3f2701",
+      "source_video_sha256": "6b2f5062d550e8e3ad2da4e34a6a4fdc51051cfdbcfa34bb3ccc28529047d67f",
+      "English_presentation": {
+        "video": "assets/reasoning/reasoning-case-03.mp4",
+        "sha256": "43daec5eaec62ad7b6cecb8462342eab55e0430c4fcecfb8e6900c9f59ab51ed",
+        "poster": "assets/reasoning/reasoning-case-03-poster.webp",
+        "duration_seconds": 15,
+        "fps": 24
+      }
+    },
+    {
+      "id": "04",
+      "qa_id": "test_001419",
+      "editorial_title": "Distinct edges, small protrusion",
+      "editorial_takeaway": "Both baselines select large. Touch-R1 selects small, matching the source label.",
+      "question": "Which protrusion label is best supported by the tactile evidence?",
+      "actual_prompt": "Which protrusion label is best supported by the tactile evidence?\nReturn the option letter on the first line. Then give a brief explanation of at most 45 words based on the visible evidence. Do not invent force or displacement measurements. Answer in English.",
+      "options": {
+        "A": "small",
+        "B": "none",
+        "C": "large"
+      },
+      "source_label": {
+        "option": "A",
+        "text": "small",
+        "provenance": "Inherited source annotations in the supplied transcript; ordinal comparisons are derived from those annotations, not new physical measurements."
+      },
+      "responses": [
+        {
+          "key": "astra",
+          "model": "GPT-6 Astra",
+          "answer": "large",
+          "matchesSource": false,
+          "output": "C.\nThe visible contact pattern has pronounced horizontal and vertical edges with strong localized deformation. It persists across the middle press frames and during sliding, supporting a large protrusion rather than a flat or subtly raised surface."
+        },
+        {
+          "key": "qwen",
+          "model": "Original Qwen",
+          "answer": "large",
+          "matchesSource": false,
+          "output": "C. large\n\nThe grid shows a larger protrusion that covers more area, indicating a larger object."
+        },
+        {
+          "key": "touch-r1",
+          "model": "Touch-R1",
+          "answer": "small",
+          "matchesSource": true,
+          "output": "A. small\n\nThe grid is deformed slightly, indicating a small protrusion."
+        }
+      ],
+      "input_image_sha256": [
+        "11414e7d2cb30241e553016fea0c1170f48081f28f86b00f75e22566197b7fb8",
+        "470961d799610bd3d3ad5f5260b72c3b55e4d588930040112103dad26a993a9b"
+      ],
+      "source_transcript_sha256": "925de402df0903371be1360f537b465d4b72a20ef89b30e75eb9dc5398a7cd81",
+      "source_video_sha256": "7f399e11d4f67f380e50dd4ebd1dec89b398ed7d701f7de3c8000cf7a945d0ac",
+      "English_presentation": {
+        "video": "assets/reasoning/reasoning-case-04.mp4",
+        "sha256": "910f605b6bde2153e15e19150ced97e79d54bfe5681dcdcad98d1e7ba6aa8ea3",
+        "poster": "assets/reasoning/reasoning-case-04-poster.webp",
+        "duration_seconds": 15,
+        "fps": 24
+      }
+    },
+    {
+      "id": "05",
+      "qa_id": "test_001672",
+      "editorial_title": "Roughness beyond appearance",
+      "editorial_takeaway": "Both baselines rank Object 1 higher. Touch-R1 selects Equal, matching the source label.",
+      "question": "Compare object 1 to object 2 in roughness. Levels from low to high: smooth,medium,rough.",
+      "actual_prompt": "Compare object 1 to object 2 in roughness. Levels from low to high: smooth,medium,rough.\nReturn the option letter on the first line. Then give a brief explanation of at most 45 words based on the visible evidence. Do not invent force or displacement measurements. Answer in English.",
+      "options": {
+        "A": "Equal",
+        "B": "Object 1 is lower",
+        "C": "Object 1 is higher"
+      },
+      "source_label": {
+        "option": "A",
+        "text": "Equal",
+        "provenance": "Inherited source annotations in the supplied transcript; ordinal comparisons are derived from those annotations, not new physical measurements."
+      },
+      "responses": [
+        {
+          "key": "astra",
+          "model": "GPT-6 Astra",
+          "answer": "Object 1 is higher",
+          "matchesSource": false,
+          "output": "C.\nObject 1 shows small bumps and uneven texture along its contact bands. Object 2 shows a smoother, more uniform contact pattern with fewer visible fine-scale irregularities, suggesting lower roughness."
+        },
+        {
+          "key": "qwen",
+          "model": "Original Qwen",
+          "answer": "Object 1 is higher",
+          "matchesSource": false,
+          "output": "C. Object 1 is higher\n\nThe tactile signals in Object 1 show more pronounced variations and intensity changes compared to Object 2, indicating a rougher surface."
+        },
+        {
+          "key": "touch-r1",
+          "model": "Touch-R1",
+          "answer": "Equal",
+          "matchesSource": true,
+          "output": "A. Equal\n\nThe two objects have similar textures, as both show a consistent pattern of dots and lines without any significant variation in their appearance."
+        }
+      ],
+      "input_image_sha256": [
+        "d091ebc7342139142206d6bcd17fc2f8eb2c1a7519946414742b7adc3ec13cf4",
+        "d555de16463808ce703acc7ecdde832e7aa5f8b6773a0394d159025e40da1160",
+        "50e9d935319f692b07e52c1d5a85515691a576ab03132db2e989c07463d1391d",
+        "3a49ff00fe40c0453dc6b45d93283a2dce4e79e1731609a069df428f6392350a"
+      ],
+      "source_transcript_sha256": "2c5295bd423a9d9eb74b306acbb63f587dc124b14d9bf582187c391b0725d888",
+      "source_video_sha256": "dfca4bbfb7fe4c03694c157c73ffb4a8829ea29981832803ff54d1e2b40182c4",
+      "English_presentation": {
+        "video": "assets/reasoning/reasoning-case-05.mp4",
+        "sha256": "fbe5b02fcf11f0c19fd53040469cc7862228363ea387eb4bb27254c0865397df",
+        "poster": "assets/reasoning/reasoning-case-05-poster.webp",
+        "duration_seconds": 15,
+        "fps": 24
+      }
+    }
+  ]
+}

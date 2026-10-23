@@ -142,6 +142,12 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
 @media(min-width:601px) and (max-width:1050px){.sim-case-heading{display:block}.sim-stage-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px 15px;text-align:left;margin-top:17px;min-width:0}.sim-stage-actions>span{margin:0;flex:1}.sim-speed-note{width:100%;text-align:right;margin:0}.sim-controls{grid-template-columns:minmax(52px,1fr) 34px auto}.sim-controls .sim-time{grid-column:1/3;grid-row:2;justify-self:start}.sim-controls .sim-open{grid-column:3;grid-row:2}.sim-controls .sim-replay{grid-column:3;grid-row:1}.sim-controls .sim-play{grid-column:1/3;grid-row:1}.sim-status{min-height:42px}}
 @media(max-width:600px){.sim-case-heading{padding-top:22px;padding-bottom:22px}.sim-stage-actions{display:block;text-align:left;min-width:0;margin-top:18px}.sim-stage-actions>span{margin-bottom:10px;font-size:8px}.sim-stage-actions>.sim-toolbar{justify-content:flex-start;gap:6px;width:100%}.sim-stage-actions #sim-toggle-all{flex:1;min-width:0;font-size:9px;padding:8px 6px;min-height:42px;white-space:nowrap}.sim-stage-actions #sim-replay-all{width:36px;min-width:36px;min-height:42px}.sim-stage-actions .sim-speed button{width:29px;min-height:34px;font-size:10px}.sim-speed-note{font-size:7px;line-height:1.6;margin-top:9px}.sim-controls{grid-template-columns:54px 36px minmax(0,1fr) auto;padding-top:12px;gap:5px}.sim-controls button{min-height:42px}.sim-controls .sim-play{font-size:10px}.sim-controls .sim-replay{font-size:20px}.sim-controls .sim-time,.sim-controls .sim-open{font-size:8px}.sim-status{font-size:8px;min-height:28px;margin-top:10px}.sim-model-head{min-height:56px}}
 
+/* reasoning-cases-v1 / video-first gallery beside the paper QA examples. */
+.qa-gallery{margin-top:40px;border-top:1px solid #ced8c3;padding-top:30px;scroll-margin-top:100px}.qa-gallery-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:22px}.qa-eyebrow{font:8px/1.7 "JetBrains Mono",monospace;letter-spacing:1.3px;color:#7b8b68;margin:0 0 11px}.qa-gallery-heading h3{font:400 clamp(28px,3vw,38px)/1.16 var(--display-font);letter-spacing:-1.3px;color:#24331d;margin:0}.qa-gallery-heading>p{font-size:12px;color:#7b896b;margin:0 0 2px}.qa-cases{display:flex;gap:5px;border-bottom:1px solid #cad6be;padding-bottom:12px;margin-bottom:16px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#7b9164 #eaf0e2}.qa-case{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;border:1px solid transparent;background:transparent;color:#718360;font-size:11px;line-height:1.6;padding:10px 8px;border-radius:5px;white-space:nowrap}.qa-case>span{font:8px "JetBrains Mono",monospace;opacity:.7}.qa-case[aria-pressed="true"]{background:#26371b;color:#dcf5be;border-color:#708d51}.qa-case[aria-pressed="true"]>span{color:var(--acid);opacity:1}.qa-case:hover{background:#e5edda;color:#3b5429}.qa-case[aria-pressed="true"]:hover{background:#26371b;color:#dcf5be}.qa-player{border:1px solid #3c4d2e;border-radius:8px;overflow:hidden;background:#10170d}.qa-video-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 20px}.qa-video-heading h4{font:400 16px/1.5 var(--display-font);letter-spacing:-.25px;color:#dce9cc;margin:0}#qa-index{font:8px "JetBrains Mono",monospace;letter-spacing:.6px;color:#93ab7c;flex:none}.qa-screen{aspect-ratio:16/9;background:#0b0e0d}.qa-screen video{display:block;width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;background:#0b0e0d}#qa-progress{display:block;appearance:none;width:100%;height:2px;border:0;background:#2d3c23;color:var(--acid)}#qa-progress::-webkit-progress-bar{background:#2d3c23}#qa-progress::-webkit-progress-value{background:var(--acid)}#qa-progress::-moz-progress-bar{background:var(--acid)}.qa-player-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:12px 17px}.qa-play-actions,.qa-view-actions{display:flex;align-items:center;gap:8px}.qa-player-footer button{min-height:35px;border:1px solid #455d32;background:transparent;color:#bcd0a6;border-radius:4px;padding:7px 10px;font-size:9px;white-space:nowrap}#qa-play{min-width:68px;background:var(--acid);border-color:var(--acid);color:#1b2b11;font-weight:600}#qa-replay{width:34px;padding:4px;font-size:18px}#qa-time{font:8px "JetBrains Mono",monospace;font-variant-numeric:tabular-nums;color:#a1b58d;margin-left:5px;white-space:nowrap}#qa-status{font:7px/1.7 "JetBrains Mono",monospace;color:#788f65;margin-left:9px}#qa-open{font:8px "JetBrains Mono",monospace;color:#b4c99e;white-space:nowrap}.qa-takeaway{display:flex;align-items:center;gap:20px;padding:16px 20px 18px;background:#16220f;border-top:1px solid #334729}.qa-takeaway>span{font:7px/1.7 "JetBrains Mono",monospace;letter-spacing:1px;color:#9cbb7d;flex:none}.qa-takeaway p{font-size:12px;line-height:1.75;color:#d5e6c2;margin:0}.qa-source-note{font:8px/1.9 "JetBrains Mono",monospace;color:#819270;margin:11px 0 0}.qa-source-note a{color:#536e3d;white-space:nowrap;margin-left:8px}.qa-gallery button:focus-visible{outline:2px solid #90b164;outline-offset:3px}
+@media(max-width:1050px){.qa-case{font-size:10px;gap:6px;padding-inline:6px}#qa-status{display:none}.qa-gallery-heading>p{font-size:11px;max-width:230px;text-align:right}}
+@media(max-width:600px){.qa-gallery{margin-top:28px;padding-top:25px}.qa-gallery-heading{display:block;margin-bottom:17px}.qa-gallery-heading h3{font-size:28px;letter-spacing:-1px}.qa-eyebrow{font-size:7px;margin-bottom:10px}.qa-gallery-heading>p{font-size:11px;max-width:none;text-align:left;margin-top:12px}.qa-cases{gap:6px;padding-bottom:10px;margin-bottom:12px}.qa-case{flex:0 0 auto;font-size:10px;padding:9px 11px;gap:7px}.qa-case>span{font-size:7px}.qa-video-heading{padding:13px 12px;gap:14px}.qa-video-heading h4{font-size:13px;line-height:1.5}#qa-index{font-size:7px}.qa-player-footer{display:block;padding:10px 12px}.qa-play-actions{gap:7px}.qa-player-footer button{min-height:40px}#qa-play{min-width:75px}#qa-replay{width:36px}#qa-time{font-size:8px}.qa-view-actions{justify-content:space-between;margin-top:10px;padding-top:9px;border-top:1px solid #2c3e22}#qa-fullscreen{border:0;min-height:28px;padding:0;font-size:9px}#qa-open{font-size:8px}.qa-takeaway{display:block;padding:13px 13px 15px}.qa-takeaway>span{display:block;margin-bottom:7px;font-size:6px;letter-spacing:.8px}.qa-takeaway p{font-size:11px;line-height:1.8}.qa-source-note{font-size:7px;line-height:1.9}.qa-source-note a{margin-left:0;display:inline-block;margin-top:3px}}
+
+.qa-gallery .qa-view-actions{justify-content:flex-end}
 </style>
 </head>
 <body>
@@ -158,7 +164,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
       <div class="authors"><span>Yingxin Lai<sup>1,5,*</sup></span><span>Yafei Zhou<sup>2,5,*</sup></span><span>Fucai Zhu<sup>5</sup></span><span>Siyu Zhu<sup>3</sup></span><span>Weihao Yuan<sup>4,5,†</sup></span></div>
       <p class="affiliations"><sup>1</sup> Xiamen University &nbsp; <sup>2</sup> Great Bay University &nbsp; <sup>3</sup> Fudan University &nbsp; <sup>4</sup> Nanjing University &nbsp; <sup>5</sup> Daimon Robotics</p>
       <p class="author-note">* Equal contribution. Author order is random. &nbsp; † Corresponding author.</p>
-      <div class="research-brand"><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics official website"><img src="assets/brand/daimon-robotics.svg" alt="戴盟 Daimon Robotics" width="193" height="35"></a></div>
+      <div class="research-brand"><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics official website"><img src="assets/brand/daimon-robotics.svg" alt="Daimon Robotics" width="193" height="35"></a></div>
       <div class="links"><a class="button" href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a><a class="button secondary" href="#robot-evidence">Explore touch <span aria-hidden="true">↓</span></a></div>
       <p class="resource-note">TouchReason-1M &nbsp; / &nbsp; TouchReason-Bench</p>
       </div>
@@ -336,7 +342,7 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
         <div class="results-grid">
           <figure class="figure-card">
             <img src="assets/figures/paper_user_agent.png" alt="Qualitative Touch-R1 reasoning examples">
-            <figcaption class="card-caption">Qualitative reasoning examples: interpreting contact evidence and revising physical-property judgments.</figcaption>
+            <figcaption class="card-caption">Qualitative reasoning examples: interpreting contact evidence and revising physical-property judgments. <a href="#reasoning-cases">Watch the model comparisons ↓</a></figcaption>
           </figure>
           <div class="result-card">
             <h3 style="margin:0;font-size:24px;">TouchReason-Bench Avg</h3>
@@ -362,6 +368,15 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
             <p class="score-note">OMAE: ordinal error (lower is better). CSC: cross-sensor consistency.</p>
           </div>
         </div>
+<section id="reasoning-cases" class="qa-gallery" aria-labelledby="qa-heading">
+ <div class="qa-gallery-heading"><div><p class="qa-eyebrow">QUALITATIVE COMPARISONS</p><h3 id="qa-heading">Touch reasoning. In action.</h3></div><p>Five cases. Three models. Actual answers.</p></div>
+ <nav class="qa-cases" aria-label="Choose a tactile QA demonstration"><button class="qa-case" type="button" data-qa-case="01" aria-pressed="true" aria-label="Show Strong response, small protrusion"><span>01</span>Signal & size</button><button class="qa-case" type="button" data-qa-case="02" aria-pressed="false" aria-label="Show One pair, opposite rankings"><span>02</span>Opposite rankings</button><button class="qa-case" type="button" data-qa-case="03" aria-pressed="false" aria-label="Show Hardness across different views"><span>03</span>Hardness</button><button class="qa-case" type="button" data-qa-case="04" aria-pressed="false" aria-label="Show Distinct edges, small protrusion"><span>04</span>Contour & height</button><button class="qa-case" type="button" data-qa-case="05" aria-pressed="false" aria-label="Show Roughness beyond appearance"><span>05</span>Roughness</button></nav>
+ <div class="qa-player"><div class="qa-video-heading"><h4 id="qa-title">Strong response, small protrusion</h4><span id="qa-index">01 / 05</span></div><div class="qa-screen"><video id="qa-video" muted playsinline preload="none" width="1920" height="1080" data-source="assets/reasoning/reasoning-case-01.mp4" poster="assets/reasoning/reasoning-case-01-poster.webp" aria-label="English three-model tactile QA answer replay"></video></div><progress id="qa-progress" value="0" max="15" aria-label="Answer replay progress"></progress>
+ <div class="qa-player-footer"><div class="qa-play-actions"><button type="button" id="qa-play">Play</button><button type="button" id="qa-replay" aria-label="Restart video" title="Restart video">↺</button><span id="qa-time">0:00 / 0:15</span><span id="qa-status" role="status" aria-live="off">Ready</span></div><div class="qa-view-actions"><a id="qa-open" href="assets/reasoning/reasoning-case-01.mp4" target="_blank" rel="noopener">Open full-size ↗</a></div></div>
+ <div class="qa-takeaway"><span>THE DIFFERENCE</span><p id="qa-takeaway">Both baselines select large. Touch-R1 selects small, matching the source label.</p></div></div>
+ <p class="qa-source-note">Curated tactile QA · Verbatim answers · Fixed text replay, not inference latency. <a href="assets/reasoning/cases.json" target="_blank" rel="noopener">Source details ↗</a></p>
+ <noscript><p class="qa-source-note">Open the video or source details to view the examples.</p></noscript>
+ </section>
       </div>
     </section>
 
@@ -1323,6 +1338,344 @@ body{background:var(--night);font-family:var(--body-font);color:#eff3eb;font-siz
   });
   groupLabel();
 })();
+</script>
+<script type="application/json" id="reasoning-data">{"cases":[{"id":"01","title":"Strong response, small protrusion","question":"Which protrusion label is best supported by the tactile evidence?","sourceLabel":"small","video":"assets/reasoning/reasoning-case-01.mp4","poster":"assets/reasoning/reasoning-case-01-poster.webp","qaId":"test_001059","options":{"A":"large","B":"small","C":"none"},"responses":[{"key":"astra","model":"GPT-6 Astra","answer":"large","matchesSource":false,"output":"A\nThe maps show a broad, prominent central region with a bright core and extensive surrounding gradients across pressing and sliding. This substantial contact footprint best supports a large protrusion rather than a small bump or no protrusion."},{"key":"qwen","model":"Original Qwen","answer":"large","matchesSource":false,"output":"A. large\n\nThe images show a central bright spot, indicating a significant tactile response, suggesting a large protrusion."},{"key":"touch-r1","model":"Touch-R1","answer":"small","matchesSource":true,"output":"B. small\n\nThe grid shows a small, localized area of increased tactile signal intensity."}],"takeaway":"Both baselines select large. Touch-R1 selects small, matching the source label."},{"id":"02","title":"One pair, opposite rankings","question":"Compare object 1 to object 2 in protrusion. Levels from low to high: none,small,large.","sourceLabel":"Equal","video":"assets/reasoning/reasoning-case-02.mp4","poster":"assets/reasoning/reasoning-case-02-poster.webp","qaId":"test_000644","options":{"A":"Object 1 is higher","B":"Equal","C":"Object 1 is lower"},"responses":[{"key":"astra","model":"GPT-6 Astra","answer":"Object 1 is higher","matchesSource":false,"output":"A.\nObject 1 shows a pronounced continuous ridge with a strong light–dark transition. Object 2 has a broader, patterned contact imprint with less prominent relief, suggesting lower protrusion."},{"key":"qwen","model":"Original Qwen","answer":"Object 1 is lower","matchesSource":false,"output":"C. Object 1 is lower\n\nThe images show that Object 1 has less protrusion than Object 2, as indicated by the smaller shadows and less visible deformation under pressure."},{"key":"touch-r1","model":"Touch-R1","answer":"Equal","matchesSource":true,"output":"B. Equal"}],"takeaway":"The baselines give opposite rankings. Touch-R1 selects Equal, matching the source label."},{"id":"03","title":"Hardness across different views","question":"Compare object 1 to object 2 in hardness. Levels from low to high: soft,medium,hard.","sourceLabel":"Equal","video":"assets/reasoning/reasoning-case-03.mp4","poster":"assets/reasoning/reasoning-case-03-poster.webp","qaId":"test_001308","options":{"A":"Equal","B":"Object 1 is higher","C":"Object 1 is lower"},"responses":[{"key":"astra","model":"GPT-6 Astra","answer":"Object 1 is higher","matchesSource":false,"output":"B.\nObject 1 maintains a sharply defined, stable contact shape across pressing frames, suggesting greater rigidity. Object 2’s contact region broadens from loading to peak, consistent with greater compliance and lower hardness."},{"key":"qwen","model":"Original Qwen","answer":"Object 1 is lower","matchesSource":false,"output":"C. Object 1 is lower\n\nThe grid in Object 1 shows more deformation under pressure compared to Object 2, indicating it is softer."},{"key":"touch-r1","model":"Touch-R1","answer":"Equal","matchesSource":true,"output":"A. Equal\n\nThe two objects have similar tactile signals, indicating they are equally hard."}],"takeaway":"Touch-R1 matches the shared hardness label across different contact views."},{"id":"04","title":"Distinct edges, small protrusion","question":"Which protrusion label is best supported by the tactile evidence?","sourceLabel":"small","video":"assets/reasoning/reasoning-case-04.mp4","poster":"assets/reasoning/reasoning-case-04-poster.webp","qaId":"test_001419","options":{"A":"small","B":"none","C":"large"},"responses":[{"key":"astra","model":"GPT-6 Astra","answer":"large","matchesSource":false,"output":"C.\nThe visible contact pattern has pronounced horizontal and vertical edges with strong localized deformation. It persists across the middle press frames and during sliding, supporting a large protrusion rather than a flat or subtly raised surface."},{"key":"qwen","model":"Original Qwen","answer":"large","matchesSource":false,"output":"C. large\n\nThe grid shows a larger protrusion that covers more area, indicating a larger object."},{"key":"touch-r1","model":"Touch-R1","answer":"small","matchesSource":true,"output":"A. small\n\nThe grid is deformed slightly, indicating a small protrusion."}],"takeaway":"Both baselines select large. Touch-R1 selects small, matching the source label."},{"id":"05","title":"Roughness beyond appearance","question":"Compare object 1 to object 2 in roughness. Levels from low to high: smooth,medium,rough.","sourceLabel":"Equal","video":"assets/reasoning/reasoning-case-05.mp4","poster":"assets/reasoning/reasoning-case-05-poster.webp","qaId":"test_001672","options":{"A":"Equal","B":"Object 1 is lower","C":"Object 1 is higher"},"responses":[{"key":"astra","model":"GPT-6 Astra","answer":"Object 1 is higher","matchesSource":false,"output":"C.\nObject 1 shows small bumps and uneven texture along its contact bands. Object 2 shows a smoother, more uniform contact pattern with fewer visible fine-scale irregularities, suggesting lower roughness."},{"key":"qwen","model":"Original Qwen","answer":"Object 1 is higher","matchesSource":false,"output":"C. Object 1 is higher\n\nThe tactile signals in Object 1 show more pronounced variations and intensity changes compared to Object 2, indicating a rougher surface."},{"key":"touch-r1","model":"Touch-R1","answer":"Equal","matchesSource":true,"output":"A. Equal\n\nThe two objects have similar textures, as both show a consistent pattern of dots and lines without any significant variation in their appearance."}],"takeaway":"Both baselines rank Object 1 higher. Touch-R1 selects Equal, matching the source label."}],"revision":"reasoning-cases-v1","source_archive_sha256":"37ae2594c2c0afe03980106a3be4627129c9771d67837b7c056519268c755967"}</script>
+<script data-controller="qa-controller-entry">
+(() => {
+  const section = document.querySelector('#reasoning-cases');
+  const dataElement = document.querySelector('#reasoning-data');
+  if (!section || !dataElement) return;
+  let cases;
+  try { cases = JSON.parse(dataElement.textContent).cases; } catch (_) { return; }
+  if (!Array.isArray(cases) || !cases.length) return;
+  const video = section.querySelector('#qa-video');
+  const playButton = section.querySelector('#qa-play');
+  if (!video || !playButton) return;
+  const replayButton = section.querySelector('#qa-replay');
+  const fullscreenButton = section.querySelector('#qa-fullscreen');
+  const openLink = section.querySelector('#qa-open');
+  const progress = section.querySelector('#qa-progress');
+  const time = section.querySelector('#qa-time');
+  const status = section.querySelector('#qa-status');
+  const buttons = Array.from(section.querySelectorAll('[data-qa-case]'));
+  const cards = Array.from(section.querySelectorAll('[data-qa-model]'));
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const state = {
+    selected: null, version: 0, generation: 0, controller: null, preparation: null,
+    starting: null, url: null, ready: false, visible: false, disposed: false,
+    manualPaused: false, ownerPaused: false, userEnabled: false, blocked: false,
+    failed: false, ended: false, hasPlayed: false, waiting: false
+  };
+  const text = (selector, value) => {
+    const element = section.querySelector(selector);
+    if (element) element.textContent = value == null ? '' : String(value);
+  };
+  const clock = seconds => {
+    const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
+    return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
+  };
+  const wanted = () => !state.disposed && !document.hidden && state.visible &&
+    !state.manualPaused && !state.ownerPaused && !state.blocked && !state.ended &&
+    (!reducedMotion.matches || state.userEnabled);
+  function display(mode, message) {
+    section.dataset.playbackState = mode;
+    video.dataset.playbackState = mode;
+    if (status && status.textContent !== message) status.textContent = message;
+    const active = mode === 'loading' || mode === 'playing' || mode === 'buffering';
+    const verb = state.failed ? 'Retry' : state.ended ? 'Replay' : active ? 'Pause' : 'Play';
+    if (playButton.textContent !== verb) playButton.textContent = verb;
+    playButton.setAttribute('aria-label', `${verb} reasoning case ${state.selected ? state.selected.id : ''}`.trim());
+  }
+  function sampleQuality() {
+    const second = Math.floor(video.currentTime || 0);
+    if (!state.ready || (state.qualitySecond === second && !video.ended)) return;
+    state.qualitySecond = second;
+    ['totalFrames', 'droppedFrames', 'corruptedFrames'].forEach(key => { delete section.dataset[key]; });
+    let quality = null;
+    try { if (typeof video.getVideoPlaybackQuality === 'function') quality = video.getVideoPlaybackQuality(); } catch (_) {}
+    if (quality && Number.isFinite(quality.totalVideoFrames) && Number.isFinite(quality.droppedVideoFrames)) {
+      section.dataset.qualityMetric = 'standard';
+      section.dataset.totalFrames = String(quality.totalVideoFrames);
+      section.dataset.droppedFrames = String(quality.droppedVideoFrames);
+      if (Number.isFinite(quality.corruptedVideoFrames)) section.dataset.corruptedFrames = String(quality.corruptedVideoFrames);
+    } else if (Number.isFinite(video.webkitDecodedFrameCount) && Number.isFinite(video.webkitDroppedFrameCount)) {
+      section.dataset.qualityMetric = 'webkit';
+      section.dataset.totalFrames = String(video.webkitDecodedFrameCount);
+      section.dataset.droppedFrames = String(video.webkitDroppedFrameCount);
+    } else section.dataset.qualityMetric = 'unavailable';
+  }
+  function updateTime() {
+    const duration = Number.isFinite(video.duration) ? video.duration : 0;
+    const label = `${clock(video.currentTime)} / ${clock(duration)}`;
+    if (time && state.timeText !== label) { time.textContent = label; state.timeText = label; }
+    if (progress) {
+      const maximum = duration || 1;
+      const value = video.currentTime || 0;
+      if (state.progressMaximum !== maximum) { progress.max = maximum; state.progressMaximum = maximum; }
+      if (state.progressValue !== value) { progress.value = value; state.progressValue = value; }
+    }
+    sampleQuality();
+  }
+  function releaseSource() {
+    state.ready = false;
+    state.hasPlayed = false;
+    state.waiting = false;
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    if (state.url) URL.revokeObjectURL(state.url);
+    state.url = null;
+    section.dataset.bufferedBytes = '0';
+    state.qualitySecond = undefined;
+    ['qualityMetric', 'totalFrames', 'droppedFrames', 'corruptedFrames'].forEach(key => { delete section.dataset[key]; });
+  }
+  function stop(message = 'Paused · 1× source replay') {
+    state.generation += 1;
+    if (state.controller) state.controller.abort();
+    state.controller = null;
+    state.preparation = null;
+    state.starting = null;
+    state.waiting = false;
+    video.pause();
+    if (!state.ready && state.url) releaseSource();
+    if (state.ended) display('ended', 'Ended · source final frame');
+    else if (!state.failed && !state.blocked) display(state.ready ? 'paused' : 'idle', message);
+  }
+  function failed(error) {
+    state.failed = true;
+    state.blocked = true;
+    section.dataset.lastError = error && error.name ? error.name : 'MediaError';
+    releaseSource();
+    display('error', 'Video unavailable. Tap Retry or open video.');
+  }
+  function awaitReady(signal) {
+    return new Promise((resolve, reject) => {
+      const cleanup = () => {
+        ['loadeddata', 'canplay', 'canplaythrough'].forEach(type => video.removeEventListener(type, check));
+        video.removeEventListener('error', error);
+        signal.removeEventListener('abort', abort);
+      };
+      const check = () => { if (video.readyState >= 4) { cleanup(); resolve(); } };
+      const error = () => { cleanup(); reject(new Error('Media decode failed')); };
+      const abort = () => { cleanup(); reject(new DOMException('Cancelled', 'AbortError')); };
+      ['loadeddata', 'canplay', 'canplaythrough'].forEach(type => video.addEventListener(type, check));
+      video.addEventListener('error', error);
+      signal.addEventListener('abort', abort, { once: true });
+      if (signal.aborted) abort(); else check();
+    });
+  }
+  function prepare() {
+    if (state.ready && video.readyState >= 4) return Promise.resolve(true);
+    if (state.preparation) return state.preparation;
+    const generation = ++state.generation;
+    const controller = new AbortController();
+    state.controller = controller;
+    state.failed = false;
+    let timedOut = false;
+    display('loading', 'Preparing full video…');
+    const timeout = setTimeout(() => { timedOut = true; controller.abort(); }, 30000);
+    const task = (async () => {
+      try {
+        let bytes = Number(section.dataset.bufferedBytes) || 0;
+        if (!state.url) {
+          if (!video.dataset.source) throw new Error('Missing video source');
+          const response = await fetch(video.dataset.source, { signal: controller.signal });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const blob = await response.blob();
+          if (!blob.size || /^text\//i.test(blob.type) || /(?:json|xml|html)/i.test(blob.type)) throw new Error('Invalid video response');
+          if (generation !== state.generation || controller.signal.aborted) return false;
+          bytes = blob.size;
+          state.url = URL.createObjectURL(blob);
+          video.preload = 'auto';
+          video.src = state.url;
+          video.load();
+        }
+        await awaitReady(controller.signal);
+        if (generation !== state.generation || controller.signal.aborted) return false;
+        state.ready = true;
+        section.dataset.bufferedBytes = String(bytes);
+        updateTime();
+        return true;
+      } catch (error) {
+        if (generation === state.generation && (!controller.signal.aborted || timedOut)) failed(timedOut ? new DOMException('Video load timed out', 'TimeoutError') : error);
+        return false;
+      } finally {
+        clearTimeout(timeout);
+        if (generation === state.generation) { state.controller = null; state.preparation = null; }
+      }
+    })();
+    state.preparation = task;
+    return task;
+  }
+  function claimOwnership() {
+    document.dispatchEvent(new CustomEvent('touch-r1:pause-pairs', { detail: { owner: 'reasoning' } }));
+    document.dispatchEvent(new Event('touch-r1:pause-robots'));
+  }
+  function start() {
+    if (!wanted() || state.starting || (state.ready && !video.paused)) return;
+    const revision = state.version;
+    // Claim before fetching to invalidate pending starts in the older players.
+    claimOwnership();
+    const task = (async () => {
+      if (!await prepare() || revision !== state.version || !wanted()) return;
+      const generation = state.generation;
+      video.muted = true;
+      video.defaultPlaybackRate = 1;
+      video.playbackRate = 1;
+      claimOwnership();
+      try {
+        await video.play();
+        if (revision !== state.version || generation !== state.generation) return;
+        if (!wanted()) { video.pause(); return; }
+        display('playing', 'Playing · 1× source replay');
+      } catch (error) {
+        if (revision !== state.version || generation !== state.generation || !wanted()) return;
+        state.blocked = true;
+        if (error && error.name === 'NotAllowedError') display('blocked', 'Tap Play · 1× source replay');
+        else failed(error);
+      }
+    })();
+    state.starting = task;
+    task.finally(() => { if (state.starting === task) state.starting = null; });
+  }
+  function reconcile() {
+    if (wanted()) start(); else stop();
+  }
+  function manualStart(replay = false) {
+    replay = replay || state.ended;
+    state.manualPaused = false;
+    state.ownerPaused = false;
+    state.userEnabled = true;
+    state.blocked = false;
+    state.failed = false;
+    state.ended = false;
+    delete section.dataset.lastError;
+    if (replay && state.ready) video.currentTime = 0;
+    reconcile();
+  }
+  function pauseForOwner() {
+    state.ownerPaused = true;
+    stop();
+  }
+  function selectCase(id) {
+    const selected = cases.find(item => String(item.id) === String(id));
+    if (!selected || selected === state.selected) return;
+    state.version += 1;
+    stop();
+    releaseSource();
+    state.selected = selected;
+    section.dataset.qaCase = String(selected.id);
+    text('#qa-title', selected.title || selected.question);
+    text('#qa-takeaway', selected.takeaway || '');
+    text('#qa-index', `${String(cases.indexOf(selected) + 1).padStart(2, '0')} / ${String(cases.length).padStart(2, '0')}`);
+    text('#qa-source-label', selected.sourceLabel);
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.qaCase === String(selected.id))));
+    video.dataset.source = selected.video || '';
+    video.poster = selected.poster || '';
+    video.setAttribute('aria-label', `Reasoning case ${selected.id} · ${selected.question || selected.title || ''}`);
+    if (openLink) { openLink.href = selected.video || ''; openLink.setAttribute('aria-label', `Open reasoning case ${selected.id} source video`); }
+    if (replayButton) replayButton.setAttribute('aria-label', `Replay reasoning case ${selected.id}`);
+    if (fullscreenButton) fullscreenButton.setAttribute('aria-label', `Show reasoning case ${selected.id} fullscreen`);
+    cards.forEach(card => {
+      const response = (selected.responses || []).find(item => item.key === card.dataset.qaModel) || {};
+      card.dataset.sourceCase = String(selected.id);
+      card.dataset.match = response.matchesSource == null ? '' : String(response.matchesSource);
+      const choice = card.querySelector('.qa-choice');
+      const match = card.querySelector('.qa-match');
+      const output = card.querySelector('.qa-response');
+      if (choice) choice.textContent = response.answer == null ? '' : String(response.answer);
+      if (match) match.textContent = response.matchesSource === true ? 'Matches source' : response.matchesSource === false ? 'Differs from source' : 'Source comparison unavailable';
+      if (output) output.textContent = response.output == null ? '' : String(response.output);
+      const detail = card.querySelector('.qa-response-detail');
+      if (detail) detail.open = false;
+    });
+    state.manualPaused = false;
+    state.ownerPaused = false;
+    state.userEnabled = false;
+    state.blocked = false;
+    state.failed = false;
+    state.ended = false;
+    section.dataset.bufferingEvents = '0';
+    section.dataset.playbackSpeed = '1';
+    delete section.dataset.lastError;
+    display('idle', '1× source replay · inference wait omitted');
+    updateTime();
+    reconcile();
+  }
+  video.muted = true;
+  video.playsInline = true;
+  video.loop = false;
+  video.defaultPlaybackRate = 1;
+  video.playbackRate = 1;
+  playButton.addEventListener('click', () => {
+    if (!state.failed && !state.blocked && wanted() && (state.starting || state.preparation || !video.paused)) {
+      state.manualPaused = true;
+      stop();
+    } else manualStart();
+  });
+  if (replayButton) replayButton.addEventListener('click', () => manualStart(true));
+  document.addEventListener('fullscreenchange', () => { section.dataset.fullscreenActive = String(document.fullscreenElement === video); });
+  video.addEventListener('webkitbeginfullscreen', () => { section.dataset.fullscreenActive = 'true'; });
+  video.addEventListener('webkitendfullscreen', () => { section.dataset.fullscreenActive = 'false'; });
+  if (fullscreenButton) fullscreenButton.addEventListener('click', () => {
+    const fallback = () => { if (status) status.textContent = 'Fullscreen unavailable. Use Open video.'; };
+    try {
+      if (typeof video.requestFullscreen === 'function') Promise.resolve(video.requestFullscreen()).catch(fallback);
+      else if (typeof video.webkitEnterFullscreen === 'function') video.webkitEnterFullscreen();
+      else fallback();
+    } catch (_) { fallback(); }
+  });
+  video.addEventListener('timeupdate', updateTime);
+  video.addEventListener('loadedmetadata', updateTime);
+  video.addEventListener('ratechange', () => { if (video.playbackRate !== 1) video.playbackRate = 1; });
+  video.addEventListener('playing', () => {
+    if (!wanted()) { video.pause(); return; }
+    if (!state.ready || video.readyState < 4) return;
+    state.hasPlayed = true;
+    state.waiting = false;
+    display('playing', 'Playing · 1× source replay');
+  });
+  video.addEventListener('pause', () => {
+    state.waiting = false;
+    if (video.paused && state.ready && !state.failed && !state.blocked && !state.ended && !video.ended) display('paused', 'Paused · 1× source replay');
+  });
+  video.addEventListener('ended', () => {
+    if (!state.ready || !video.ended) return;
+    state.ended = true;
+    state.waiting = false;
+    display('ended', 'Ended · source final frame');
+    updateTime();
+  });
+  video.addEventListener('waiting', () => {
+    if (!wanted() || video.paused || !state.hasPlayed || video.readyState >= 4 || video.currentTime <= 0.15 ||
+        !Number.isFinite(video.duration) || video.duration - video.currentTime <= 0.15) return;
+    if (!state.waiting) section.dataset.bufferingEvents = String(Number(section.dataset.bufferingEvents || 0) + 1);
+    state.waiting = true;
+    display('buffering', 'Buffering…');
+  });
+  video.addEventListener('error', () => { if (state.ready && !state.controller && video.error) failed(video.error); });
+  buttons.forEach(button => button.addEventListener('click', () => selectCase(button.dataset.qaCase)));
+  document.addEventListener('touch-r1:pause-pairs', event => {
+    if (!event.detail || event.detail.owner !== 'reasoning') pauseForOwner();
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Element && event.target.closest('#pause-demos, .motion-play, .motion-replay, #robot-toggle-all, .robot-play, .robot-replay, #sim-toggle-all, #sim-replay-all, .sim-play, .sim-replay, [data-sim-case]')) pauseForOwner();
+  }, true);
+  document.addEventListener('visibilitychange', reconcile);
+  reducedMotion.addEventListener('change', reconcile);
+  const initial = buttons.find(button => button.getAttribute('aria-pressed') === 'true');
+  selectCase(initial ? initial.dataset.qaCase : cases[0].id);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.target === video) state.visible = entry.isIntersecting && entry.intersectionRatio >= 0.35; });
+      reconcile();
+    }, { threshold: [0, 0.35, 0.5, 0.75, 1] });
+    observer.observe(video);
+  } else { state.visible = true; reconcile(); }
+  window.addEventListener('pagehide', () => { state.disposed = true; stop(); releaseSource(); });
+  window.addEventListener('pageshow', event => { if (event.persisted) { state.disposed = false; reconcile(); } });
+})();
+
 </script>
 </body>
 </html>
