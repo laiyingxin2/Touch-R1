@@ -443,6 +443,32 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
 .resource-links a:hover svg,.resource-links a:hover .resource-arrow{color:var(--acid)}
 @media(max-width:600px){.resource-links{gap:7px;margin-top:15px;max-width:430px}.resource-links a{font-size:12px;gap:8px;padding:10px;min-height:46px}.resource-links svg{width:16px;height:16px}.resource-arrow{font-size:12px}}
 @media(max-width:380px){.resource-links{gap:6px}.resource-links a{padding:10px 8px;gap:6px;font-size:11px}.resource-links svg{width:15px;height:15px}.resource-arrow{font-size:11px}}
+
+/* long-horizon-v1 / source-faithful physical8× previews with a focused, manual player. */
+.evidence-jumps{flex-wrap:wrap;justify-content:flex-end}.long-horizon{margin:0 0 46px;scroll-margin-top:0}
+.long-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin:0 0 25px;padding-top:8px}
+.long-kicker{font:10px/1.7 "JetBrains Mono",monospace;letter-spacing:1px;color:#94a986;margin:0 0 13px}
+.long-heading h3{font:400 clamp(28px,3vw,39px)/1.14 var(--display-font);letter-spacing:-1.5px;color:#eef4e7;margin:0}
+.long-heading>p{font-size:13px;line-height:1.85;color:#a1b095;margin:0;max-width:370px}
+.long-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.long-demo{min-width:0;overflow:hidden;background:#121714;border:1px solid #ffffff20;border-radius:16px}
+.long-frame{position:relative;aspect-ratio:16/9;background:#060a07;overflow:hidden}
+.long-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#060a07}
+.long-speed,.long-index{position:absolute;top:15px;font:9px/1.5 "JetBrains Mono",monospace;letter-spacing:.4px;border-radius:5px;padding:5px 8px;background:#0b0e0de6;color:#d3fa79;border:1px solid #d3fa7938;pointer-events:none}
+.long-speed{right:15px}.long-index{left:15px;color:#c4d3b9;border-color:#ffffff20}
+.long-progress{display:block;appearance:none;width:100%;height:2px;border:0;background:#26351d;color:var(--acid)}.long-progress::-webkit-progress-bar{background:#26351d}.long-progress::-webkit-progress-value{background:var(--acid)}.long-progress::-moz-progress-bar{background:var(--acid)}
+.long-copy{padding:24px 23px 0}.long-copy h4{font:400 25px/1.18 var(--display-font);letter-spacing:-.8px;color:#e5efdc;margin:0 0 13px}.long-copy p{font-size:13px;line-height:1.85;color:#9eaf93;margin:0}
+.long-controls{display:flex;align-items:center;gap:9px;margin:21px 23px 0;padding-top:17px;border-top:1px solid #ffffff15}
+.long-controls button{min-height:42px;border:1px solid #425c31;border-radius:7px;padding:9px 14px;font-size:12px;color:#c5d8b4;background:transparent;white-space:nowrap}
+.long-controls .long-play{background:var(--acid);color:#17220e;border-color:var(--acid);min-width:115px;font-weight:600}.long-play span{margin-left:12px}.long-controls .long-replay{padding:4px;width:39px;min-width:39px;font-size:21px}
+.long-time{margin-left:auto;font:10px "JetBrains Mono",monospace;color:#98b087;font-variant-numeric:tabular-nums;white-space:nowrap}.long-controls a{font-size:11px;color:#b9cfa7;margin-left:8px;white-space:nowrap}
+.long-status{min-height:20px;font:11px/1.8 var(--body-font);color:#8ea67d;margin:11px 23px 21px}
+.long-footnote{font:11px/1.9 var(--body-font);color:#8fa480;margin:17px 0 0}.long-footnote a{color:#b8cfa2;margin-left:8px;white-space:nowrap}
+@media(max-width:1050px){.long-heading{display:block}.long-heading>p{max-width:none;margin-top:17px}.evidence-jumps{justify-content:flex-start}.long-copy h4{font-size:23px}.long-copy,.long-controls{margin-left:0;margin-right:0}.long-copy{padding:21px 18px 0}.long-controls{margin:18px 18px 0;flex-wrap:wrap;gap:8px}.long-time{font-size:9px}.long-controls a{font-size:10px;margin-left:2px}.long-status{margin-inline:18px}}
+@media(max-width:600px){.long-horizon{margin-bottom:33px}.long-heading{margin-bottom:22px;padding-top:2px}.long-kicker{font-size:9px;letter-spacing:.6px;margin-bottom:12px}.long-heading h3{font-size:30px;letter-spacing:-1.1px}.long-heading>p{font-size:12px;line-height:1.9;margin-top:16px}.long-grid{grid-template-columns:1fr;gap:18px}.long-demo{border-radius:12px}.long-speed,.long-index{top:11px;font-size:8px;padding:4px 7px}.long-speed{right:11px}.long-index{left:11px}.long-copy{padding:22px 18px 0}.long-copy h4{font-size:25px;line-height:1.2;letter-spacing:-.7px}.long-copy p{font-size:12px;line-height:1.9}.long-controls{margin:18px 18px 0;padding-top:15px;gap:8px}.long-controls button{min-height:44px;font-size:11px;padding:9px 12px}.long-controls .long-play{min-width:110px}.long-time{font-size:9px}.long-controls a{font-size:10px;margin-left:3px}.long-status{font-size:10px;margin:11px 18px 19px;line-height:1.9}.long-footnote{font-size:10px;line-height:1.95}.long-footnote a{margin-left:0;display:inline-block}.evidence-jumps{justify-content:flex-start;gap:7px}.evidence-jumps a{font-size:10px;padding:10px;gap:7px}}
+@media(max-width:380px){.long-copy h4{font-size:23px}.long-controls{gap:7px}.long-time{margin-left:auto;font-size:8px}.long-controls a{margin-left:0}.long-controls .long-play{min-width:99px;padding-inline:10px}}
+
+.long-demo{display:flex;flex-direction:column}.long-frame{flex:none}.long-copy{flex:1}
 </style>
 </head>
 <body>
@@ -492,7 +518,22 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
       </div>
     </section>
 
-<section id="robot-evidence" class="evidence-section" aria-labelledby="evidence-title"><div class="container evidence-container"><div class="evidence-header"><div><div class="kicker">02 / ROBOT EVIDENCE</div><h2 id="evidence-title">From contact to control.</h2><p>Explore real-robot interaction, then compare model rollouts task by task.</p></div><nav class="evidence-jumps" aria-label="Choose demonstration setting"><a href="#robot-trials">On real robots <span>03</span></a><a href="#simulation-trials">In simulation <span>10 CASES</span></a></nav></div><section class="robot-trials teaser" id="robot-trials" aria-labelledby="robot-title">
+<section id="robot-evidence" class="evidence-section" aria-labelledby="evidence-title"><div class="container evidence-container"><div class="evidence-header"><div><div class="kicker">02 / ROBOT EVIDENCE</div><h2 id="evidence-title">From contact to control.</h2><p>Explore long-horizon tasks, real-robot comparisons, and simulated rollouts.</p></div><nav class="evidence-jumps" aria-label="Choose demonstration setting"><a href="#long-horizon">Long-horizon <span>02</span></a><a href="#robot-trials">On real robots <span>03</span></a><a href="#simulation-trials">In simulation <span>10 CASES</span></a></nav></div><section id="long-horizon" class="long-horizon" aria-labelledby="long-horizon-title">
+ <div class="long-heading"><div><p class="long-kicker">EXTENDED REAL-WORLD DEMONSTRATIONS</p><h3 id="long-horizon-title">Long-horizon, complex tasks.</h3></div><p>Multi-step organization. Coordinated manipulation.<br>Explore two real-world sequences at 8× speed.</p></div>
+ <div class="long-grid"><article class="long-demo" data-long-demo="01" data-speed="8" aria-label="Multi-step tabletop organization, eight-times-speed demonstration">
+  <div class="long-frame"><video muted playsinline preload="none" width="960" height="540" data-source="assets/long-horizon/task-01-preview.mp4" poster="assets/long-horizon/task-01-poster.webp" aria-label="Multi-step tabletop organization at 8× speed"></video><span class="long-speed">8× SPEED</span><span class="long-index">01 / 02</span></div>
+  <progress class="long-progress" value="0" max="1" aria-label="Multi-step tabletop organization playback progress"></progress>
+  <div class="long-copy"><h4>Multi-step tabletop organization</h4><p>Object handling across an extended tabletop sequence.</p></div>
+  <div class="long-controls"><button type="button" class="long-play" aria-label="Play Multi-step tabletop organization">Play demo <span aria-hidden="true">▷</span></button><button type="button" class="long-replay" aria-label="Replay Multi-step tabletop organization" title="Replay demo">↺</button><span class="long-time">0:00</span><a href="assets/long-horizon/task-01-preview.mp4" target="_blank" rel="noopener" aria-label="Open Multi-step tabletop organization accelerated video">Video ↗</a></div><p class="long-status" role="status" aria-live="off">8× preview · Muted</p>
+ </article><article class="long-demo" data-long-demo="02" data-speed="8" aria-label="Bimanual bowl wiping, eight-times-speed demonstration">
+  <div class="long-frame"><video muted playsinline preload="none" width="960" height="540" data-source="assets/long-horizon/task-02-preview.mp4" poster="assets/long-horizon/task-02-poster.webp" aria-label="Bimanual bowl wiping at 8× speed"></video><span class="long-speed">8× SPEED</span><span class="long-index">02 / 02</span></div>
+  <progress class="long-progress" value="0" max="1" aria-label="Bimanual bowl wiping playback progress"></progress>
+  <div class="long-copy"><h4>Bimanual bowl wiping</h4><p>One arm holds the bowl while the other wipes its interior.</p></div>
+  <div class="long-controls"><button type="button" class="long-play" aria-label="Play Bimanual bowl wiping">Play demo <span aria-hidden="true">▷</span></button><button type="button" class="long-replay" aria-label="Replay Bimanual bowl wiping" title="Replay demo">↺</button><span class="long-time">0:00</span><a href="assets/long-horizon/task-02-preview.mp4" target="_blank" rel="noopener" aria-label="Open Bimanual bowl wiping accelerated video">Video ↗</a></div><p class="long-status" role="status" aria-live="off">8× preview · Muted</p>
+ </article></div>
+ <p class="long-footnote">Accelerated source footage · 8× speed · Muted · Each clip is prepared before playback. <a href="assets/long-horizon/manifest.json" target="_blank" rel="noopener">Recording details ↗</a></p>
+</section>
+<section class="robot-trials teaser" id="robot-trials" aria-labelledby="robot-title">
       <div class="robot-heading"><div><p class="robot-kicker">REAL-WORLD / ADAPTER INSERTION</p><h3 id="robot-title">Real robots. Physical contact.</h3><p class="robot-intro">Fine-tuned Qwen, fine-tuned Phi 0.5, and Touch-R1. Real-robot insertion at 2× speed.</p></div><div class="robot-heading-actions"><span class="robot-collection-tag">03 REAL-ROBOT TRIALS</span><button type="button" id="robot-toggle-all">Pause robot demos</button></div></div>
       <div class="robot-grid"><article class="robot-demo" data-outcome="failed" data-method="Qwen (Fine-tuned)" data-robot-demo="03" aria-label="Qwen (Fine-tuned): real robot trial 03">
  <div class="robot-frame"><span class="robot-trial-index">TRIAL 03</span><span class="robot-speed">2× SPEED</span><video muted loop playsinline preload="none" data-source="assets/robot/trial-03-preview.mp4" poster="assets/robot/trial-03-poster.jpg" width="480" height="480" aria-label="Real robot trial 03, shown at two times speed"></video></div>
@@ -729,16 +770,16 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
   <script>
   (() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // native-progressive-v3: let the browser reuse MP4 cache/range requests; no duplicate full-file fetch.
+    // buffered-blob-v5: download complete selected MP4 bodies with default cache; never depend on paused native preloading.
     const recordings=[];
     document.querySelectorAll('[data-motion]').forEach(card=>{
       const videos=[...card.querySelectorAll('video')],rgb=videos[0],touch=videos[1],play=card.querySelector('.motion-play'),replay=card.querySelector('.motion-replay'),clock=card.querySelector('.motion-time');
       if(videos.length!==2||!play||!replay||!clock)return;
       const notice=card.closest('.contact-showcase')?.querySelector('.showcase-live');
       const title=()=>card.querySelector('h3').textContent.toLowerCase();
-      let desired=false,generation=0,request=null,prepared='',mode='idle',launching=false,hasPlayed=false,waiting=false,phase='idle';
+      let desired=false,generation=0,request=null,prepared='',mode='idle',launching=false,hasPlayed=false,waiting=false,phase='idle',urls=[],downloads=[{loaded:0,total:0,complete:false},{loaded:0,total:0,complete:false}];
       videos.forEach(v=>{v.loop=false;v.preload='none';v.muted=true;v.playsInline=true;});
-      card.dataset.player='native-progressive-v3';card.dataset.sourceTransport='native-progressive';
+      card.dataset.player='buffered-blob-v5';card.dataset.sourceTransport='complete-blob-default-cache';
       const label=()=>{
         const busy=mode==='loading'||mode==='buffering';
         card.dataset.playbackState=mode;
@@ -748,13 +789,37 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
       };
       const say=text=>{if(notice)notice.textContent=text;};
       const pause=()=>{desired=false;generation++;request?.abort();request=null;mode='idle';launching=false;waiting=false;videos.forEach(v=>{v.pause();v.playbackRate=1;});label();};
-      const release=()=>{pause();videos.forEach(v=>{v.preload='none';v.removeAttribute('src');v.load();});prepared='';hasPlayed=false;delete card.dataset.bufferBytes;};
-      const decoded=v=>v.ended||(v.readyState>=2&&!v.seeking);
+      const release=()=>{pause();videos.forEach(v=>{v.preload='none';v.removeAttribute('src');v.load();});urls.forEach(url=>URL.revokeObjectURL(url));urls=[];prepared='';hasPlayed=false;downloads=[{loaded:0,total:0,complete:false},{loaded:0,total:0,complete:false}];delete card.dataset.bufferBytes;delete card.dataset.bufferedBytes;updateBufferNotice();};
       const ready=v=>v.ended||(v.readyState>=3&&!v.seeking);
+      const updateBufferNotice=()=>{
+        const values=downloads.map(item=>item.complete?100:item.total>0?Math.min(99,Math.floor(item.loaded/item.total*100)):0);
+        card.dataset.bufferedPercent=values.join(',');card.dataset.downloadedBytes=downloads.map(item=>item.loaded).join(',');card.dataset.totalBytes=downloads.map(item=>item.total||0).join(',');card.dataset.downloadComplete=String(downloads.every(item=>item.complete));
+        card.dataset.readyStates=videos.map(v=>v.readyState).join(',');
+        const progress=downloads.map((item,i)=>item.complete?'100%':item.total>0?values[i]+'%':Math.floor(item.loaded/1024)+' KB');
+        if(mode==='loading'||mode==='buffering')say('Preparing smooth playback · RGB '+progress[0]+' / Touch '+progress[1]);
+      };
+      const download=async(source,signal,index)=>{
+        const response=await fetch(source,{signal,cache:'default'});
+        if(!response.ok)throw new Error('Video download failed (HTTP '+response.status+').');
+        const total=Number(response.headers?.get('content-length'))||0;
+        const mime=response.headers?.get('content-type')||'video/mp4';
+        downloads[index]={loaded:0,total,complete:false};updateBufferNotice();
+        let blob;
+        if(response.body&&typeof response.body.getReader==='function'){
+          const reader=response.body.getReader(),chunks=[];let loaded=0;
+          try{while(true){const part=await reader.read();if(signal.aborted)throw new DOMException('Playback cancelled.','AbortError');if(part.done)break;chunks.push(part.value);loaded+=part.value.byteLength;downloads[index].loaded=loaded;updateBufferNotice();}}
+          finally{reader.releaseLock?.();}
+          blob=new Blob(chunks,{type:mime});
+        }else{blob=await response.blob();}
+        if(signal.aborted)throw new DOMException('Playback cancelled.','AbortError');
+        if(!blob.size||/^text\//i.test(blob.type)||/(?:json|xml|html)/i.test(blob.type))throw new Error('Invalid video response.');
+        downloads[index]={loaded:blob.size,total:blob.size,complete:true};updateBufferNotice();
+        return blob.type==='video/mp4'?blob:new Blob([blob],{type:'video/mp4'});
+      };
       const waitReady=(v,signal)=>new Promise((resolve,reject)=>{
-        const events=['canplay','loadeddata','seeked','progress'];
+        const events=['loadedmetadata','durationchange','canplay','canplaythrough','loadeddata','seeked','progress','suspend'];
         const clean=()=>{events.forEach(e=>v.removeEventListener(e,check));v.removeEventListener('error',fail);signal.removeEventListener('abort',aborted);};
-        const check=()=>{if(decoded(v)){clean();resolve();}};
+        const check=()=>{updateBufferNotice();if(ready(v)){clean();resolve();}};
         const fail=()=>{clean();const e=new Error('Native media error '+(v.error?.code||'unknown'));e.name='MediaError';reject(e);};
         const aborted=()=>{clean();reject(new DOMException('Playback cancelled.','AbortError'));};
         events.forEach(e=>v.addEventListener(e,check));v.addEventListener('error',fail);signal.addEventListener('abort',aborted,{once:true});
@@ -767,34 +832,38 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
         const sources=videos.map(v=>v.querySelector('source')?.src||''),key=sources.join('|');
         if(sources.some(source=>!source))throw new Error('Missing paired media source.');
         if(prepared!==key){
-          videos.forEach((v,i)=>{v.preload='auto';v.src=sources[i];v.load();});
-          prepared=key;
+          downloads=[{loaded:0,total:0,complete:false},{loaded:0,total:0,complete:false}];updateBufferNotice();
+          const blobs=await Promise.all(sources.map((source,index)=>download(source,signal,index)));
+          if(token!==generation||signal.aborted)throw new DOMException('Playback cancelled.','AbortError');
+          urls.forEach(url=>URL.revokeObjectURL(url));urls=blobs.map(blob=>URL.createObjectURL(blob));
+          videos.forEach((v,i)=>{v.preload='auto';v.src=urls[i];v.load();});
+          prepared=key;card.dataset.bufferedBytes=String(blobs.reduce((sum,blob)=>sum+blob.size,0));
         }
         await Promise.all(videos.map(v=>waitReady(v,signal)));
         if(token!==generation||signal.aborted)throw new DOMException('Playback cancelled.','AbortError');
       };
       const nominalRate=()=>card.dataset.syncMode==='elapsed'?1:(Number.isFinite(touch.duration/rgb.duration)?touch.duration/rgb.duration:1);
       const resume=async token=>{
-        if(!desired||token!==generation||launching||!videos.every(mode==='buffering'?ready:decoded))return;
+        if(!desired||token!==generation||launching||!videos.every(ready))return;
         launching=true;phase='play';mode='playing';waiting=false;if(!touch.ended&&Math.abs(touch.playbackRate-nominalRate())>.005)touch.playbackRate=nominalRate();label();
-        try{await Promise.all(videos.filter(v=>!v.ended).map(v=>v.play()));if(token===generation&&desired){hasPlayed=true;card.dataset.started='true';}}
+        try{await Promise.all(videos.filter(v=>!v.ended).map(v=>v.play()));if(token===generation&&desired){hasPlayed=true;card.dataset.started='true';say('Playing paired recording · Fully buffered.');}}
         catch(error){if(token===generation&&desired&&mode!=='buffering')fail(error,'play');}
         finally{if(token===generation){launching=false;if(desired&&mode==='buffering'&&videos.every(ready))resume(token);}}
       };
       const start=async(restart=false)=>{
-        recordings.forEach(other=>{if(other.card!==card)other.release();});
+        recordings.forEach(other=>{if(other.card!==card)other.pause();});
         pause();desired=true;const token=generation;request=new AbortController();const controller=request,signal=controller.signal;
-        mode='loading';phase='prepare';hasPlayed=false;card.dataset.bufferingEvents='0';delete card.dataset.lastError;delete card.dataset.errorPhase;label();say('Preparing the selected RGB and tactile recordings…');
-        let timedOut=false;const started=Date.now();const timeout=setTimeout(()=>{timedOut=true;controller.abort();},30000);
+        mode='loading';phase='prepare';hasPlayed=false;card.dataset.bufferingEvents='0';delete card.dataset.lastError;delete card.dataset.errorPhase;label();updateBufferNotice();
+        let timedOut=false;const started=Date.now();const timeout=setTimeout(()=>{timedOut=true;controller.abort();},90000);
         try{
           await prepare(signal,token);
           if(!desired||token!==generation||signal.aborted)return;
           if(restart||rgb.ended){videos.forEach(v=>{v.currentTime=0;});await Promise.all(videos.map(v=>waitReady(v,signal)));}
           if(!desired||token!==generation||signal.aborted)return;
-          card.dataset.startupMs=String(Date.now()-started);say('Paired playback ready.');await resume(token);
+          card.dataset.startupMs=String(Date.now()-started);say('Fully buffered. Starting paired playback…');await resume(token);
         }catch(error){
           if(token!==generation||!desired)return;
-          fail(timedOut?new DOMException('Selected pair did not become decodable within 30 seconds.','TimeoutError'):error,phase);
+          fail(timedOut?new DOMException('Selected pair did not finish downloading/decoding within 90 seconds.','TimeoutError'):error,phase);
         }finally{clearTimeout(timeout);}
       };
       const fmt=t=>Number.isFinite(t)?String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0'):'00:00';
@@ -809,9 +878,9 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
         if(Math.abs(touch.playbackRate-nextRate)>.005)touch.playbackRate=nextRate;
       });
       videos.forEach(v=>{
-        v.addEventListener('ended',()=>{if(card.dataset.syncMode==='elapsed'&&videos.every(video=>video.ended))pause();});
-        v.addEventListener('waiting',()=>{if(desired&&hasPlayed&&mode==='playing'&&!ready(v)&&v.duration-v.currentTime>.15){if(!waiting)card.dataset.bufferingEvents=String(Number(card.dataset.bufferingEvents||0)+1);waiting=true;mode='buffering';videos.forEach(video=>video.pause());label();say('Waiting for the next paired frames…');}});
-        ['canplay','canplaythrough','loadeddata','progress'].forEach(event=>v.addEventListener(event,()=>{if(desired&&mode==='buffering'&&videos.every(ready))resume(generation);}));
+        v.addEventListener('ended',()=>{if(card.dataset.syncMode==='elapsed'&&videos.every(video=>video.ended)){pause();mode='ended';label();say('Playback complete. Replay pair to watch again.');}});
+        v.addEventListener('waiting',()=>{if(desired&&hasPlayed&&mode==='playing'&&!ready(v)&&v.duration-v.currentTime>.15){if(!waiting)card.dataset.bufferingEvents=String(Number(card.dataset.bufferingEvents||0)+1);waiting=true;mode='buffering';videos.forEach(video=>video.pause());label();updateBufferNotice();}});
+        ['loadedmetadata','durationchange','canplay','canplaythrough','loadeddata','progress','suspend'].forEach(event=>v.addEventListener(event,()=>{updateBufferNotice();if(desired&&mode==='buffering'&&videos.every(ready))resume(generation);}));
         v.addEventListener('error',()=>{if(desired&&v.error){const e=new Error('Native media error '+v.error.code);e.name='MediaError';fail(e,phase);}});
       });
       rgb.addEventListener('ended',()=>{if(card.dataset.syncMode!=='elapsed'&&desired)start(true);});
@@ -822,6 +891,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     document.getElementById('pause-demos')?.addEventListener('click',()=>recordings.forEach(x=>x.pause()));
     document.addEventListener('touch-r1:pause-pairs',()=>recordings.forEach(x=>x.pause()));
     document.addEventListener('visibilitychange',()=>{if(document.hidden)recordings.forEach(x=>x.pause());});
+    window.addEventListener('pagehide',()=>recordings.forEach(x=>x.release()));
     const share=document.getElementById('copy-project-link');
     share.addEventListener('click',async()=>{const url='https://laiyingxin2.github.io/Touch-R1';try{await navigator.clipboard.writeText(url);share.textContent='Link copied ✓';document.getElementById('share-status').textContent='';}catch(_){document.getElementById('share-status').textContent=url;}});
     const copy=document.getElementById('copy-bib'), status=document.getElementById('copy-status');
@@ -1976,6 +2046,297 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
   window.addEventListener('pageshow', event => { if (event.persisted) { state.disposed = false; reconcile(); } });
 })();
 
+</script>
+<script id="long-horizon-controller-v1">(() => {
+  const section = document.querySelector('#long-horizon');
+  if (!section) return;
+  const states = Array.from(section.querySelectorAll('[data-long-demo]')).map(card => ({
+    card, video: card.querySelector('video'), play: card.querySelector('.long-play'),
+    replay: card.querySelector('.long-replay'), status: card.querySelector('.long-status'),
+    time: card.querySelector('.long-time'), progress: card.querySelector('.long-progress'),
+    generation: 0, controller: null, pending: null, prepared: '', desired: false,
+    visible: true, disposed: false, ended: false, failed: false, hasPlayed: false,
+    waiting: false, phase: 'idle', qualitySecond: undefined, url: null, download: { loaded: 0, total: 0, complete: false }
+  })).filter(state => state.video && state.play);
+  const clock = value => {
+    const seconds = Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0;
+    return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+  };
+  const speed = state => /^[1-9]\d*(?:\.\d+)?$/.test(state.card.dataset.speed || '') ? `${state.card.dataset.speed}×` : 'Accelerated';
+  const note = state => `${speed(state)} speed · muted`;
+  const wanted = state => state.desired && state.visible && !state.disposed && !document.hidden;
+  const say = (state, message) => {
+    if (state.status && state.status.textContent !== message) state.status.textContent = message;
+  };
+  const display = (state, mode, message) => {
+    state.card.dataset.playbackState = mode;
+    const busy = mode === 'loading' || mode === 'buffering';
+    const verb = state.failed ? 'Retry' : state.ended ? 'Replay' : state.desired ? 'Pause' : 'Play';
+    state.play.textContent = verb;
+    state.play.setAttribute('aria-label', `${verb} long-horizon demonstration ${state.card.dataset.longDemo}`);
+    state.play.setAttribute('aria-busy', String(busy));
+    if (message) say(state, message);
+  };
+  function updateBuffer(state) {
+    const item = state.download;
+    const percent = item.complete ? 100 : item.total > 0 ? Math.min(99, Math.floor(item.loaded / item.total * 100)) : 0;
+    state.card.dataset.bufferedPercent = String(percent);
+    state.card.dataset.downloadedBytes = String(item.loaded);
+    state.card.dataset.totalBytes = String(item.total);
+    state.card.dataset.downloadComplete = String(item.complete);
+    state.card.dataset.readyState = String(state.video.readyState);
+    if (state.card.dataset.playbackState === 'loading' || state.card.dataset.playbackState === 'buffering') {
+      const progress = item.complete || item.total > 0 ? `${percent}%` : `${Math.floor(item.loaded / 1024)} KB`;
+      say(state, `Preparing smooth playback · ${progress} · ${note(state)}`);
+    }
+    return item.complete && state.video.readyState >= 3 && !state.video.seeking;
+  }
+  function releaseSource(state) {
+    state.video.preload = 'none';
+    state.video.removeAttribute('src');
+    state.video.load();
+    if (state.url) URL.revokeObjectURL(state.url);
+    state.url = null;
+    state.prepared = '';
+    state.download = { loaded: 0, total: 0, complete: false };
+    delete state.card.dataset.bufferedBytes;
+    updateBuffer(state);
+  }
+  async function downloadComplete(state, source, signal, generation) {
+    const response = await fetch(source, { signal, cache: 'default' });
+    if (!response.ok) throw new Error(`Video download failed (HTTP ${response.status}).`);
+    const total = Number(response.headers?.get('content-length')) || 0;
+    const mime = response.headers?.get('content-type') || 'video/mp4';
+    if (signal.aborted || generation !== state.generation) throw new DOMException('Playback cancelled.', 'AbortError');
+    state.download = { loaded: 0, total, complete: false };
+    updateBuffer(state);
+    let blob;
+    if (response.body && typeof response.body.getReader === 'function') {
+      const reader = response.body.getReader(), chunks = [];
+      let loaded = 0;
+      try {
+        while (true) {
+          const part = await reader.read();
+          if (signal.aborted || generation !== state.generation) throw new DOMException('Playback cancelled.', 'AbortError');
+          if (part.done) break;
+          chunks.push(part.value); loaded += part.value.byteLength;
+          state.download.loaded = loaded; updateBuffer(state);
+        }
+      } finally { reader.releaseLock?.(); }
+      blob = new Blob(chunks, { type: mime });
+    } else blob = await response.blob();
+    if (signal.aborted || generation !== state.generation) throw new DOMException('Playback cancelled.', 'AbortError');
+    if (!blob.size || /^text\//i.test(blob.type) || /(?:json|xml|html)/i.test(blob.type)) throw new Error('Invalid video response.');
+    state.download = { loaded: blob.size, total: blob.size, complete: true };
+    updateBuffer(state);
+    return blob.type === 'video/mp4' ? blob : new Blob([blob], { type: 'video/mp4' });
+  }
+  function sampleQuality(state, force = false) {
+    const video = state.video, second = Math.floor(video.currentTime || 0);
+    if (!force && state.qualitySecond === second) return;
+    state.qualitySecond = second;
+    ['totalFrames', 'droppedFrames', 'corruptedFrames'].forEach(key => { delete state.card.dataset[key]; });
+    let quality = null;
+    try { if (typeof video.getVideoPlaybackQuality === 'function') quality = video.getVideoPlaybackQuality(); } catch (_) {}
+    if (quality && Number.isFinite(quality.totalVideoFrames) && Number.isFinite(quality.droppedVideoFrames)) {
+      state.card.dataset.qualityMetric = 'standard';
+      state.card.dataset.totalFrames = String(quality.totalVideoFrames);
+      state.card.dataset.droppedFrames = String(quality.droppedVideoFrames);
+      if (Number.isFinite(quality.corruptedVideoFrames)) state.card.dataset.corruptedFrames = String(quality.corruptedVideoFrames);
+    } else if (Number.isFinite(video.webkitDecodedFrameCount) && Number.isFinite(video.webkitDroppedFrameCount)) {
+      state.card.dataset.qualityMetric = 'webkit';
+      state.card.dataset.totalFrames = String(video.webkitDecodedFrameCount);
+      state.card.dataset.droppedFrames = String(video.webkitDroppedFrameCount);
+    } else state.card.dataset.qualityMetric = 'unavailable';
+  }
+  function updateTime(state) {
+    const video = state.video;
+    const duration = Number.isFinite(video.duration) ? video.duration : 0;
+    const label = `${clock(video.currentTime)} / ${clock(duration)}`;
+    if (state.time && state.time.textContent !== label) state.time.textContent = label;
+    if (state.progress) { state.progress.max = duration || 1; state.progress.value = video.currentTime || 0; }
+    sampleQuality(state);
+  }
+  function pause(state, reason = `Paused · ${note(state)}`) {
+    state.desired = false;
+    state.generation++;
+    state.controller?.abort();
+    state.controller = null;
+    state.pending = null;
+    state.waiting = false;
+    state.video.pause();
+    if (!state.failed) display(state, state.ended ? 'ended' : 'paused', state.ended ? `Playback complete · ${note(state)}` : reason);
+  }
+  function fail(state, error, phase) {
+    pause(state);
+    state.failed = true;
+    state.prepared = '';
+    state.card.dataset.lastError = `${error?.name || 'Error'}: ${error?.message || String(error)}`;
+    state.card.dataset.errorPhase = phase;
+    display(state, 'error', 'Video could not be prepared. Retry or open the video.');
+  }
+  function waitBuffered(state, signal) {
+    return new Promise((resolve, reject) => {
+      const video = state.video;
+      const events = ['loadedmetadata', 'durationchange', 'loadeddata', 'canplay', 'canplaythrough', 'progress', 'seeked', 'suspend'];
+      const cleanup = () => {
+        events.forEach(type => video.removeEventListener(type, check));
+        video.removeEventListener('error', error);
+        signal.removeEventListener('abort', abort);
+      };
+      const check = () => { if (updateBuffer(state)) { cleanup(); resolve(); } };
+      const error = () => {
+        cleanup(); const problem = new Error(`Native media error ${video.error?.code || 'unknown'}`); problem.name = 'MediaError'; reject(problem);
+      };
+      const abort = () => { cleanup(); reject(new DOMException('Playback cancelled.', 'AbortError')); };
+      events.forEach(type => video.addEventListener(type, check));
+      video.addEventListener('error', error);
+      signal.addEventListener('abort', abort, { once: true });
+      if (signal.aborted) abort(); else check();
+    });
+  }
+  function claimOwnership() {
+    document.dispatchEvent(new CustomEvent('touch-r1:pause-pairs', { detail: { owner: 'long-horizon' } }));
+    document.dispatchEvent(new Event('touch-r1:pause-robots'));
+  }
+  function start(state, replay = false) {
+    states.forEach(other => { if (other !== state) pause(other); });
+    pause(state);
+    state.failed = false;
+    state.ended = false;
+    state.hasPlayed = false;
+    state.desired = true;
+    state.waiting = false;
+    delete state.card.dataset.lastError;
+    delete state.card.dataset.errorPhase;
+    state.card.dataset.bufferingEvents = '0';
+    const generation = state.generation;
+    const controller = new AbortController();
+    state.controller = controller;
+    claimOwnership();
+    display(state, 'loading', `Preparing smooth playback · ${note(state)}`);
+    const started = Date.now();
+    let timedOut = false;
+    const timeout = setTimeout(() => { timedOut = true; controller.abort(); }, 90000);
+    const task = (async () => {
+      try {
+        state.phase = 'prepare';
+        const source = state.video.dataset.source;
+        if (!source) throw new Error('Missing video source.');
+        if (state.prepared !== source) {
+          releaseSource(state);
+          const blob = await downloadComplete(state, source, controller.signal, generation);
+          if (generation !== state.generation || controller.signal.aborted) return;
+          state.url = URL.createObjectURL(blob);
+          state.video.preload = 'auto';
+          state.video.src = state.url;
+          state.video.load();
+          state.prepared = source;
+          state.card.dataset.bufferedBytes = String(blob.size);
+        }
+        if (replay || state.video.ended) state.video.currentTime = 0;
+        await waitBuffered(state, controller.signal);
+        if (generation !== state.generation || controller.signal.aborted || !wanted(state)) return;
+        state.card.dataset.startupMs = String(Date.now() - started);
+        state.phase = 'play';
+        state.video.muted = true;
+        state.video.defaultPlaybackRate = 1;
+        state.video.playbackRate = 1;
+        claimOwnership();
+        await state.video.play();
+        if (generation !== state.generation) return;
+        if (!wanted(state)) { state.video.pause(); return; }
+        state.hasPlayed = true;
+        display(state, 'playing', `Playing · ${note(state)} · Fully buffered`);
+      } catch (error) {
+        if (generation !== state.generation || !state.desired) return;
+        fail(state, timedOut ? new DOMException('Selected video did not finish downloading/decoding within 90 seconds.', 'TimeoutError') : error, state.phase);
+      } finally {
+        clearTimeout(timeout);
+        if (generation === state.generation) { state.controller = null; state.pending = null; }
+      }
+    })();
+    state.pending = task;
+  }
+  states.forEach(state => {
+    const video = state.video;
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = false;
+    video.preload = 'none';
+    video.defaultPlaybackRate = 1;
+    video.playbackRate = 1;
+    state.card.dataset.player = 'long-horizon-buffered-blob-v5';
+    state.card.dataset.sourceTransport = 'complete-blob-default-cache';
+    state.card.dataset.bufferedPercent = '0';
+    state.card.dataset.bufferingEvents = '0';
+    display(state, 'idle', `Press Play · ${note(state)}`);
+    updateTime(state);
+    state.play.addEventListener('click', () => {
+      if (state.desired && (state.pending || !video.paused)) pause(state);
+      else start(state, state.ended);
+    });
+    state.replay?.addEventListener('click', () => start(state, true));
+    video.addEventListener('ratechange', () => { if (video.playbackRate !== 1) video.playbackRate = 1; });
+    video.addEventListener('timeupdate', () => updateTime(state));
+    video.addEventListener('loadedmetadata', () => updateTime(state));
+    video.addEventListener('playing', () => {
+      if (!wanted(state)) { video.pause(); return; }
+      state.hasPlayed = true;
+      state.waiting = false;
+      display(state, 'playing', `Playing · ${note(state)} · Fully buffered`);
+    });
+    video.addEventListener('waiting', () => {
+      if (!wanted(state) || !state.hasPlayed || video.paused || video.readyState >= 3 ||
+          !Number.isFinite(video.duration) || video.duration - video.currentTime <= 0.08) return;
+      if (!state.waiting) state.card.dataset.bufferingEvents = String(Number(state.card.dataset.bufferingEvents || 0) + 1);
+      state.waiting = true;
+      display(state, 'buffering', `Waiting for the next frame · ${note(state)}`);
+      updateBuffer(state);
+    });
+    video.addEventListener('pause', () => {
+      state.waiting = false;
+      if (!state.desired && !state.failed && !state.ended) display(state, 'paused', `Paused · ${note(state)}`);
+    });
+    video.addEventListener('ended', () => {
+      if (!video.ended) return;
+      state.ended = true;
+      state.desired = false;
+      state.waiting = false;
+      display(state, 'ended', `Playback complete · ${note(state)}`);
+      updateTime(state);
+      sampleQuality(state, true);
+    });
+    ['loadedmetadata', 'durationchange', 'loadeddata', 'canplay', 'canplaythrough', 'progress', 'suspend'].forEach(type => video.addEventListener(type, () => updateBuffer(state)));
+    video.addEventListener('error', () => { if (state.desired && video.error) { const error = new Error(`Native media error ${video.error.code}`); error.name = 'MediaError'; fail(state, error, state.phase); } });
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const state = states.find(item => item.card === entry.target);
+        if (!state) return;
+        state.visible = entry.isIntersecting;
+        if (!state.visible) pause(state, `Paused offscreen · ${note(state)}`);
+      });
+    }, { threshold: 0 });
+    states.forEach(state => observer.observe(state.card));
+  }
+  document.addEventListener('touch-r1:pause-pairs', event => {
+    if (event.detail?.owner !== 'long-horizon') states.forEach(state => pause(state));
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Element && event.target.closest('#pause-demos, .motion-play, .motion-replay, #robot-toggle-all, .robot-play, .robot-replay, #sim-toggle-all, #sim-replay-all, .sim-play, .sim-replay, [data-sim-case], #qa-play, #qa-replay, [data-qa-case]')) states.forEach(state => pause(state));
+  }, true);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) states.forEach(state => pause(state, `Paused while hidden · ${note(state)}`)); });
+  window.addEventListener('pagehide', () => {
+    states.forEach(state => {
+      state.disposed = true;
+      pause(state);
+      releaseSource(state);
+    });
+  });
+  window.addEventListener('pageshow', event => { if (event.persisted) states.forEach(state => { state.disposed = false; display(state, 'idle', `Press Play · ${note(state)}`); }); });
+})();
 </script>
 </body>
 </html>
