@@ -1,5 +1,5 @@
 {
-  "revision": "long-horizon-8x-v2-bandwidth-budget",
+  "revision": "lite-stream-v6",
   "section_label": "Long-horizon, complex tasks",
   "recordings": [
     {
@@ -58,7 +58,29 @@
       "observed_encoder_rc": "libx264 rc=crf crf=27.0 vbv_maxrate=900 vbv_bufsize=1800",
       "container_average_kbps": 912.27,
       "size_budget_bytes": 2800000,
-      "size_budget_passed": true
+      "size_budget_passed": true,
+      "video_lite": "task-01-preview-lite.mp4",
+      "video_lite_bytes": 932068,
+      "video_lite_sha256": "2f02d5b8892c3a0b2722c9004e1484261d0a75df99533ea624c294cc5a7547b0",
+      "video_lite_width": 640,
+      "video_lite_height": 362,
+      "video_lite_fps": 30,
+      "video_lite_duration_seconds": 22.8,
+      "video_lite_speed_multiplier": 8,
+      "video_lite_codec": "H264 Main",
+      "video_lite_pixel_format": "yuv420p",
+      "video_lite_crf": 30,
+      "video_lite_preset": "medium",
+      "video_lite_maxrate_kbps": 320,
+      "video_lite_bufsize_kbits": 640,
+      "video_lite_max_gop_frames": 30,
+      "video_lite_b_frames": 0,
+      "video_lite_faststart": true,
+      "video_lite_audio_tracks": 0,
+      "video_lite_full_decode_exit_status": 0,
+      "video_lite_monotonic_pts": true,
+      "recommended_preview_source": "video_lite",
+      "full_size_source": "video"
     },
     {
       "id": "02",
@@ -116,7 +138,29 @@
       "observed_encoder_rc": "libx264 rc=crf crf=27.0 vbv_maxrate=900 vbv_bufsize=1800",
       "container_average_kbps": 977.87,
       "size_budget_bytes": 600000,
-      "size_budget_passed": true
+      "size_budget_passed": true,
+      "video_lite": "task-02-preview-lite.mp4",
+      "video_lite_bytes": 218196,
+      "video_lite_sha256": "01143353f1045d380ec090e00a8c04babd71036812e05a88a175d455ac9cc428",
+      "video_lite_width": 640,
+      "video_lite_height": 360,
+      "video_lite_fps": 30,
+      "video_lite_duration_seconds": 4.633333333333334,
+      "video_lite_speed_multiplier": 8,
+      "video_lite_codec": "H264 Main",
+      "video_lite_pixel_format": "yuv420p",
+      "video_lite_crf": 30,
+      "video_lite_preset": "medium",
+      "video_lite_maxrate_kbps": 320,
+      "video_lite_bufsize_kbits": 640,
+      "video_lite_max_gop_frames": 30,
+      "video_lite_b_frames": 0,
+      "video_lite_faststart": true,
+      "video_lite_audio_tracks": 0,
+      "video_lite_full_decode_exit_status": 0,
+      "video_lite_monotonic_pts": true,
+      "recommended_preview_source": "video_lite",
+      "full_size_source": "video"
     }
   ],
   "presentation_note": "Two supplied real-robot demonstration recordings, physically accelerated8\u00d7 and encoded at30fps; not comparative benchmark scores. Native browser playback remains1\u00d7.",
@@ -182,6 +226,11 @@
       "sha256": "be295a008dbf4b7aa3c641132ad26f11ef08c42fb47f0282c1c4cb2578c440b8"
     },
     {
+      "name": "task-01-preview-lite.mp4",
+      "bytes": 932068,
+      "sha256": "2f02d5b8892c3a0b2722c9004e1484261d0a75df99533ea624c294cc5a7547b0"
+    },
+    {
       "name": "task-02-preview.mp4",
       "bytes": 566347,
       "sha256": "ee91d16e670377e082282e194018585d8e017a08a7479a764806e9179628ad2a"
@@ -190,7 +239,61 @@
       "name": "task-02-poster.webp",
       "bytes": 48422,
       "sha256": "3dc67d2b49f8a12220639098f11fb180b55fd15e7a8ad223965bc8f694f0fda7"
+    },
+    {
+      "name": "task-02-preview-lite.mp4",
+      "bytes": 218196,
+      "sha256": "01143353f1045d380ec090e00a8c04babd71036812e05a88a175d455ac9cc428"
     }
   ],
-  "bandwidth_note": "Software libx264 CRF27 with900kbps VBV maxrate and1800kbit buffer; measured whole-file averages can differ from VBVmaxrate due buffering and container overhead."
+  "bandwidth_note": "Software libx264 CRF27 with900kbps VBV maxrate and1800kbit buffer; measured whole-file averages can differ from VBVmaxrate due buffering and container overhead.",
+  "lite_video_total_bytes": 1150264,
+  "streaming_recommendation": "Use the lite MP4 as native progressive video src with metadata preload; do not gate playback on a completed full-file fetch or Blob conversion. Preserve the existing higher-resolution MP4 as the full-size link.",
+  "cache_recommendation": "Allow normal browser HTTP caching and reuse stable source URLs rather than recreating Blob URLs; server cache headers are hosting-controlled, not asserted by this manifest.",
+  "lite_encoding_command_template": [
+    "ffmpeg",
+    "-i",
+    "INPUT",
+    "-map",
+    "0:v:0",
+    "-vf",
+    "setpts=(PTS-STARTPTS)/8,fps=30,scale=640:-2:flags=lanczos,setsar=1,sidedata=delete",
+    "-an",
+    "-sn",
+    "-dn",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "30",
+    "-maxrate",
+    "320k",
+    "-bufsize",
+    "640k",
+    "-profile:v",
+    "main",
+    "-level:v",
+    "3.1",
+    "-pix_fmt",
+    "yuv420p",
+    "-g",
+    "30",
+    "-keyint_min",
+    "30",
+    "-sc_threshold",
+    "0",
+    "-bf",
+    "0",
+    "-map_metadata",
+    "-1",
+    "-map_metadata:s:v",
+    "-1",
+    "-map_chapters",
+    "-1",
+    "-movflags",
+    "+faststart",
+    "LITE_PREVIEW"
+  ],
+  "lite_note": "30fps physically accelerated8\u00d7 from the same complete original recordings, no audio, editorial cuts, or motion interpolation. Lower-resolution previews reduce transfer size; higher-resolution videos and posters remain unchanged."
 }
