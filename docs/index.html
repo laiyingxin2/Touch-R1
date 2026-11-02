@@ -432,6 +432,17 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
 /* A single sticky-header offset, rather than adding scroll-margin and scroll-padding. */
 .section,.evidence-section,.robot-trials,.simulation-trials,#reasoning-cases.qa-gallery,.object-atlas,#videos,#contact-showcase{scroll-margin-top:0}
 
+
+/* playback-fix-v3 / direct release links; no translucent filter over moving frames. */
+.navbar{background:#0b0e0d;backdrop-filter:none;-webkit-backdrop-filter:none}
+.resource-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;max-width:470px;margin-top:17px}
+.resource-links a{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 13px;color:#c5d3ba;background:#ffffff03;border:1px solid #ffffff20;border-radius:8px;font-size:12px;line-height:1.5;transition:background .18s,border-color .18s,color .18s}
+.resource-links a:hover{color:var(--acid);background:#d3fa790a;border-color:#8ca964;text-decoration:none}
+.resource-links svg{flex:none;color:#91a77e}
+.resource-arrow{margin-left:auto;font-size:13px;color:#829873}
+.resource-links a:hover svg,.resource-links a:hover .resource-arrow{color:var(--acid)}
+@media(max-width:600px){.resource-links{gap:7px;margin-top:15px;max-width:430px}.resource-links a{font-size:12px;gap:8px;padding:10px;min-height:46px}.resource-links svg{width:16px;height:16px}.resource-arrow{font-size:12px}}
+@media(max-width:380px){.resource-links{gap:6px}.resource-links a{padding:10px 8px;gap:6px;font-size:11px}.resource-links svg{width:15px;height:15px}.resource-arrow{font-size:11px}}
 </style>
 </head>
 <body>
@@ -447,7 +458,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
       <h2 class="hero-title">Reinforcing Touch Reasoning in MLLMs</h2>
       <p class="hero-summary">Turning contact evidence into physical understanding—across tactile perception, comparison, and reasoning.</p>
       <div class="links"><a class="button" href="#robot-evidence">Watch the demos <span aria-hidden="true">↓</span></a><a class="button secondary" href="https://arxiv.org/abs/2605.27154" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a></div>
-      <p class="resource-note">TouchReason-1M &nbsp; / &nbsp; TouchReason-Bench</p>
+      <nav class="resource-links" aria-label="Touch-R1 open resources"><a href="https://github.com/laiyingxin2/Touch-R1" target="_blank" rel="noopener" aria-label="Touch-R1 code repository"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg><span>Code</span><span class="resource-arrow" aria-hidden="true">↗</span></a><a href="https://huggingface.co/laiyingxin/Touch-R1" target="_blank" rel="noopener" aria-label="Touch-R1 model repository"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7Zm-9 5 9 5 9-5m-9 5v10"/></svg><span>Model</span><span class="resource-arrow" aria-hidden="true">↗</span></a><a href="https://huggingface.co/datasets/laiyingxin/TouchReason" target="_blank" rel="noopener" aria-label="Touch-R1 dataset repository"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v7c0 4 18 4 18 0V5M3 12v7c0 4 18 4 18 0v-7"/></svg><span>Dataset</span><span class="resource-arrow" aria-hidden="true">↗</span></a></nav>
       <details class="hero-team"><summary>Research team &amp; affiliations</summary><div class="hero-team-content">
       <div class="authors"><span>Yingxin Lai<sup>1,5,*</sup></span><span>Yafei Zhou<sup>2,5,*</sup></span><span>Fucai Zhu<sup>5</sup></span><span>Siyu Zhu<sup>3</sup></span><span>Weihao Yuan<sup>4,5,†</sup></span></div>
       <p class="affiliations"><sup>1</sup> Xiamen University &nbsp; <sup>2</sup> Great Bay University &nbsp; <sup>3</sup> Fudan University &nbsp; <sup>4</sup> Nanjing University &nbsp; <sup>5</sup> Daimon Robotics</p>
@@ -718,100 +729,97 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
   <script>
   (() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // buffered-v2: fully buffer only the selected short pair; never seek on timeupdate.
+    // native-progressive-v3: let the browser reuse MP4 cache/range requests; no duplicate full-file fetch.
     const recordings=[];
     document.querySelectorAll('[data-motion]').forEach(card=>{
       const videos=[...card.querySelectorAll('video')],rgb=videos[0],touch=videos[1],play=card.querySelector('.motion-play'),replay=card.querySelector('.motion-replay'),clock=card.querySelector('.motion-time');
+      if(videos.length!==2||!play||!replay||!clock)return;
       const notice=card.closest('.contact-showcase')?.querySelector('.showcase-live');
       const title=()=>card.querySelector('h3').textContent.toLowerCase();
-      let desired=false,generation=0,request=null,prepared='',urls=[],mode='idle',launching=false;
-      videos.forEach(v=>{v.loop=false;v.preload='none';});
+      let desired=false,generation=0,request=null,prepared='',mode='idle',launching=false,hasPlayed=false,waiting=false,phase='idle';
+      videos.forEach(v=>{v.loop=false;v.preload='none';v.muted=true;v.playsInline=true;});
+      card.dataset.player='native-progressive-v3';card.dataset.sourceTransport='native-progressive';
       const label=()=>{
         const busy=mode==='loading'||mode==='buffering';
-        card.dataset.playbackState=mode;card.dataset.player='buffered-v2';
-        play.textContent=busy?(mode==='loading'?'Loading pair…':'Buffering…'):(mode==='error'?'Retry pair ↻':desired?'Pause pair Ⅱ':'Play pair ▷');
-        play.setAttribute('aria-label',(desired?'Pause ':'Play ')+title()+' paired videos');
-        play.setAttribute('aria-busy',String(busy));
+        card.dataset.playbackState=mode;
+        card.dataset.readyStates=videos.map(v=>v.readyState).join(',');
+        play.textContent=busy?(mode==='loading'?'Preparing pair…':'Buffering…'):(mode==='error'?'Retry pair ↻':desired?'Pause pair Ⅱ':'Play pair ▷');
+        play.setAttribute('aria-label',(desired?'Pause ':'Play ')+title()+' paired videos');play.setAttribute('aria-busy',String(busy));
       };
       const say=text=>{if(notice)notice.textContent=text;};
-      const pause=()=>{desired=false;generation++;request?.abort();request=null;mode='idle';launching=false;videos.forEach(v=>{v.pause();v.playbackRate=1;});label();};
-      const release=()=>{pause();videos.forEach(v=>{v.removeAttribute('src');v.preload='none';v.load();});urls.forEach(url=>URL.revokeObjectURL(url));urls=[];prepared='';delete card.dataset.bufferBytes;};
+      const pause=()=>{desired=false;generation++;request?.abort();request=null;mode='idle';launching=false;waiting=false;videos.forEach(v=>{v.pause();v.playbackRate=1;});label();};
+      const release=()=>{pause();videos.forEach(v=>{v.preload='none';v.removeAttribute('src');v.load();});prepared='';hasPlayed=false;delete card.dataset.bufferBytes;};
+      const decoded=v=>v.ended||(v.readyState>=2&&!v.seeking);
       const ready=v=>v.ended||(v.readyState>=3&&!v.seeking);
       const waitReady=(v,signal)=>new Promise((resolve,reject)=>{
         const events=['canplay','loadeddata','seeked','progress'];
         const clean=()=>{events.forEach(e=>v.removeEventListener(e,check));v.removeEventListener('error',fail);signal.removeEventListener('abort',aborted);};
-        const check=()=>{if(ready(v)){clean();resolve();}};
-        const fail=()=>{clean();reject(new Error('Video decoding failed.'));};
+        const check=()=>{if(decoded(v)){clean();resolve();}};
+        const fail=()=>{clean();const e=new Error('Native media error '+(v.error?.code||'unknown'));e.name='MediaError';reject(e);};
         const aborted=()=>{clean();reject(new DOMException('Playback cancelled.','AbortError'));};
         events.forEach(e=>v.addEventListener(e,check));v.addEventListener('error',fail);signal.addEventListener('abort',aborted,{once:true});
         if(signal.aborted)aborted();else check();
       });
+      const fail=(error,where)=>{
+        pause();prepared='';mode='error';card.dataset.lastError=(error?.name||'Error')+': '+(error?.message||String(error));card.dataset.errorPhase=where;label();say('Playback could not start. Retry pair, or open the RGB / Touch links.');
+      };
       const prepare=async(signal,token)=>{
-        const sources=videos.map(v=>v.querySelector('source').src),key=sources.join('|');
+        const sources=videos.map(v=>v.querySelector('source')?.src||''),key=sources.join('|');
+        if(sources.some(source=>!source))throw new Error('Missing paired media source.');
         if(prepared!==key){
-          const blobs=await Promise.all(sources.map(async source=>{
-            const response=await fetch(source,{signal,cache:'no-cache'});
-            if(!response.ok)throw new Error('Video download failed ('+response.status+').');
-            const blob=await response.blob();
-            if(!blob.size||blob.type.startsWith('text/'))throw new Error('Invalid video response.');
-            return blob.type==='video/mp4'?blob:new Blob([blob],{type:'video/mp4'});
-          }));
-          if(token!==generation||signal.aborted)return;
-          urls.forEach(url=>URL.revokeObjectURL(url));urls=blobs.map(blob=>URL.createObjectURL(blob));
-          videos.forEach((v,i)=>{v.src=urls[i];v.preload='auto';v.load();});
-          prepared=key;card.dataset.bufferBytes=String(blobs.reduce((sum,blob)=>sum+blob.size,0));
+          videos.forEach((v,i)=>{v.preload='auto';v.src=sources[i];v.load();});
+          prepared=key;
         }
         await Promise.all(videos.map(v=>waitReady(v,signal)));
+        if(token!==generation||signal.aborted)throw new DOMException('Playback cancelled.','AbortError');
       };
       const nominalRate=()=>card.dataset.syncMode==='elapsed'?1:(Number.isFinite(touch.duration/rgb.duration)?touch.duration/rgb.duration:1);
       const resume=async token=>{
-        if(!desired||token!==generation||launching||!videos.every(ready))return;
-        launching=true;mode='playing';if(!touch.ended&&Math.abs(touch.playbackRate-nominalRate())>.005)touch.playbackRate=nominalRate();label();
-        try{await Promise.all(videos.filter(v=>!v.ended).map(v=>v.play()));}
-        catch(error){if(token===generation&&desired&&mode!=='buffering'){release();mode='error';label();say('Playback paused. Press Play pair to retry, or open the RGB / Touch links.');}}
+        if(!desired||token!==generation||launching||!videos.every(mode==='buffering'?ready:decoded))return;
+        launching=true;phase='play';mode='playing';waiting=false;if(!touch.ended&&Math.abs(touch.playbackRate-nominalRate())>.005)touch.playbackRate=nominalRate();label();
+        try{await Promise.all(videos.filter(v=>!v.ended).map(v=>v.play()));if(token===generation&&desired){hasPlayed=true;card.dataset.started='true';}}
+        catch(error){if(token===generation&&desired&&mode!=='buffering')fail(error,'play');}
         finally{if(token===generation){launching=false;if(desired&&mode==='buffering'&&videos.every(ready))resume(token);}}
       };
       const start=async(restart=false)=>{
         recordings.forEach(other=>{if(other.card!==card)other.release();});
         pause();desired=true;const token=generation;request=new AbortController();const controller=request,signal=controller.signal;
-        mode='loading';card.dataset.bufferingEvents='0';label();say('Loading both recordings before playback…');
-        const timeout=setTimeout(()=>controller.abort(),30000);
+        mode='loading';phase='prepare';hasPlayed=false;card.dataset.bufferingEvents='0';delete card.dataset.lastError;delete card.dataset.errorPhase;label();say('Preparing the selected RGB and tactile recordings…');
+        let timedOut=false;const started=Date.now();const timeout=setTimeout(()=>{timedOut=true;controller.abort();},30000);
         try{
           await prepare(signal,token);
           if(!desired||token!==generation||signal.aborted)return;
           if(restart||rgb.ended){videos.forEach(v=>{v.currentTime=0;});await Promise.all(videos.map(v=>waitReady(v,signal)));}
           if(!desired||token!==generation||signal.aborted)return;
-          say('Both recordings ready.');await resume(token);
+          card.dataset.startupMs=String(Date.now()-started);say('Paired playback ready.');await resume(token);
         }catch(error){
           if(token!==generation||!desired)return;
-          release();mode='error';label();say('Could not load the pair. Press Retry pair, or open the RGB / Touch links.');
+          fail(timedOut?new DOMException('Selected pair did not become decodable within 30 seconds.','TimeoutError'):error,phase);
         }finally{clearTimeout(timeout);}
       };
       const fmt=t=>Number.isFinite(t)?String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0'):'00:00';
       card.addEventListener('touch-r1:reset',()=>{release();clock.textContent='00:00';});
-      play.addEventListener('click',()=>desired?pause():start());
-      replay.addEventListener('click',()=>start(true));
+      play.addEventListener('click',()=>desired?pause():start());replay.addEventListener('click',()=>start(true));
       rgb.addEventListener('timeupdate',()=>{
-        clock.textContent=fmt(rgb.currentTime)+' / '+fmt(rgb.duration);
+        const value=fmt(rgb.currentTime)+' / '+fmt(rgb.duration);if(clock.textContent!==value)clock.textContent=value;
         if(mode!=='playing'||!desired||!videos.every(ready)||!rgb.duration||rgb.ended||touch.ended)return;
         const rate=nominalRate(),target=card.dataset.syncMode==='elapsed'?rgb.currentTime:rgb.currentTime/rgb.duration*touch.duration;
-        const drift=target-touch.currentTime;
-        let nextRate=touch.playbackRate;
+        const drift=target-touch.currentTime;let nextRate=touch.playbackRate;
         if(Math.abs(drift)>.12)nextRate=rate*(drift>0?1.03:.97);else if(Math.abs(drift)<.04)nextRate=rate;
         if(Math.abs(touch.playbackRate-nextRate)>.005)touch.playbackRate=nextRate;
       });
       videos.forEach(v=>{
         v.addEventListener('ended',()=>{if(card.dataset.syncMode==='elapsed'&&videos.every(video=>video.ended))pause();});
-        v.addEventListener('waiting',()=>{if(desired&&mode==='playing'&&!ready(v)&&v.duration-v.currentTime>.15){card.dataset.bufferingEvents=String(Number(card.dataset.bufferingEvents||0)+1);mode='buffering';videos.forEach(video=>video.pause());label();say('Preparing both frames…');}});
-        ['canplay','loadeddata','progress'].forEach(event=>v.addEventListener(event,()=>{if(desired&&mode==='buffering'&&videos.every(ready))resume(generation);}));
-        v.addEventListener('error',()=>{if(desired&&v.error){release();mode='error';label();say('Playback unavailable. Press Retry pair or open the RGB / Touch links.');}});
+        v.addEventListener('waiting',()=>{if(desired&&hasPlayed&&mode==='playing'&&!ready(v)&&v.duration-v.currentTime>.15){if(!waiting)card.dataset.bufferingEvents=String(Number(card.dataset.bufferingEvents||0)+1);waiting=true;mode='buffering';videos.forEach(video=>video.pause());label();say('Waiting for the next paired frames…');}});
+        ['canplay','canplaythrough','loadeddata','progress'].forEach(event=>v.addEventListener(event,()=>{if(desired&&mode==='buffering'&&videos.every(ready))resume(generation);}));
+        v.addEventListener('error',()=>{if(desired&&v.error){const e=new Error('Native media error '+v.error.code);e.name='MediaError';fail(e,phase);}});
       });
       rgb.addEventListener('ended',()=>{if(card.dataset.syncMode!=='elapsed'&&desired)start(true);});
       rgb.addEventListener('loadedmetadata',()=>{clock.textContent='00:00 / '+fmt(rgb.duration);});
-      new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)pause();},{threshold:.2}).observe(card);
+      if('IntersectionObserver' in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)pause();},{threshold:0}).observe(card);
       recordings.push({card,pause,start,release});label();
     });
-    document.getElementById('pause-demos').addEventListener('click',()=>recordings.forEach(x=>x.pause()));
+    document.getElementById('pause-demos')?.addEventListener('click',()=>recordings.forEach(x=>x.pause()));
     document.addEventListener('touch-r1:pause-pairs',()=>recordings.forEach(x=>x.pause()));
     document.addEventListener('visibilitychange',()=>{if(document.hidden)recordings.forEach(x=>x.pause());});
     const share=document.getElementById('copy-project-link');
@@ -907,7 +915,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     card, video: card.querySelector('video'), button: card.querySelector('.robot-play'),
     replay: card.querySelector('.robot-replay'), status: card.querySelector('.robot-status'),
     time: card.querySelector('.robot-time'), progress: card.querySelector('.robot-progress'),
-    visible: false, ratio: 0, manualPaused: false, userEnabled: false, overridePause: false,
+    visible: false, intersecting: false, ratio: 0, manualPaused: false, userEnabled: false, overridePause: false,
     blocked: false, failed: false, ready: false, hasPlayed: false, waiting: false,
     generation: 0, controller: null, preparation: null, starting: null, url: null
   })).filter(state => state.video && state.button);
@@ -915,7 +923,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
     return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
   };
-  const eligible = state => !disposed && !document.hidden && state.visible && !state.manualPaused &&
+  const eligible = state => !disposed && !document.hidden && (state.visible || (state.userEnabled && state.intersecting)) && !state.manualPaused &&
     !state.blocked && (!groupPaused || state.overridePause) && (!reducedMotion.matches || state.userEnabled);
   const wanted = state => eligible(state) && (!mobileLayout.matches || state === mobileActive);
   function groupLabel() {
@@ -1054,7 +1062,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     task.finally(() => { if (state.starting === task) state.starting = null; });
   }
   function reconcileAll() {
-    if (mobileChoice && (!mobileChoice.visible || mobileChoice.manualPaused || mobileChoice.blocked)) mobileChoice = null;
+    if (mobileChoice && !eligible(mobileChoice)) mobileChoice = null;
     if (mobileLayout.matches) {
       const candidates = states.filter(state => state.visible);
       mobileActive = mobileChoice && eligible(mobileChoice) ? mobileChoice :
@@ -1151,13 +1159,14 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
         const state = states.find(item => item.card === entry.target);
         if (!state) return;
         state.ratio = entry.isIntersecting ? entry.intersectionRatio : 0;
-        state.visible = state.ratio >= 0.2;
+        state.intersecting = entry.isIntersecting;
+        state.visible = entry.isIntersecting && state.ratio >= (state.visible ? 0.05 : 0.2);
       });
       reconcileAll();
-    }, { threshold: [0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
+    }, { threshold: [0, 0.01, 0.05, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
     states.forEach(state => observer.observe(state.card));
   } else {
-    states.forEach(state => { state.visible = true; state.ratio = 1; });
+    states.forEach(state => { state.visible = true; state.intersecting = true; state.ratio = 1; });
     reconcileAll();
   }
   window.addEventListener('pagehide', () => {
@@ -1203,7 +1212,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     card, video: card.querySelector('video'), button: card.querySelector('.sim-play'),
     replay: card.querySelector('.sim-replay'), status: card.querySelector('.sim-status'),
     time: card.querySelector('.sim-time'), progress: card.querySelector('.sim-progress'),
-    visible: false, ratio: 0, manualPaused: false, userEnabled: false, overridePause: false,
+    visible: false, intersecting: false, ratio: 0, manualPaused: false, userEnabled: false, overridePause: false,
     blocked: false, failed: false, ended: false, solo: false, ready: false, hasPlayed: false, waiting: false,
     generation: 0, controller: null, preparation: null, starting: null, url: null
   })).filter(state => state.video && state.button);
@@ -1211,7 +1220,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
     return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
   };
-  const eligible = state => !disposed && !document.hidden && state.visible && !state.manualPaused &&
+  const eligible = state => !disposed && !document.hidden && (state.visible || (state.userEnabled && state.intersecting)) && !state.manualPaused &&
     !state.blocked && !state.ended && (!groupPaused || state.overridePause) && (!reducedMotion.matches || state.userEnabled);
   const wanted = state => eligible(state) && (!mobileLayout.matches || state === mobileActive);
   const allEnded = () => states.length > 0 && states.every(state => state.ended);
@@ -1422,7 +1431,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     }).finally(() => { if (cohortTask === task) cohortTask = null; });
   }
   function reconcileAll() {
-    if (mobileChoice && (!mobileChoice.visible || mobileChoice.manualPaused || mobileChoice.blocked)) mobileChoice = null;
+    if (mobileChoice && !eligible(mobileChoice)) mobileChoice = null;
     if (mobileLayout.matches) {
       const candidates = states.filter(state => state.visible);
       mobileActive = mobileChoice && eligible(mobileChoice) ? mobileChoice :
@@ -1610,13 +1619,14 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
         const state = states.find(item => item.card === entry.target);
         if (!state) return;
         state.ratio = entry.isIntersecting ? entry.intersectionRatio : 0;
-        state.visible = state.ratio >= 0.2;
+        state.intersecting = entry.isIntersecting;
+        state.visible = entry.isIntersecting && state.ratio >= (state.visible ? 0.05 : 0.2);
       });
       reconcileAll();
-    }, { threshold: [0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
+    }, { threshold: [0, 0.01, 0.05, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
     states.forEach(state => observer.observe(state.card));
   } else {
-    states.forEach(state => { state.visible = true; state.ratio = 1; });
+    states.forEach(state => { state.visible = true; state.intersecting = true; state.ratio = 1; });
     reconcileAll();
   }
   window.addEventListener('pagehide', () => {
@@ -1652,7 +1662,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const state = {
     selected: null, version: 0, generation: 0, controller: null, preparation: null,
-    starting: null, url: null, ready: false, visible: false, disposed: false,
+    starting: null, url: null, ready: false, visible: false, intersecting: false, ratio: 0, disposed: false,
     manualPaused: false, ownerPaused: false, userEnabled: false, blocked: false,
     failed: false, ended: false, hasPlayed: false, waiting: false
   };
@@ -1664,7 +1674,7 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
     const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
     return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
   };
-  const wanted = () => !state.disposed && !document.hidden && state.visible &&
+  const wanted = () => !state.disposed && !document.hidden && (state.visible || (state.userEnabled && state.intersecting)) &&
     !state.manualPaused && !state.ownerPaused && !state.blocked && !state.ended &&
     (!reducedMotion.matches || state.userEnabled);
   function display(mode, message) {
@@ -1957,11 +1967,11 @@ footer{font-size:12px;padding:29px 0 38px;border-color:#ffffff1c;gap:30px;line-h
   selectCase(initial ? initial.dataset.qaCase : cases[0].id);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.target === video) state.visible = entry.isIntersecting && entry.intersectionRatio >= 0.35; });
+      entries.forEach(entry => { if (entry.target !== video) return; state.ratio = entry.isIntersecting ? entry.intersectionRatio : 0; state.intersecting = entry.isIntersecting; state.visible = entry.isIntersecting && state.ratio >= (state.visible ? 0.05 : 0.35); });
       reconcile();
-    }, { threshold: [0, 0.35, 0.5, 0.75, 1] });
+    }, { threshold: [0, 0.01, 0.05, 0.35, 0.5, 0.75, 1] });
     observer.observe(video);
-  } else { state.visible = true; reconcile(); }
+  } else { state.visible = true; state.intersecting = true; state.ratio = 1; reconcile(); }
   window.addEventListener('pagehide', () => { state.disposed = true; stop(); releaseSource(); });
   window.addEventListener('pageshow', event => { if (event.persisted) { state.disposed = false; reconcile(); } });
 })();
