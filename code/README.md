@@ -1,52 +1,38 @@
-# Touch-R1 Training and Inference Code
+# Touch-R1
 
-This directory contains the original Touch-R1 research source snapshots for visual pretraining, supervised fine-tuning (SFT), GRPO, and inference. The project website remains in the repository's separate `docs/` directory.
+Training and inference code for **Touch-R1: Reinforcing Touch Reasoning in MLLMs**.
+
+[Project Page](https://laiyingxin2.github.io/Touch-R1/) · [Paper](https://arxiv.org/abs/2605.27154) · [Model](https://huggingface.co/laiyingxin/Touch-R1) · [Dataset](https://huggingface.co/datasets/laiyingxin/TouchReason)
 
 ## Installation
 
 ```bash
-cd code
+git clone https://github.com/laiyingxin2/Touch-R1.git
+cd Touch-R1/code
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-research.txt
 ```
 
-Choose a PyTorch build compatible with your CUDA environment. The recorded dependency versions are in `research/provenance/environment_versions.json`.
+Use a PyTorch build compatible with your CUDA environment. The backbone is [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct).
 
-Obtain the backbone, adapters, and data separately:
-
-- Backbone: `Qwen/Qwen2.5-VL-7B-Instruct`.
-- Touch-R1 model repository: <https://huggingface.co/laiyingxin/Touch-R1>.
-- TouchReason dataset repository: <https://huggingface.co/datasets/laiyingxin/TouchReason>.
-
-## Setup Before Running
-
-These are historical research implementations, not a standalone portable training package. Before using the worker commands below:
-
-1. Work on a copy of `research/source/` and update the original `/mnt/workspace/lyx` project references, backbone paths, media paths, and feature-cache locations for your machine.
-2. Prepare the required episode metadata, SQLite runtime views, splits, and per-stage plan/runtime JSON files. Model weights, original media, databases, and caches are not included in this Git repository.
-3. Configure the distributed launcher for the chosen worker, including its rank, world size, rendezvous, and device visibility. Several workers assume one visible GPU per process and are not interchangeable with an unconfigured multi-GPU `torchrun` command.
-4. Keep the Stage 1 visual adapter and the corresponding SFT parent consistent when continuing GRPO or loading a checkpoint.
-
-Full training and GPU inference have not been validated in a clean environment by this source upload. Original cloud submission/controller tooling is not included.
+Download the model weights and TouchReason data from the links above. Update local paths in `research/source/` for the backbone, shared modules, media, and feature caches.
 
 ## Training
 
-The following are the original worker entry points, to run only after the setup above and with the required launcher environment:
+| Stage | Objective | Entry point |
+| --- | --- | --- |
+| 1. Visual pretraining | Future tactile-token prediction | [stage1.py](research/source/touchreason_touchr1_three_stage_20261024/stage1.py) |
+| 2. Supervised fine-tuning | Tactile instruction tuning | [fast_worker.py](research/source/touchreason_v12_best_sft_20261025/fast_worker.py) |
+| 3. GRPO | Reinforcement learning for touch reasoning | [grpo_worker.py](research/source/touchr1_grpo_accelerated_20261028/grpo_worker.py) |
 
-```bash
-python research/source/touchreason_touchr1_three_stage_20261024/stage1.py
-python research/source/touchreason_v12_best_sft_20261025/fast_worker.py
-python research/source/touchr1_grpo_accelerated_20261028/grpo_worker.py
-```
+Prepare episode metadata, SQLite runtime views, data splits, and stage-specific plan/runtime JSON files before training. Configure each worker's rank, world size, rendezvous, GPU visibility, and memory limits for your hardware.
 
-They implement Stage 1 future tactile-token prediction, SFT, and GRPO, respectively. Public-data continual SFT is implemented in `research/source/touchr1_continual_dual_20261028/train_job.py`, which takes a prepared job JSON path as its positional argument.
-
-See [the source map](research/README.md) for shared components and additional entry points.
+GRPO starts from an SFT checkpoint paired with its Stage 1 visual adapter. See the [source map](research/README.md) for data preparation, continual SFT, and evaluation modules.
 
 ## Inference
 
-After relocating the source paths and preparing a checkpoint:
+Use a checkpoint directory containing `adaptation.pt` and its matching `vision_adapter.pt`:
 
 ```bash
 python research/source/touchreason_touchr1_three_stage_20261024/infer.py \
@@ -55,18 +41,14 @@ python research/source/touchreason_touchr1_three_stage_20261024/infer.py \
   --output /path/to/predictions.jsonl
 ```
 
-Inputs must use the normalized, answer-free JSONL schema consumed by the archived model/data modules; arbitrary chat JSON is not supported by this entry point. Each output record contains `id`, `response`, and `token_ids`.
+Inputs follow the normalized, answer-free JSONL format in [prepare_test_inputs.py](research/source/touchreason_touchr1_three_stage_20261024/prepare_test_inputs.py). Each output record contains `id`, `response`, and `token_ids`.
 
-The original loader restores language LoRA and tactile adaptation from `adaptation.pt`, and loads `vision_adapter.pt` separately. Loading only `adapter_model.safetensors` does not restore all trained components.
+## Utilities
 
-## Inspection Utilities
+| Script | Purpose |
+| --- | --- |
+| [checkpoint_info.py](scripts/checkpoint_info.py) | Inspect checkpoint metadata |
+| [dataset_preview.py](scripts/dataset_preview.py) | Preview dataset records and model inputs |
+| [score_touchreason.py](scripts/score_touchreason.py) | Score predictions with the local TouchReason parser |
 
-These utilities can be inspected without loading the GPU model:
-
-```bash
-python scripts/checkpoint_info.py /path/to/Touch-R1
-python scripts/dataset_preview.py --help
-python scripts/score_touchreason.py --help
-```
-
-`research/provenance/source_manifest.json` records the original paths, file sizes, and SHA-256 hashes of the source snapshots. See [license status](LICENSE_STATUS.md) before redistributing code, weights, or data.
+See [license status](LICENSE_STATUS.md) for code, model, and data terms.
