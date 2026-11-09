@@ -1,0 +1,24 @@
+{
+  "scope": "Read from distribution metadata in the archived dependency directories; absent packages are not inferred.",
+  "observed": {
+    "dlc_v8_control_20261026/envs/base_site_packages": {
+      "accelerate": "1.2.1",
+      "scipy": "1.15.3",
+      "tokenizers": "0.21.1",
+      "transformers": "4.51.3"
+    },
+    "public_tactile_touchr1_peft_20261023/deps": {
+      "peft": "0.15.2"
+    },
+    "touchreason_touchr1_three_stage_20261024/deps": {
+      "h5py": "3.16.0"
+    },
+    "touchr1_followup_20261030/vl_overlay": {
+      "accelerate": "1.14.0",
+      "peft": "0.20.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.22.2",
+      "transformers": "5.15.1"
+    }
+  }
+}

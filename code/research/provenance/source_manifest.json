@@ -1,0 +1,335 @@
+{
+  "files": [
+    {
+      "path": "research/source/public_tactile_qa_20261022/clean_datasets.py",
+      "source": "public_tactile_qa_20261022/clean_datasets.py",
+      "bytes": 13971,
+      "sha256": "188b3b6d1cd6aec90042b8aa8c700f052dc9fe9271183f8d4f3a140b1275a97c"
+    },
+    {
+      "path": "research/source/public_tactile_qa_20261022/organize_datasets.py",
+      "source": "public_tactile_qa_20261022/organize_datasets.py",
+      "bytes": 11391,
+      "sha256": "f7d9cbaf76f807416a1dc7ba6feb3635cafe38ef6886392b1b226cdb3f7d300b"
+    },
+    {
+      "path": "research/source/public_tactile_qa_20261022/prepare_qa.py",
+      "source": "public_tactile_qa_20261022/prepare_qa.py",
+      "bytes": 1286,
+      "sha256": "3af9e7f0dc12a764b76284d9823141ab4dd71addbdf7d97a71d002d3bda1f8ff"
+    },
+    {
+      "path": "research/source/public_tactile_qa_20261022/score_quality_v2.py",
+      "source": "public_tactile_qa_20261022/score_quality_v2.py",
+      "bytes": 4323,
+      "sha256": "c2514329f3e1cc6a5055c979d639cfd23cdf754d2a4e5dd18e0746b908bfe01f"
+    },
+    {
+      "path": "research/source/public_tactile_qa_20261022/score_quality_v3.py",
+      "source": "public_tactile_qa_20261022/score_quality_v3.py",
+      "bytes": 4851,
+      "sha256": "095683275e11721b03175a1cfc064028a390578eec5605a7d38188e145dacff4"
+    },
+    {
+      "path": "research/source/public_tactile_qa_20261022/verify_cleaned.py",
+      "source": "public_tactile_qa_20261022/verify_cleaned.py",
+      "bytes": 14326,
+      "sha256": "142f5666d45074532528f97e3f0cbf46873417573324cd613ef3e976afdcaa5c"
+    },
+    {
+      "path": "research/source/public_tactile_touchr1_peft_20261023/runtime.py",
+      "source": "public_tactile_touchr1_peft_20261023/runtime.py",
+      "bytes": 17240,
+      "sha256": "7cd046e4a34bf85a32313e730809e59e8db68ed11c27789bf2d9c730fc82d7d4"
+    },
+    {
+      "path": "research/source/public_tactile_touchr1_peft_20261023/method_runtime.py",
+      "source": "public_tactile_touchr1_peft_20261023/method_runtime.py",
+      "bytes": 6881,
+      "sha256": "83b6cb6460e541cabf8306fdb46821202331532a9ed9647398ac74306dcb1e0e"
+    },
+    {
+      "path": "research/source/public_tactile_touchr1_peft_20261023/rewards.py",
+      "source": "public_tactile_touchr1_peft_20261023/rewards.py",
+      "bytes": 2401,
+      "sha256": "5cbdfaa01d9d1d588a70d582c6ae233b16c36fe63d0ee93a00ebe87564151d80"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/data.py",
+      "source": "touchreason_touchr1_three_stage_20261024/data.py",
+      "bytes": 15235,
+      "sha256": "2bbce3d650271bce82eec292e5bd87175a42e5cc99d64f2d8958918708b7b4a0"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/vision.py",
+      "source": "touchreason_touchr1_three_stage_20261024/vision.py",
+      "bytes": 9035,
+      "sha256": "d778404afaec8bdbb5f37375e98c683388195b49effbecaa16899392c4b83cde"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/efficient_attention.py",
+      "source": "touchreason_touchr1_three_stage_20261024/efficient_attention.py",
+      "bytes": 2958,
+      "sha256": "0f92b07d19689e354ad1ba186622e973854468064a377b67b5797b94fcfa08b1"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/stage1.py",
+      "source": "touchreason_touchr1_three_stage_20261024/stage1.py",
+      "bytes": 13100,
+      "sha256": "256ba2e839c0162ee6e672ce7d61bf39f19122a3fb120342b50c3f2220fd6557"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/distributed.py",
+      "source": "touchreason_touchr1_three_stage_20261024/distributed.py",
+      "bytes": 4412,
+      "sha256": "b7a744caa03b422da8a903dd452acfbc09bb499037ba5a5058b9cb77c9f2036c"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/model.py",
+      "source": "touchreason_touchr1_three_stage_20261024/model.py",
+      "bytes": 15110,
+      "sha256": "2de6fc13b1ecc47dba8ceb4295de997b63ff2f38b9b3ad04e36368bf87b2ccf3"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/language.py",
+      "source": "touchreason_touchr1_three_stage_20261024/language.py",
+      "bytes": 13939,
+      "sha256": "82fd94712ac2c3ad5e806f497016269c66a36e92ebc869333750db3a8d2c38b0"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/rewarding.py",
+      "source": "touchreason_touchr1_three_stage_20261024/rewarding.py",
+      "bytes": 6158,
+      "sha256": "47dd45509301b09d3377f6f532fcf6f8d3926545de8812c5c470133285190b1a"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/scoring.py",
+      "source": "touchreason_touchr1_three_stage_20261024/scoring.py",
+      "bytes": 4228,
+      "sha256": "35af910af074c8b745155c1196a7d875f74aad731ae244d78efee6aed6f9e76a"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/native_scoring.py",
+      "source": "touchreason_touchr1_three_stage_20261024/native_scoring.py",
+      "bytes": 3092,
+      "sha256": "3166d27a2297d1fee3638168e64da34296b7de8fcdcb0b10a8abb06c25f038e7"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/training_policy.py",
+      "source": "touchreason_touchr1_three_stage_20261024/training_policy.py",
+      "bytes": 775,
+      "sha256": "e341b8c1c5503158827bfd98f7caffb0bfe7533a665137016f98051b78541913"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/prepare_test_inputs.py",
+      "source": "touchreason_touchr1_three_stage_20261024/prepare_test_inputs.py",
+      "bytes": 5342,
+      "sha256": "f74819f28f0078cc4107c4fd2bb204453dcc8a75beb3b3c52ce4ef1763727df9"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/infer.py",
+      "source": "touchreason_touchr1_three_stage_20261024/infer.py",
+      "bytes": 885,
+      "sha256": "9050255724ba35a90571755ca7ecff3beb21b1017d87c106ce349c11eca28773"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/evaluate.py",
+      "source": "touchreason_touchr1_three_stage_20261024/evaluate.py",
+      "bytes": 7573,
+      "sha256": "cbc5a297b749782a5b70ffb2d5d78797b8081009b35aba5ebd22ed13ea3d06ea"
+    },
+    {
+      "path": "research/source/touchreason_touchr1_three_stage_20261024/small_parameter_search_20261024/parameters.py",
+      "source": "touchreason_touchr1_three_stage_20261024/small_parameter_search_20261024/parameters.py",
+      "bytes": 1721,
+      "sha256": "4546c14686c8c015909368279e7679a6ab94683589c22057af6803d70d5711d4"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/experiment.py",
+      "source": "touchreason_v12_best_sft_20261025/experiment.py",
+      "bytes": 7036,
+      "sha256": "f1cd4b309f57e08235a5d38fb02209976a9e7e202ef58b2a6a95513068b554ef"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/worker.py",
+      "source": "touchreason_v12_best_sft_20261025/worker.py",
+      "bytes": 17469,
+      "sha256": "c9c40931d70678138b0cfc5830bfd6f6e7406f3c86a84a5a53e7ef39a959d9e6"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/fast_worker.py",
+      "source": "touchreason_v12_best_sft_20261025/fast_worker.py",
+      "bytes": 15267,
+      "sha256": "a60b6f863a03740f684aeb152bbf15506dae712d14d81399d524ffa318a573a4"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/runtime_media.py",
+      "source": "touchreason_v12_best_sft_20261025/runtime_media.py",
+      "bytes": 3188,
+      "sha256": "84d0209e42cab15e5ef20b4a8d4b6f319dc8863c57c0a0fb2a6351f92136c5c5"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/prepare.py",
+      "source": "touchreason_v12_best_sft_20261025/prepare.py",
+      "bytes": 12652,
+      "sha256": "cd8b5e0e77f5da0a8d482b206c22fcf477b9d7f351717c63307378c9ba07e49e"
+    },
+    {
+      "path": "research/source/touchreason_v12_best_sft_20261025/verify.py",
+      "source": "touchreason_v12_best_sft_20261025/verify.py",
+      "bytes": 3544,
+      "sha256": "1498023f41e458f85af3479b6998dc52e5b8c31ae339e10102becb8b6d2ef1ce"
+    },
+    {
+      "path": "research/source/touchr1_continual_dual_20261028/common.py",
+      "source": "touchr1_continual_dual_20261028/common.py",
+      "bytes": 9344,
+      "sha256": "0e87016a92c5796fcfadd98b88490aecb6a771c0d5b0664c3179580d2c992506"
+    },
+    {
+      "path": "research/source/touchr1_continual_dual_20261028/train_job.py",
+      "source": "touchr1_continual_dual_20261028/train_job.py",
+      "bytes": 17496,
+      "sha256": "64f0968d6d45711e129101aad8bd5920461ade05d679190613e6e7cdca4c3163"
+    },
+    {
+      "path": "research/source/touchr1_continual_dual_20261028/prepare.py",
+      "source": "touchr1_continual_dual_20261028/prepare.py",
+      "bytes": 7241,
+      "sha256": "b8b54f0bc39a4e0e2365c4d376a9a7baee78d5e25992be804a008ff896f0e229"
+    },
+    {
+      "path": "research/source/touchr1_continual_dual_20261028/prepare_dual.py",
+      "source": "touchr1_continual_dual_20261028/prepare_dual.py",
+      "bytes": 5478,
+      "sha256": "830f84c06eb5c439f1201576a1ad8680ab453985db1c5e2ebc3ca81f905de9ec"
+    },
+    {
+      "path": "research/source/touchr1_continual_dual_20261028/make_plan.py",
+      "source": "touchr1_continual_dual_20261028/make_plan.py",
+      "bytes": 4269,
+      "sha256": "eb335b5e873d35ea04888261c09ba11753efa2b9cbb853a239f49ecb77c8ce5b"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_8gpu_20261028/prepare_grpo.py",
+      "source": "touchr1_public_sft_grpo_8gpu_20261028/prepare_grpo.py",
+      "bytes": 6143,
+      "sha256": "9e0afdf5813439fbf70dab679586ca4350da50550da23dc6efc6e6f9e2ceec3f"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_8gpu_20261028/recover_grpo_media.py",
+      "source": "touchr1_public_sft_grpo_8gpu_20261028/recover_grpo_media.py",
+      "bytes": 4348,
+      "sha256": "86b979c5414b429bf182ed8c0c8ed863ae8e8412cbfafdfd9ec2df447db58487"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_16a800_20261028/common.py",
+      "source": "touchr1_public_sft_grpo_16a800_20261028/common.py",
+      "bytes": 10865,
+      "sha256": "a10657d2c02f69d9b9a42e3e0889ecad7b64257c217bc7ae5af73edd42725dd6"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_16a800_20261028/grpo_worker.py",
+      "source": "touchr1_public_sft_grpo_16a800_20261028/grpo_worker.py",
+      "bytes": 17663,
+      "sha256": "7646708b95c92773148b937aa53a8ba2989d262f609f44b7ea0bd8e66036ffa0"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_16a800_20261028/grpo_ops.py",
+      "source": "touchr1_public_sft_grpo_16a800_20261028/grpo_ops.py",
+      "bytes": 5475,
+      "sha256": "081fabfc70b888534fdd5e3a24143ff9b840f9c5abc1c035069b06759e6a1abb"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_16a800_20261028/evaluation_helpers.py",
+      "source": "touchr1_public_sft_grpo_16a800_20261028/evaluation_helpers.py",
+      "bytes": 17496,
+      "sha256": "64f0968d6d45711e129101aad8bd5920461ade05d679190613e6e7cdca4c3163"
+    },
+    {
+      "path": "research/source/touchr1_public_sft_grpo_16a800_20261028/feature_cache.py",
+      "source": "touchr1_public_sft_grpo_16a800_20261028/feature_cache.py",
+      "bytes": 1197,
+      "sha256": "0f178a4fa9607d846bc90e183db32a0a335cbc5c8174bbf49bc6a275b5d26ccd"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/common.py",
+      "source": "touchr1_grpo_accelerated_20261028/common.py",
+      "bytes": 11048,
+      "sha256": "86285f580e5e89e0cf3286fc360a5c5c6c55f40cf84fc32e58443e2bb1e8d9a1"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/grpo_worker.py",
+      "source": "touchr1_grpo_accelerated_20261028/grpo_worker.py",
+      "bytes": 21150,
+      "sha256": "3acf70644d752d92ddd9105bd6f30f5988128f2c170e60d147e3763b7f48a4d6"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/grpo_ops.py",
+      "source": "touchr1_grpo_accelerated_20261028/grpo_ops.py",
+      "bytes": 5906,
+      "sha256": "4f1adf4f6640823f06ff4a7ab349c03bfc369adfa01db4239fc7f3d067527bbc"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/evaluation_helpers.py",
+      "source": "touchr1_grpo_accelerated_20261028/evaluation_helpers.py",
+      "bytes": 17496,
+      "sha256": "64f0968d6d45711e129101aad8bd5920461ade05d679190613e6e7cdca4c3163"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/feature_cache.py",
+      "source": "touchr1_grpo_accelerated_20261028/feature_cache.py",
+      "bytes": 1299,
+      "sha256": "50cee7712aed18c359ab48abadac7f2efdacdcd131e7c637d52a77690a45b2c5"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/fast_cache.py",
+      "source": "touchr1_grpo_accelerated_20261028/fast_cache.py",
+      "bytes": 1856,
+      "sha256": "bfb7c98a2da4303b7bf084cf8f2a5ef1ae2536a3959640ed236c51f92ed96b76"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/feature_worker.py",
+      "source": "touchr1_grpo_accelerated_20261028/feature_worker.py",
+      "bytes": 6529,
+      "sha256": "9bf6b4e10c543742c8051bbaa04178451bfa7e017679c5b17f6f08fec2294545"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/token_batches.py",
+      "source": "touchr1_grpo_accelerated_20261028/token_batches.py",
+      "bytes": 461,
+      "sha256": "df64049652021bab1394d316ccc94fe169db3daa96a387628e14f3075682807b"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/batch_plan.py",
+      "source": "touchr1_grpo_accelerated_20261028/batch_plan.py",
+      "bytes": 1410,
+      "sha256": "a36e732b9ec6ea45e3e0d19a00586591659caea290c86ba63bcc15b26d6e4d1b"
+    },
+    {
+      "path": "research/source/touchr1_grpo_accelerated_20261028/tune_microbatch.py",
+      "source": "touchr1_grpo_accelerated_20261028/tune_microbatch.py",
+      "bytes": 2718,
+      "sha256": "d2b4872cf5e3c603eefad3765a9659637abd52bd6dfe783f47cc427d8b84209f"
+    },
+    {
+      "path": "research/source/touchr1_followup_20261030/evaluate_7b.py",
+      "source": "touchr1_followup_20261030/evaluate_7b.py",
+      "bytes": 6097,
+      "sha256": "4ae433d4ef9edf6c59c229b11775be4d51c170a4af85851e20fb1390eb16a4c9"
+    },
+    {
+      "path": "research/source/touchr1_best_full_eval_20261102/run_eval.py",
+      "source": "touchr1_best_full_eval_20261102/run_eval.py",
+      "bytes": 4527,
+      "sha256": "1ea34bb4c7786485cbfb18e5cb6c82cf3a6994b8a343b810ec09f7db5d687f7d"
+    },
+    {
+      "path": "research/source/touchreason_bench4800_v2_20261023/object_identity.py",
+      "source": "touchreason_bench4800_v2_20261023/object_identity.py",
+      "bytes": 3465,
+      "sha256": "f3f672617622b85f15081fc3d6f1f49afe4912d4303898a788d1e0c833a63b57"
+    }
+  ],
+  "source_modified": false
+}

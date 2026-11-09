@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.pt
+*.safetensors
+*.sqlite*
+*.log
+checkpoints/
+features/
+hf-model/
+hf-dataset/
+local/

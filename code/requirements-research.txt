@@ -1,0 +1,14 @@
+# 7B research dependencies. Versions below were observed in the archived setup.
+# This file is not a lockfile or a claim that a fresh CUDA install was tested.
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.2.1
+tokenizers==0.21.1
+scipy==1.15.3
+h5py==3.16.0
+# Select a torch build matching the machine's CUDA stack.
+torch>=2.6
+safetensors
+numpy
+Pillow
+opencv-python

@@ -8,13 +8,13 @@ Paper: https://arxiv.org/abs/2605.27154
 
 The previous URL https://laiyingxin2.github.io/Projects/ is retained as a redirect.
 
-This repository contains the **website source**, not a release of the model training code or dataset.
+This repository contains the **website source** in `docs/` and the **training and inference research code** in [`code/`](code/README.md). Model weights and datasets are hosted separately.
 
 ## Research resources
 
 - Dataset: https://huggingface.co/datasets/laiyingxin/TouchReason
 - Model: https://huggingface.co/laiyingxin/Touch-R1
-- Data, research code, and model weights: coming soon.
+- Training and inference code: [`code/`](code/README.md) — installation, source map, and usage; historical machine-specific paths require configuration.
 
 ## Citation
 
